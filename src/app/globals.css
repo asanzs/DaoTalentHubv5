@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #020408;
+  --slate-zinc: #0A0E14;
+  --action-cyan: #00F5FF;
+  --mica-purple: #9B5DE5;
+  --data-white: #F8FAFC;
+  --glass-border: rgba(248, 250, 252, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #020408;
+  color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Tight', 'Inter', sans-serif;
+  letter-spacing: -0.04em;
+}
+
+/* ===== SCANNER LINE ===== */
+.scanner-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00F5FF, transparent);
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0, 245, 255, 0.8);
+}
+
+/* ===== GLASSMORPHISM (PREMIUM) ===== */
+.glassmorphic {
+  background: rgba(10, 14, 20, 0.45);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(248, 250, 252, 0.05);
+  box-shadow: 
+    0 10px 40px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.glassmorphic-cyan {
+  background: rgba(0, 245, 255, 0.03);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.05);
+}
+
+.glassmorphic-purple {
+  background: rgba(155, 93, 229, 0.03);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(155, 93, 229, 0.15);
+  box-shadow: 0 0 30px rgba(155, 93, 229, 0.05);
+}
+
+/* ===== QUANTUM UI ELEMENTS ===== */
+.quantum-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.quantum-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 245, 255, 0.05),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.75s;
+}
+
+.quantum-card:hover::before {
+  left: 150%;
+}
+
+.card-hover-glow:hover {
+  border-color: rgba(0, 245, 255, 0.2);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.06);
+}
+
+/* ===== LIQUID BAR ===== */
+.liquid-bar {
+  background: linear-gradient(90deg, #00F5FF, #9B5DE5, #00F5FF);
+  background-size: 200% 100%;
+  animation: liquidFlow 3s ease infinite;
+}
+
+@keyframes liquidFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(1deg); }
+  66% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+@keyframes pulse-cyan {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 245, 255, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(0, 245, 255, 0.5), 0 0 70px rgba(0, 245, 255, 0.2); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-cyan { animation: pulse-cyan 3s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+
+/* ===== CTA BUTTONS ===== */
+.cta-primary {
+  background: #00F5FF;
+  color: #020408;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+}
+
+.cta-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00F5FF, #9B5DE5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cta-primary:hover::before { opacity: 1; }
+.cta-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+  transform: scale(1.03);
+}
+
+.cta-secondary {
+  border: 1px solid rgba(0, 245, 255, 0.4);
+  color: #00F5FF;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cta-secondary:hover {
+  background: rgba(0, 245, 255, 0.05);
+  border-color: rgba(0, 245, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+/* ===== CARD HOVER ===== */
+.card-hover-glow { transition: all 0.3s ease; }
+.card-hover-glow:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 245, 255, 0.1), inset 0 0 30px rgba(0, 245, 255, 0.03);
+  transform: translateY(-4px);
+}
+
+.card-hover-purple:hover {
+  border-color: rgba(155, 93, 229, 0.4);
+  box-shadow: 0 0 30px rgba(155, 93, 229, 0.15), inset 0 0 30px rgba(155, 93, 229, 0.05);
+  transform: translateY(-4px);
+}
+
+/* ===== SECURITY BLUR ===== */
+.security-blur { filter: blur(8px); transition: filter 0.5s ease; }
+.security-blur:hover { filter: blur(0px); }
+
+/* ===== FADE IN SECTION ===== */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== GLOW ===== */
+.glow-cyan { box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 60px rgba(0, 245, 255, 0.1); }
+.glow-purple { box-shadow: 0 0 20px rgba(155, 93, 229, 0.3), 0 0 60px rgba(155, 93, 229, 0.1); }
+
+/* ===== FOCUS RING ===== */
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #00F5FF;
+  outline-offset: 2px;
+}
+
+/* ===== INFINITE MARQUEE ===== */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
