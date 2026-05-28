@@ -6,35 +6,6 @@ import { Briefcase, Code, CheckCircle2, Bot, ArrowRight, Zap, Sparkles } from "l
 import Link from "next/link";
 
 // Nav component
-const NavBar = () => (
-  <nav className="fixed top-0 left-0 w-full z-50 bg-[#0B0C10]/80 backdrop-blur-md border-b border-white/5">
-    <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div className="flex items-center gap-2 cursor-pointer">
-        <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#00F5FF] to-[#9B5DE5] flex items-center justify-center">
-          <span className="text-white font-black text-xs">V5</span>
-        </div>
-        <span className="text-white font-bold text-xl tracking-tight">DAO Talent Hub</span>
-      </div>
-      
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-        <Link href="#empresas" className="text-white/70 hover:text-white transition-colors">Para Empresas</Link>
-        <Link href="#talento" className="text-white/70 hover:text-white transition-colors">Para Talento</Link>
-        <Link href="/academy" className="text-white/70 hover:text-white transition-colors">Academia</Link>
-        <Link href="/how-it-works" className="text-white/70 hover:text-white transition-colors">Garantías de Pago</Link>
-      </div>
-
-      <div className="flex items-center gap-4">
-        <button className="text-sm font-medium text-white/70 hover:text-white hidden md:block">
-          Login
-        </button>
-        <button className="h-10 px-6 rounded-full bg-white text-black font-semibold text-sm hover:scale-105 transition-transform">
-          Empezar Gratis
-        </button>
-      </div>
-    </div>
-  </nav>
-);
-
 // Hero Component
 const Hero = () => {
   return (
@@ -199,8 +170,7 @@ const TalentValue = () => {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0B0C10] font-sans selection:bg-[#00F5FF]/30">
-      <NavBar />
-      <Hero />
+            <Hero />
       <CompanyValue />
       <TalentValue />
     </main>

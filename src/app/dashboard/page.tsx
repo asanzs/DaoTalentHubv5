@@ -7,9 +7,11 @@ import {
   Zap, Search, Plus, 
   ArrowRightLeft, Scale, ShieldAlert,
   ArrowUpRight, Building2, Terminal,
-  ShieldCheck, Lock, ArrowRight
+  ShieldCheck, Lock, ArrowRight, User
 } from "lucide-react";
 import Link from "next/link";
+import { useAccount } from "wagmi";
+import { useWalletModal } from "@/context/Web3Provider";
 
 export default function Dashboard() {
   const [view, setView] = useState<"b2c" | "b2b">("b2c");
@@ -18,6 +20,8 @@ export default function Dashboard() {
   const [isBridging, setIsBridging] = useState(false);
   const [hasVoted, setHasVoted] = useState(false);
   const [stakedAmount, setStakedAmount] = useState(0);
+  const { address, isConnected } = useAccount();
+  const { open } = useWalletModal();
 
   return (
     <main className="min-h-screen bg-[#0B0C10] font-sans text-white">
@@ -43,12 +47,17 @@ export default function Dashboard() {
         </div>
         <div className="flex items-center gap-4">
           <div className="text-right hidden md:block">
-            <p className="text-sm font-bold">{view === "b2c" ? "Alex Developer" : "Acme Corp"}</p>
-            <p className="text-xs text-[#00F5FF]">{view === "b2c" ? "0x8F4...2b9A" : "Premium Member"}</p>
+            <p className="text-sm font-bold">{isConnected ? "Usuario Autenticado" : "Modo Demo"}</p>
+            <p className="text-xs text-[#00F5FF]">
+              {isConnected && address ? `${address.slice(0, 6)}...${address.slice(-4)}` : "No conectado"}
+            </p>
           </div>
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#9B5DE5] to-[#00F5FF] flex items-center justify-center font-bold text-black border-2 border-black">
-            {view === "b2c" ? "AD" : "AC"}
-          </div>
+          <button 
+            onClick={open}
+            className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#9B5DE5] to-[#00F5FF] flex items-center justify-center font-bold text-black border-2 border-black hover:opacity-80 transition-opacity"
+          >
+            {isConnected ? <CheckCircle2 className="w-5 h-5" /> : <User className="w-5 h-5" />}
+          </button>
         </div>
       </nav>
 
