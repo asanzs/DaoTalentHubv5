@@ -1,30 +1,26 @@
 "use client";
 
-import React, { ReactNode, createContext, useContext, useState, useEffect } from 'react';
-import { createConfig, WagmiProvider, useConnect, useAccount, useDisconnect } from 'wagmi';
-import { mainnet, arbitrum, base, baseSepolia } from 'wagmi/chains';
-import { injected, metaMask, coinbaseWallet } from 'wagmi/connectors';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { http } from 'viem';
+import React, { ReactNode, createContext, useContext, useState } from 'react';
 import { ShieldCheck, Mail, Wallet } from 'lucide-react';
 
-export const wagmiConfig = createConfig({
-  chains: [mainnet, base, baseSepolia, arbitrum],
-  connectors: [
-    injected(),
-    metaMask(),
-    coinbaseWallet({ appName: 'DAO Talent Hub' }),
-  ],
-  transports: {
-    [mainnet.id]: http(),
-    [base.id]: http(),
-    [baseSepolia.id]: http(),
-    [arbitrum.id]: http(),
-  },
+// ─── Mocked Wagmi Context ──────────────────────────────────────────────────────
+interface AccountContextType {
+  address: string | undefined;
+  isConnected: boolean;
+  connect: (name: string) => void;
+  disconnect: () => void;
+}
+
+const AccountContext = createContext<AccountContextType>({
+  address: undefined,
+  isConnected: false,
+  connect: () => {},
+  disconnect: () => {},
 });
 
-const queryClient = new QueryClient();
+export const useAccount = () => useContext(AccountContext);
 
+// ─── Wallet Modal Context ──────────────────────────────────────────────────────
 interface WalletModalContextType {
   open: () => void;
   close: () => void;
@@ -39,32 +35,35 @@ const WalletModalContext = createContext<WalletModalContextType>({
 
 export const useWalletModal = () => useContext(WalletModalContext);
 
+// ─── Wallet Modal UI ───────────────────────────────────────────────────────────
 function WalletModal({ onClose }: { onClose: () => void }) {
-  const { connectors, connect, isPending } = useConnect();
-  const { address, isConnected } = useAccount();
-  const { disconnect } = useDisconnect();
-
+  const { connect, address, isConnected, disconnect } = useAccount();
   const [simulatedGoogle, setSimulatedGoogle] = useState(false);
-
-  const getWalletIcon = (name: string) => {
-    if (name.toLowerCase().includes('metamask')) return '🦊';
-    if (name.toLowerCase().includes('coinbase')) return '🔵';
-    return '🌐';
-  };
+  const [isPending, setIsPending] = useState(false);
 
   const handleSimulatedGoogleLogin = () => {
     setSimulatedGoogle(true);
     setTimeout(() => {
+      connect("Google/Email");
       onClose();
-      // En una app real de NextAuth o Web3Auth, aquí se refrescaría la sesión.
       window.location.href = "/dashboard";
     }, 1500);
+  };
+
+  const handleWalletConnect = (name: string) => {
+    setIsPending(true);
+    setTimeout(() => {
+      connect(name);
+      setIsPending(false);
+      onClose();
+      window.location.href = "/dashboard";
+    }, 1000);
   };
 
   if (isConnected && address) {
     return (
       <div
-        className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+        className="fixed inset-0 z-[9999] flex items-center justify-center p-4 animate-fade-in"
         style={{ background: 'rgba(2,4,8,0.85)', backdropFilter: 'blur(12px)' }}
         onClick={onClose}
       >
@@ -73,7 +72,6 @@ function WalletModal({ onClose }: { onClose: () => void }) {
           style={{ background: 'linear-gradient(135deg,rgba(0,245,255,0.05),rgba(155,93,229,0.05))', boxShadow: '0 0 60px rgba(0,245,255,0.1)' }}
           onClick={e => e.stopPropagation()}
         >
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00F5FF]/40 to-transparent rounded-t-3xl" />
           <div className="text-center mb-6">
             <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center text-[#00F5FF]"
               style={{ background: 'linear-gradient(135deg,rgba(0,245,255,0.1),rgba(155,93,229,0.1))' }}>
@@ -110,15 +108,7 @@ function WalletModal({ onClose }: { onClose: () => void }) {
         style={{ background: 'linear-gradient(135deg,rgba(0,245,255,0.02),rgba(155,93,229,0.02))', boxShadow: '0 0 60px rgba(155,93,229,0.1)' }}
         onClick={e => e.stopPropagation()}
       >
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#9B5DE5]/60 to-transparent rounded-t-3xl" />
-        
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-xl bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all"
-        >
-          ✕
-        </button>
-
+        <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-xl bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white transition-all">✕</button>
         <div className="text-center mb-8">
           <div className="w-14 h-14 rounded-2xl mx-auto mb-4 flex items-center justify-center"
             style={{ background: 'linear-gradient(135deg,#00F5FF20,#9B5DE520)', border: '1px solid rgba(155,93,229,0.3)' }}>
@@ -129,7 +119,6 @@ function WalletModal({ onClose }: { onClose: () => void }) {
         </div>
 
         <div className="space-y-3">
-          {/* Opción Web2 Simulada (Web3Auth/Google) */}
           <button
             onClick={handleSimulatedGoogleLogin}
             disabled={simulatedGoogle}
@@ -139,12 +128,8 @@ function WalletModal({ onClose }: { onClose: () => void }) {
               <Mail className="w-5 h-5" />
             </span>
             <div className="flex-1 text-left">
-              <span className="block text-sm font-bold text-white group-hover:text-gray-300 transition-colors">
-                Email / Google
-              </span>
-              <span className="text-[10px] text-gray-500 uppercase tracking-wider">
-                {simulatedGoogle ? 'Verificando...' : 'Recomendado para B2C'}
-              </span>
+              <span className="block text-sm font-bold text-white group-hover:text-gray-300 transition-colors">Email / Google</span>
+              <span className="text-[10px] text-gray-500 uppercase tracking-wider">{simulatedGoogle ? 'Verificando...' : 'Recomendado para B2C'}</span>
             </div>
           </button>
 
@@ -154,56 +139,59 @@ function WalletModal({ onClose }: { onClose: () => void }) {
             <div className="h-px bg-white/5 flex-1"></div>
           </div>
 
-          {/* Opciones Wagmi */}
-          {connectors.map(connector => (
+          {['MetaMask', 'Coinbase Wallet'].map(name => (
             <button
-              key={connector.uid}
-              onClick={() => connect({ connector })}
+              key={name}
+              onClick={() => handleWalletConnect(name)}
               disabled={isPending}
               className="w-full flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 hover:border-[#9B5DE5]/30 transition-all duration-300 group disabled:opacity-50 disabled:cursor-wait"
             >
               <span className="text-2xl w-10 h-10 flex items-center justify-center rounded-xl bg-white/5">
-                {getWalletIcon(connector.name)}
+                {name === 'MetaMask' ? '🦊' : '🔵'}
               </span>
               <div className="flex-1 text-left">
-                <span className="block text-sm font-bold text-white group-hover:text-[#9B5DE5] transition-colors">
-                  {connector.name}
-                </span>
-                <span className="text-[10px] text-gray-500 uppercase tracking-wider">
-                  {isPending ? 'Conectando...' : 'Wallet Descentralizada'}
-                </span>
+                <span className="block text-sm font-bold text-white group-hover:text-[#9B5DE5] transition-colors">{name}</span>
+                <span className="text-[10px] text-gray-500 uppercase tracking-wider">{isPending ? 'Conectando...' : 'Wallet Descentralizada'}</span>
               </div>
             </button>
           ))}
         </div>
-
-        <p className="mt-6 text-center text-[10px] text-gray-600 font-bold tracking-wider uppercase">
-          Infraestructura Segura • 0% Riesgo
-        </p>
       </div>
     </div>
   );
 }
 
-function WalletModalProvider({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState(false);
+// ─── Provider Wrappers ───────────────────────────────────────────────
+function AccountProvider({ children }: { children: ReactNode }) {
+  const [address, setAddress] = useState<string | undefined>(undefined);
+  const [isConnected, setIsConnected] = useState(false);
+
+  const connect = (name: string) => { console.log(name);
+    setAddress("0x7F2a095E" + Math.floor(Math.random() * 100000000).toString(16));
+    setIsConnected(true);
+  };
+
+  const disconnect = () => {
+    setAddress(undefined);
+    setIsConnected(false);
+  };
 
   return (
-    <WalletModalContext.Provider value={{ open: () => setIsOpen(true), close: () => setIsOpen(false), isOpen }}>
+    <AccountContext.Provider value={{ address, isConnected, connect, disconnect }}>
       {children}
-      {isOpen && <WalletModal onClose={() => setIsOpen(false)} />}
-    </WalletModalContext.Provider>
+    </AccountContext.Provider>
   );
 }
 
 export default function Web3Provider({ children }: { children: ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <WagmiProvider config={wagmiConfig}>
-      <QueryClientProvider client={queryClient}>
-        <WalletModalProvider>
-          {children}
-        </WalletModalProvider>
-      </QueryClientProvider>
-    </WagmiProvider>
+    <AccountProvider>
+      <WalletModalContext.Provider value={{ open: () => setIsOpen(true), close: () => setIsOpen(false), isOpen }}>
+        {children}
+        {isOpen && <WalletModal onClose={() => setIsOpen(false)} />}
+      </WalletModalContext.Provider>
+    </AccountProvider>
   );
 }

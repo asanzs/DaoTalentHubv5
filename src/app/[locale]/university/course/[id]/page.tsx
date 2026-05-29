@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+
 import { BookOpen, CheckCircle2, PlayCircle, ShieldCheck, ChevronRight, Lock, Code2 } from "lucide-react";
 import Link from "next/link";
 import { useWalletModal } from "@/context/Web3Provider";

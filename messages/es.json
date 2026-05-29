@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "whitepaper": "Whitepaper",
+    "university": "Universidad",
+    "dataRoom": "Inversores (Data Room)",
+    "earlyPass": "Pase Fundador",
+    "talent": "Talento B2C",
+    "dashboard": "Ir al Dashboard",
+    "login": "Acceder / Conectar"
+  },
+  "footer": {
+    "subtitle": "Revolucionando la contratación global mediante riesgo cero para empresas y 100% de ganancias para el talento.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal"
+  },
+  "landing": {
+    "badge": "Acceso Anticipado B2B",
+    "title": "Contrata al 1% del Talento. <br />Con <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Cero Riesgo.</span>",
+    "subtitle": "Nuestra IA valida técnicamente a cada desarrollador. Los Smart Contracts garantizan que tu empresa solo paga si se cumplen los hitos. Rentabilidad máxima, riesgo cero.",
+    "ctaPrimary": "Prueba el Smart Match",
+    "ctaSecondary": "Adquiere el Pase Fundador"
+  },
+  "dashboard": {
+    "titleB2C": "Dashboard Talento",
+    "subtitleB2C": "Tus hitos, tokens y reputación validados por IA.",
+    "titleB2B": "Dashboard Corporativo",
+    "subtitleB2B": "Gestiona tus inversiones, contratos y talento con cero riesgo.",
+    "switchB2B": "Cambiar a B2B (Inversor/Empresa)",
+    "switchB2C": "Cambiar a B2C (Talento)",
+    "stakingLabel": "Staking y Comisiones 0%",
+    "stakingDesc": "Bloquea liquidez para eliminar las comisiones de contratación.",
+    "walletNotConnected": "Conecta tu Wallet para acceder al Dashboard"
+  },
+  "earlyPass": {
+    "title": "Pase Fundador (Early Pass)",
+    "subtitle": "Acceso VIP a la preventa de tokens, 0% fees vitalicios en la plataforma y gobernanza directa.",
+    "mint": "Mintear Pase (0.5 ETH)",
+    "benefits": "Beneficios Exclusivos",
+    "b1": "Airdrop Garantizado",
+    "b2": "Acceso al Tribunal B2B",
+    "b3": "Multiplicador de Staking x2"
+  },
+  "dataRoom": {
+    "title": "Mythos Data Room Privada",
+    "subtitle": "Información confidencial para VCs, Ángeles y Socios Estratégicos.",
+    "capTable": "Cap Table y Distribución",
+    "tokenomics": "Tokenomics y Emisión",
+    "roadmap": "Roadmap Q3-Q4 2026",
+    "download": "Descargar Pitch Deck"
+  },
+  "university": {
+    "title": "Mythos IA University",
+    "subtitle": "La única academia donde la IA te examina y emite un Soulbound Token irrefutable sobre tus habilidades.",
+    "courseM1": "Módulo 1: Fundamentos Web3",
+    "startCourse": "Iniciar Módulo",
+    "validated": "Validación IA",
+    "sbt": "Certificado SBT"
+  }
+}

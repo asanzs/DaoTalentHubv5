@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "home": "Home",
+    "whitepaper": "Whitepaper",
+    "university": "University",
+    "dataRoom": "Investors (Data Room)",
+    "earlyPass": "Founder Pass",
+    "talent": "B2C Talent",
+    "dashboard": "Go to Dashboard",
+    "login": "Login / Connect"
+  },
+  "footer": {
+    "subtitle": "Revolutionizing global hiring through zero risk for companies and 100% earnings for talent.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal"
+  },
+  "landing": {
+    "badge": "B2B Early Access",
+    "title": "Hire the Top 1% of Talent. <br />With <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk.</span>",
+    "subtitle": "Our AI technically validates every developer. Smart Contracts ensure your company only pays if milestones are met. Maximum ROI, zero risk.",
+    "ctaPrimary": "Try Smart Match",
+    "ctaSecondary": "Get Founder Pass"
+  },
+  "dashboard": {
+    "titleB2C": "Talent Dashboard",
+    "subtitleB2C": "Your milestones, tokens, and AI-validated reputation.",
+    "titleB2B": "Corporate Dashboard",
+    "subtitleB2B": "Manage your investments, contracts, and talent with zero risk.",
+    "switchB2B": "Switch to B2B (Investor/Company)",
+    "switchB2C": "Switch to B2C (Talent)",
+    "stakingLabel": "Staking & 0% Fees",
+    "stakingDesc": "Lock liquidity to eliminate hiring fees forever.",
+    "walletNotConnected": "Connect your Wallet to access the Dashboard"
+  },
+  "earlyPass": {
+    "title": "Founder Pass (Early Access)",
+    "subtitle": "VIP access to token presale, lifetime 0% platform fees, and direct governance.",
+    "mint": "Mint Pass (0.5 ETH)",
+    "benefits": "Exclusive Benefits",
+    "b1": "Guaranteed Airdrop",
+    "b2": "B2B Tribunal Access",
+    "b3": "Staking Multiplier x2"
+  },
+  "dataRoom": {
+    "title": "Mythos Private Data Room",
+    "subtitle": "Confidential information for VCs, Angels, and Strategic Partners.",
+    "capTable": "Cap Table & Distribution",
+    "tokenomics": "Tokenomics & Emission",
+    "roadmap": "Q3-Q4 2026 Roadmap",
+    "download": "Download Pitch Deck"
+  },
+  "university": {
+    "title": "Mythos AI University",
+    "subtitle": "The only academy where AI tests you and issues an irrefutable Soulbound Token of your skills.",
+    "courseM1": "Module 1: Web3 Fundamentals",
+    "startCourse": "Start Module",
+    "validated": "AI Validation",
+    "sbt": "SBT Certificate"
+  }
+}

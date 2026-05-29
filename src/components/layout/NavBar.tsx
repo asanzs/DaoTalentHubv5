@@ -1,37 +1,41 @@
 "use client";
-
 import React from "react";
 import Link from "next/link";
-import { useWalletModal } from "@/context/Web3Provider";
+import { useTranslations } from "next-intl";
+import { useWalletModal, useAccount } from "@/context/Web3Provider";
 
 export default function NavBar() {
+  const t = useTranslations('nav');
   const { open } = useWalletModal();
+  const { isConnected, address } = useAccount();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0B0C10]/80 backdrop-blur-md border-b border-white/5">
+    <nav className="fixed w-full z-50 top-0 border-b border-white/5 bg-black/50 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 cursor-pointer">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#00F5FF] to-[#9B5DE5] flex items-center justify-center">
-            <span className="text-white font-black text-xs">V5</span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00F5FF] to-[#9B5DE5] p-[1px]">
+            <div className="w-full h-full bg-black rounded-xl flex items-center justify-center group-hover:bg-transparent transition-colors">
+              <span className="text-white font-black text-xl">M</span>
+            </div>
           </div>
-          <span className="text-white font-bold text-xl tracking-tight">DAO Talent Hub</span>
+          <span className="text-xl font-black text-white tracking-tight">MYTHOS</span>
         </Link>
-        
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link href="/#empresas" className="text-white/70 hover:text-white transition-colors">Para Empresas</Link>
-          <Link href="/#talento" className="text-white/70 hover:text-white transition-colors">Para Talento</Link>
-          <Link href="/academy" className="text-white/70 hover:text-white transition-colors">Academia</Link>
-          <Link href="/early-pass" className="text-[#00F5FF]/80 hover:text-[#00F5FF] transition-colors">Membresía Fundador</Link>
-          <Link href="/data-room" className="text-white/70 hover:text-white transition-colors">Inversores</Link>
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/whitepaper" className="text-sm font-bold text-gray-400 hover:text-white transition-colors">{t('whitepaper')}</Link>
+          <Link href="/university" className="text-sm font-bold text-gray-400 hover:text-white transition-colors">{t('university')}</Link>
+          <Link href="/data-room" className="text-sm font-bold text-gray-400 hover:text-white transition-colors">{t('dataRoom')}</Link>
+          <Link href="/early-pass" className="text-sm font-bold text-[#00F5FF] hover:text-white transition-colors">{t('earlyPass')}</Link>
         </div>
-
         <div className="flex items-center gap-4">
-          <button onClick={open} className="text-sm font-medium text-white/70 hover:text-white hidden md:block">
-            Login
-          </button>
-          <button onClick={open} className="h-10 px-6 rounded-full bg-white text-black font-semibold text-sm hover:scale-105 transition-transform">
-            Empezar Gratis
-          </button>
+          {isConnected ? (
+            <Link href="/dashboard" className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-bold text-sm transition-all">
+              {t('dashboard')} ({address?.slice(0,6)}...)
+            </Link>
+          ) : (
+            <button onClick={open} className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5] text-black font-black text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,245,255,0.3)] hover:shadow-[0_0_30px_rgba(155,93,229,0.5)]">
+              {t('login')}
+            </button>
+          )}
         </div>
       </div>
     </nav>
