@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, BookOpen, Layers, Shield, Cpu, } ArrowRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, Layers, Shield, Cpu, ArrowRight } from 'lucide-react';
 
 export default function WhitepaperPage() {
   return (
