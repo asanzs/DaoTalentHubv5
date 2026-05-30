@@ -17,8 +17,6 @@ import {
 } from "@/lib/mocks/service";
 
 export default function StakingPage() {
-  const t = useTranslations("Staking");
-  const tExchange = useTranslations("Exchange");
   const { isConnected } = useAccount();
 
   const [mounted, setMounted] = useState(false);

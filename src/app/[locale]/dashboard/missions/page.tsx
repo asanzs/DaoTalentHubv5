@@ -11,7 +11,6 @@ import {
 } from "@/lib/mocks/service";
 
 export default function MissionsPage() {
-  const t = useTranslations("Missions");
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [missions, setMissions] = useState<Mission[]>([]);
