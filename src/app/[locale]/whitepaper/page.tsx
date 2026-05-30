@@ -18,7 +18,7 @@ export default function WhitepaperPage() {
             Documentación Oficial
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-            Protocolo <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]">Mythos</span>
+            Protocolo <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]">DAO Talent Hub</span>
           </h1>
           <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
             La arquitectura técnica detrás del primer hub descentralizado que elimina el riesgo en la contratación global mediante Inteligencia Artificial y Smart Contracts.

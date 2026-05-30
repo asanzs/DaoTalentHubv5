@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Home",
+    "whitepaper": "Whitepaper",
+    "university": "University",
+    "dataRoom": "Investors (Data Room)",
+    "earlyPass": "Founder Pass",
+    "talent": "B2C Talent",
+    "dashboard": "Go to Dashboard",
+    "login": "Login / Connect"
+  },
+  "footer": {
+    "subtitle": "DAO Talent Hub connects top-tier companies with AI-validated technical talent, guaranteeing risk-free hiring.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal"
+  },
+  "landing": {
+    "badge": "B2B Early Access",
+    "title": "Hire the Top 1% of Talent. <br />With <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk.</span>",
+    "subtitle": "Our AI technically validates every developer. Smart Contracts ensure your company only pays if milestones are met. Maximum ROI, zero risk.",
+    "ctaPrimary": "Try Smart Match",
+    "ctaSecondary": "Get Founder Pass"
+  },
+  "dashboard": {
+    "titleB2C": "Talent Dashboard",
+    "subtitleB2C": "Your milestones, tokens, and AI-validated reputation.",
+    "titleB2B": "Corporate Dashboard",
+    "subtitleB2B": "Manage your investments, contracts, and talent with zero risk.",
+    "switchB2B": "Switch to B2B (Investor/Company)",
+    "switchB2C": "Switch to B2C (Talent)",
+    "stakingLabel": "Staking & 0% Fees",
+    "stakingDesc": "Lock liquidity to eliminate hiring fees forever.",
+    "walletNotConnected": "Connect your Wallet to access the Dashboard"
+  },
+  "earlyPass": {
+    "title": "Founder Pass (Early Access)",
+    "subtitle": "VIP access to token presale, lifetime 0% platform fees, and direct governance.",
+    "mint": "Mint Pass (0.5 ETH)",
+    "benefits": "Exclusive Benefits",
+    "b1": "Guaranteed Airdrop",
+    "b2": "B2B Tribunal Access",
+    "b3": "Staking Multiplier x2"
+  },
+  "dataRoom": {
+    "title": "Mythos Private Data Room",
+    "subtitle": "Confidential information for VCs, Angels, and Strategic Partners.",
+    "capTable": "Cap Table & Distribution",
+    "tokenomics": "Tokenomics & Emission",
+    "roadmap": "Q3-Q4 2026 Roadmap",
+    "download": "Download Pitch Deck"
+  },
+  "university": {
+    "title": "Mythos AI University",
+    "subtitle": "The only academy where AI tests you and issues an irrefutable Soulbound Token of your skills.",
+    "courseM1": "Module 1: Web3 Fundamentals",
+    "startCourse": "Start Module",
+    "validated": "AI Validation",
+    "sbt": "SBT Certificate"
+  },
+  "index": {
+    "hero": {
+      "title": "Access the Tech Elite without Friction.",
+      "subtitle": "AI-validated infrastructure for the talent of tomorrow.",
+      "b2c_cta": "I am Tech Talent",
+      "b2b_cta": "Hire Companies"
+    },
+    "b2c": {
+      "title": "Web3 Mode Activated",
+      "subtitle": "Build your on-chain reputation.",
+      "features": [
+        "Verified Skills Passport (SBTs)",
+        "€20 Airdrops for Early Adopters",
+        "8% Take-rate on hires",
+        "Algorithmic code validation"
+      ]
+    },
+    "b2b": {
+      "title": "Corporate SaaS",
+      "subtitle": "Guaranteed and risk-free technical hiring.",
+      "features": [
+        "Automated FIAT billing (Stripe)",
+        "Regulatory compliance KYB",
+        "Delivery Guarantee via Escrow",
+        "Secure Payment Infrastructure"
+      ]
+    },
+    "expanded": {
+      "socialProof": "Нам доверяют ведущие компании Web3 и Web2",
+      "howItWorks": {
+        "title": "Найм без проблем, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Ноль Рисков</span>",
+        "subtitle": "Мы объединяем скорость Web2 SaaS с прозрачностью и безопасностью смарт-контрактов Web3.",
+        "step1Title": "1. Ончейн-валидация",
+        "step1Desc": "Кандидаты не загружают пустые резюме. Они проходят тесты ИИ и получают неизменяемый <strong class=\"text-white\">SBT (Soulbound Token)</strong>, подтверждающий их реальные навыки.",
+        "step2Title": "2. Smart Match AI",
+        "step2Desc": "Наш алгоритм анализирует технологический стек компании и SBT талантов, чтобы создать идеальную пару менее чем за 48 часов. Никакой предвзятости.",
+        "step3Title": "3. Условное депонирование (Escrow)",
+        "step3Desc": "Компания депонирует средства в смарт-контракт. Талант работает в безопасности. Оплата производится автоматически после сдачи проекта."
+      },
+      "engine": {
+        "tag": "Искусственный Интеллект",
+        "title": "Идеальная <br />Машина Рекрутинга",
+        "desc": "DAO Talent Hub развертывает квантовые модели и предиктивные LLM для аудита не только GitHub, но и вкладов на Hugging Face, Kaggle, публикаций arXiv и архитектур квантовых вычислений. Мы создаем неопровержимый ончейн-профиль 1% элитных талантов по всему миру, устраняя риски при найме.",
+        "bullet1": "Предиктивный анализ производительности",
+        "bullet2": "Совместимость по культуре кода",
+        "bullet3": "100% устранение предвзятости при найме",
+        "link": "Читать Технический Whitepaper"
+      },
+      "tokenomics": {
+        "title": "Ончейн-управление и Вознаграждения",
+        "subtitle": "Таланты сохраняют 100% своей ценности. Инвесторы финансируют движок. Все выигрывают с $TAL.",
+        "card1Title": "Ликвидная Репутация",
+        "card1Desc": "Каждый успешно завершенный проект добавляет опыт ончейн, повышая уровень вашего SBT и открывая доступ к премиум-клиентам.",
+        "card2Title": "Аирдропы токена $TAL",
+        "card2Desc": "Ранние пользователи, узлы-валидаторы и 1% лучших талантов получают периодические аирдропы и право голоса по комиссиям DAO."
+      },
+      "cta": {
+        "title": "Пришло время строить будущее работы.",
+        "btnB2B": "Я Компания",
+        "btnB2C": "Я Талант"
+      }
+    }
+  },
+  "universityV2": {
+    "hub": {
+      "title": "DAO University Hub",
+      "subtitle": "Учись, чтобы зарабатывать. Преподавай, чтобы преумножать. Академия Web3 под управлением талантов.",
+      "students": {
+        "title": "Студенты (Learn-to-Earn)",
+        "desc": "Освойте технологии, наиболее востребованные на рынке B2B.",
+        "course1": "Путь Web3 и Смарт-контракты",
+        "course2": "Основы ИИ и LLM",
+        "badge": "Субсидируется вашими будущими комиссиями",
+        "btn": "Начать Путь"
+      },
+      "teachers": {
+        "title": "Преподаватели (Teach-to-Earn)",
+        "desc": "Монетизируйте свои знания, создавая контент для следующего элитного поколения.",
+        "lockText": "Требуется Подтвержденный SBT Уровня Senior",
+        "btn": "Создать Академию и Заработать $TAL"
+      }
+    },
+    "course": {
+      "backBtn": "Вернуться в Hub",
+      "titleM1": "Продвинутая разработка смарт-контрактов",
+      "titleAI": "Основы искусственного интеллекта",
+      "desc": "Завершите этот модуль, чтобы получить свою неизменяемую учетную запись SBT. Компании активно ищут таланты с этим сертификатом (Match Score +40%).",
+      "challengeTitle": "Финальный вызов: ИИ-верификация",
+      "challengeDesc": "Напишите безопасный смарт-контракт, который пройдет все проверки нашего ИИ-аудитора.",
+      "placeholder": "// Подключите свою среду для ИИ-аудита...",
+      "btnConnect": "Подключить GitHub / DevEnv",
+      "btnConnecting": "Подключение среды...",
+      "btnAudit": "Отправить код ИИ-Агенту",
+      "btnAuditing": "ИИ проверяет ваш код...",
+      "modalSuccess": "Аудит пройден! 100/100",
+      "modalDesc": "Ваш код математически безопасен. Мы отчеканили ваш SBT в Base Network. Компании B2B теперь видят вас как проверенного таланта.",
+      "btnDashboard": "Перейти в B2C Dashboard",
+      "sidebarTitle": "Содержание курса",
+      "unlockPass": "Разблокируйте все модули с Founder Pass.",
+      "btnPass": "Посмотреть Подписку Founder"
+    }
+  },
+  "b2cV2": {
+    "authModal": {
+      "title": "Войти",
+      "subtitle": "Доступ к платформе B2B/B2C",
+      "loggedIn": "Вы вошли",
+      "goToDash": "Перейти в панель",
+      "disconnect": "Отключиться",
+      "btnEmail": "Email / Google",
+      "btnEmailDesc": "Рекомендуется для B2C",
+      "btnGithub": "GitHub",
+      "btnGithubDesc": "Обязательно для проверок",
+      "btnConnecting": "Подключение...",
+      "orWallet": "Или используйте Web3 Wallet",
+      "walletDesc": "Децентрализованный кошелек"
+    },
+    "b2cDashboard": {
+      "title": "Панель талантов B2C",
+      "subtitle": "Управляйте своей личностью, учетными данными и миссиями on-chain.",
+      "profile": {
+        "title": "Личность и KYC",
+        "desc": "Заполните профиль для доступа к лучшим B2B-возможностям.",
+        "btn": "Перейти в профиль"
+      },
+      "passport": {
+        "title": "Talent Passport (SBT)",
+        "desc": "Ваши учетные данные и навыки, проверенные ИИ on-chain.",
+        "btn": "Смотреть учетные данные"
+      },
+      "missions": {
+        "title": "Mission Center",
+        "desc": "Находите технические задачи и баунти от B2B-компаний.",
+        "btn": "Смотреть миссии"
+      },
+      "staking": {
+        "title": "Стейкинг $TAL",
+        "desc": "Вносите токены в стейкинг, чтобы зарабатывать вознаграждения и увеличивать свой Match Score.",
+        "btn": "Управление стейкингом"
+      }
+    }
+  }
+}

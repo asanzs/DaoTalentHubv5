@@ -1,0 +1,29 @@
+[
+  {
+    "id": "escrow-101",
+    "talentId": 1,
+    "talentName": "Alex Rivers",
+    "title": "LLM Fine-Tuning for Financial Data",
+    "amount": 4500,
+    "currency": "USD",
+    "status": "Pending",
+    "milestones": [
+      { "id": "m1", "title": "Data Preprocessing & Sandbox Setup", "amount": 1500, "status": "Completed" },
+      { "id": "m2", "title": "Model Training & Evaluation Log", "amount": 1500, "status": "Pending" },
+      { "id": "m3", "title": "Inference API Deployment & Final Audit", "amount": 1500, "status": "Pending" }
+    ]
+  },
+  {
+    "id": "escrow-102",
+    "talentId": 2,
+    "talentName": "Elena Rostova",
+    "title": "DeFi Protocol Smart Contract Audit",
+    "amount": 6000,
+    "currency": "USD",
+    "status": "Funded",
+    "milestones": [
+      { "id": "m4", "title": "Static Code Analysis & Threat Model", "amount": 3000, "status": "Completed" },
+      { "id": "m5", "title": "Dynamic Testing & Fuzzing Report", "amount": 3000, "status": "Pending" }
+    ]
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Rivers",
+    "role": "Senior AI Architect",
+    "avatar": "AR",
+    "rate": 450,
+    "rating": 4.9,
+    "availability": "Immediate",
+    "matching": {
+      "total": 98,
+      "codeAudit": 99,
+      "smartContracts": 97,
+      "rateAvailability": 98
+    },
+    "skills": ["Python", "PyTorch", "Hugging Face", "LLMs", "LangChain"],
+    "credentials": [
+      { "platform": "HUGGING_FACE", "name": "Model Fine-Tuning SBT", "grade": "98%" },
+      { "platform": "KAGGLE", "name": "Kaggle Grandmaster Proof", "grade": "Top 10" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Elena Rostova",
+    "role": "Lead Smart Contract Auditor",
+    "avatar": "ER",
+    "rate": 600,
+    "rating": 5.0,
+    "availability": "Part-Time",
+    "matching": {
+      "total": 95,
+      "codeAudit": 96,
+      "smartContracts": 98,
+      "rateAvailability": 90
+    },
+    "skills": ["Solidity", "Rust", "EVM Audits", "Fuzzing", "Foundry"],
+    "credentials": [
+      { "platform": "IBM_QUANTUM", "name": "Quantum Logic Audit", "grade": "95%" },
+      { "platform": "DEWORK", "name": "SafePay Escrow Verification", "grade": "15 Bounties" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Chen Wei",
+    "role": "Quantum Algorithms Engineer",
+    "avatar": "CW",
+    "rate": 750,
+    "rating": 4.8,
+    "availability": "Contract",
+    "matching": {
+      "total": 92,
+      "codeAudit": 95,
+      "smartContracts": 90,
+      "rateAvailability": 91
+    },
+    "skills": ["Qiskit", "Python", "Quantum Annealing", "Linear Algebra"],
+    "credentials": [
+      { "platform": "IBM_QUANTUM", "name": "Quantum Developer SBT", "grade": "96%" }
+    ]
+  }
+]

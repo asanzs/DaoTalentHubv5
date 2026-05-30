@@ -1,0 +1,649 @@
+{
+  "courses": {
+    "spec-llm-agents": {
+      "id": "spec-llm-agents",
+      "title": "Desarrollo de Agentes Autónomos con LLMs",
+      "instructorName": "Dr. Kai Nakamura",
+      "instructorTitle": "Principal AI Research Engineer · OpenAI Alumni",
+      "instructorAvatar": "🤖",
+      "category": "IA Avanzada",
+      "totalTal": 750,
+      "lang": "Python",
+      "gradientFrom": "#9B5DE5",
+      "gradientTo": "#C084FC",
+      "color": "#9B5DE5",
+      "modules": [
+        {
+          "id": "llm-m1",
+          "title": "Fundamentos de LLMs y Context Windows",
+          "talReward": 50,
+          "completed": false
+        },
+        {
+          "id": "llm-m2",
+          "title": "Orquestación con LangChain y AutoGen",
+          "talReward": 100,
+          "completed": false
+        },
+        {
+          "id": "llm-m3",
+          "title": "RAG: Retrieval-Augmented Generation",
+          "talReward": 150,
+          "completed": false
+        },
+        {
+          "id": "llm-m4",
+          "title": "Tool Calling & Web3 On-Chain Actions",
+          "talReward": 200,
+          "completed": false
+        },
+        {
+          "id": "llm-m5",
+          "title": "Multi-Agent Systems y Seguridad",
+          "talReward": 250,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "llm-m3",
+        "title": "RAG: Retrieval-Augmented Generation",
+        "lessonMarkdown": "## Módulo 3: RAG Architecture\n\n### Objetivo del Módulo\nImplementar un sistema RAG (Retrieval-Augmented Generation) que permita a un agente IA consultar una base de conocimiento personalizada antes de generar respuestas.\n\n### Conceptos Clave\n- **Vector Store**: Base de datos de embeddings para búsqueda semántica\n- **Chunking Strategy**: División óptima de documentos\n- **Retrieval Precision @ k**: Métrica de calidad de recuperación\n- **Hallucination Reduction**: Técnicas de grounding\n\n### Reto Técnico\nConstruye un agente que:\n1. Indexe documentos Web3 en un ChromaDB local\n2. Recupere contexto relevante con similarity search\n3. Use GPT-4 para generar respuestas fundamentadas\n4. Exponga una API REST con FastAPI",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "RAG for Knowledge-Intensive NLP Tasks",
+            "author": "Lewis et al. (Meta AI, 2020)",
+            "url": "#",
+            "tags": [
+              "Foundational",
+              "NLP"
+            ]
+          },
+          {
+            "type": "tool",
+            "title": "LangChain RAG Documentation",
+            "author": "LangChain Team",
+            "url": "#",
+            "tags": [
+              "Framework",
+              "Official"
+            ]
+          },
+          {
+            "type": "paper",
+            "title": "RAGAS: Automated Evaluation of RAG",
+            "author": "Es et al. (2023)",
+            "url": "#",
+            "tags": [
+              "Evaluation",
+              "Benchmark"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$145,000",
+          "openRoles": 234,
+          "topHirers": [
+            "Anthropic",
+            "Mistral AI",
+            "Cohere",
+            "Character.AI"
+          ],
+          "growthRate": "+340% YoY",
+          "timeToHire": "3.2 semanas"
+        },
+        "starterCode": "# Module 3: RAG Architecture\n# DAO Labs University — AI Advanced Specialization\n# Instructor: Dr. Kai Nakamura\n\nimport os\nfrom langchain.embeddings import OpenAIEmbeddings\nfrom langchain.vectorstores import Chroma\nfrom langchain.text_splitter import RecursiveCharacterTextSplitter\nfrom langchain.chains import RetrievalQA\nfrom langchain.chat_models import ChatOpenAI\nfrom fastapi import FastAPI\nimport uvicorn\n\n# --- TODO: Initialize your vector store ---\n# Hint: Use OpenAIEmbeddings + Chroma\ndef build_vector_store(docs: list[str]) -> Chroma:\n    \"\"\"\n    Build a Chroma vector store from a list of document strings.\n    \"\"\"\n    # YOUR CODE HERE\n    pass\n\n# --- TODO: Build the RAG chain ---\ndef build_rag_chain(vectorstore: Chroma) -> RetrievalQA:\n    \"\"\"\n    Chain: retriever → prompt → LLM → answer\n    Ensure k=4 top documents are retrieved.\n    \"\"\"\n    # YOUR CODE HERE\n    pass\n\n# --- FastAPI entry point ---\napp = FastAPI(title=\"DAO Labs RAG Agent\")\n\n@app.post(\"/query\")\nasync def query_agent(question: str):\n    \"\"\"Query the RAG agent with a natural language question.\"\"\"\n    # YOUR CODE HERE: call your chain here\n    return {\"answer\": \"...\", \"sources\": []}\n\nif __name__ == \"__main__\":\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n",
+        "consoleLogs": [
+          "$ python -m pytest tests/ --tb=short",
+          "Collecting tests... 8 items",
+          "tests/test_vectorstore.py::test_embedding_dim PASSED",
+          "tests/test_rag.py::test_retrieval_k4 FAILED",
+          "AssertionError: Expected 4 docs, got 0",
+          "tests/test_api.py::test_query_endpoint FAILED",
+          "ConnectionError: RAG chain not initialized",
+          "",
+          "FAILED: 2 errors — build_vector_store() is not implemented",
+          "Hint: Use RecursiveCharacterTextSplitter with chunk_size=512"
+        ],
+        "auditLogs": [
+          "Compiling files...",
+          "Validating Python 3.11 syntax...",
+          "Checking import dependencies...",
+          "Verifying vector store initialization...",
+          "Testing retrieval precision @ k=4...",
+          "Evaluating hallucination rate (0 → target)...",
+          "Running FastAPI endpoint tests...",
+          "Benchmarking query latency (<200ms target)...",
+          "Checking OpenAI token usage efficiency...",
+          "Verifying Web3 data sources...",
+          "Evaluating RAG answer quality score...",
+          "Generating AI audit report..."
+        ]
+      }
+    },
+    "spec-quantum": {
+      "id": "spec-quantum",
+      "title": "Algoritmos Cuánticos y Criptografía Post-Cuántica",
+      "instructorName": "Prof. Aria Chen",
+      "instructorTitle": "Senior Quantum Engineer · IBM Quantum Network",
+      "instructorAvatar": "⚛️",
+      "category": "Computación Cuántica Aplicada",
+      "totalTal": 1200,
+      "lang": "Python / Qiskit",
+      "gradientFrom": "#00F5FF",
+      "gradientTo": "#0052FF",
+      "color": "#00F5FF",
+      "modules": [
+        {
+          "id": "q-m1",
+          "title": "Fundamentos de Computación Cuántica",
+          "talReward": 100,
+          "completed": true
+        },
+        {
+          "id": "q-m2",
+          "title": "Circuitos Cuánticos con Qiskit",
+          "talReward": 200,
+          "completed": true
+        },
+        {
+          "id": "q-m3",
+          "title": "Algoritmo de Grover y Shor",
+          "talReward": 300,
+          "completed": false
+        },
+        {
+          "id": "q-m4",
+          "title": "CRYSTALS-Kyber y Dilithium (NIST PQC)",
+          "talReward": 400,
+          "completed": false
+        },
+        {
+          "id": "q-m5",
+          "title": "Protección Post-Cuántica de Wallets",
+          "talReward": 200,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "q-m3",
+        "title": "Algoritmo de Grover: Búsqueda Cuántica",
+        "lessonMarkdown": "## Módulo 3: Algoritmo de Grover\n\n### Objetivo del Módulo\nImplementar el Algoritmo de Grover usando Qiskit para realizar búsqueda cuadráticamente más rápida que cualquier algoritmo clásico.\n\n### Relevancia Blockchain\n- **Ventaja Cuántica**: Grover amenaza SHA-256 al reducir la seguridad de 256 a 128 bits efectivos\n- **Mitigación**: Los protocolos post-cuánticos deben aumentar el tamaño de clave\n- **Timeline**: Los expertos estiman amenaza real para 2030-2035\n\n### Reto Técnico\n1. Implementa el Oráculo de Grover para una función booleana\n2. Aplica el operador de difusión (inversión sobre la media)\n3. Calcula el número óptimo de iteraciones: `π/4 × √N`\n4. Ejecuta en el simulador Qiskit Aer con 1024 shots",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "A Fast Quantum Mechanical Algorithm for Database Search",
+            "author": "Grover, L.K. (1996)",
+            "url": "#",
+            "tags": [
+              "Foundational",
+              "Quantum"
+            ]
+          },
+          {
+            "type": "tool",
+            "title": "Qiskit Textbook: Grover's Algorithm",
+            "author": "IBM Quantum Team",
+            "url": "#",
+            "tags": [
+              "Tutorial",
+              "Official"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$195,000",
+          "openRoles": 89,
+          "topHirers": [
+            "IBM Quantum",
+            "Google Quantum AI",
+            "IonQ",
+            "Quantinuum"
+          ],
+          "growthRate": "+520% YoY",
+          "timeToHire": "6.1 semanas"
+        },
+        "starterCode": "# Module 3: Grover's Algorithm\n# DAO Labs University — Quantum Computing\n# Instructor: Prof. Aria Chen (IBM Quantum Network)\n\nfrom qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister\nfrom qiskit_aer import AerSimulator\nfrom qiskit.visualization import plot_histogram\nimport numpy as np\nimport math\n\n# --- TODO: Implement the Phase Oracle ---\ndef build_oracle(n_qubits: int, target: int) -> QuantumCircuit:\n    \"\"\"\n    Marks the target state with a phase flip (-1)^f(x).\n    Args:\n        n_qubits: number of search qubits\n        target: integer index to mark (0 <= target < 2^n_qubits)\n    Returns: oracle QuantumCircuit\n    \"\"\"\n    # YOUR CODE HERE\n    # Hint: Convert target to binary, apply X gates to |0> qubits,\n    #       then multi-controlled Z, then undo X gates\n    pass\n\n# --- TODO: Implement the Diffuser ---\ndef build_diffuser(n_qubits: int) -> QuantumCircuit:\n    \"\"\"\n    Grover diffusion operator: inversion about the mean.\n    2|s><s| - I  where |s> is uniform superposition\n    \"\"\"\n    # YOUR CODE HERE\n    pass\n\n# --- TODO: Full Grover Circuit ---\ndef grover_search(n_qubits: int, target: int, shots: int = 1024):\n    \"\"\"\n    Run Grover's algorithm and return measurement results.\n    Optimal iterations: floor(pi/4 * sqrt(2^n_qubits))\n    \"\"\"\n    # YOUR CODE HERE\n    pass\n\nif __name__ == \"__main__\":\n    # Search for target=6 in a 3-qubit space (8 states)\n    results = grover_search(n_qubits=3, target=6, shots=1024)\n    print(f\"Most frequent result: {max(results, key=results.get)}\")\n    # Expected: '110' (binary for 6) with ~96% probability\n",
+        "consoleLogs": [
+          "$ python grover.py",
+          "Traceback (most recent call last):",
+          "  File 'grover.py', line 52, in grover_search",
+          "    oracle = build_oracle(n_qubits, target)",
+          "TypeError: 'NoneType' object cannot be converted to QuantumCircuit",
+          "",
+          "Hint: build_oracle() must return a QuantumCircuit, not None",
+          "Optimal iterations for n=3: floor(π/4 × √8) ≈ 2"
+        ],
+        "auditLogs": [
+          "Compiling files...",
+          "Loading Qiskit Aer simulator (1024-qubit capacity)...",
+          "Verifying oracle phase-flip implementation...",
+          "Checking diffuser: inversion about mean...",
+          "Calculating optimal iteration count...",
+          "Running Grover circuit (3 qubits, 1024 shots)...",
+          "Measuring target state probability...",
+          "Validating quantum advantage over classical search...",
+          "Checking blockchain security implications...",
+          "Benchmarking circuit gate depth...",
+          "Evaluating transpilation optimization...",
+          "Generating quantum audit report..."
+        ]
+      }
+    },
+    "spec-defi-security": {
+      "id": "spec-defi-security",
+      "title": "Seguridad en Smart Contracts y Tokenomics Avanzada",
+      "instructorName": "Marcus Reeves",
+      "instructorTitle": "Lead Smart Contract Auditor · Trail of Bits Alumni",
+      "instructorAvatar": "🛡️",
+      "category": "Sistemas Web3 y DeFi Core",
+      "totalTal": 500,
+      "lang": "Solidity",
+      "gradientFrom": "#F59E0B",
+      "gradientTo": "#EF4444",
+      "color": "#F59E0B",
+      "modules": [
+        {
+          "id": "defi-m1",
+          "title": "Anatomía de un Smart Contract",
+          "talReward": 50,
+          "completed": true
+        },
+        {
+          "id": "defi-m2",
+          "title": "Reentrancy y Access Control",
+          "talReward": 100,
+          "completed": false
+        },
+        {
+          "id": "defi-m3",
+          "title": "Flash Loans y MEV Attacks",
+          "talReward": 150,
+          "completed": false
+        },
+        {
+          "id": "defi-m4",
+          "title": "Diseño de Tokenomics Sostenibles",
+          "talReward": 200,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "defi-m2",
+        "title": "Reentrancy Attack: El Hack del DAO (2016)",
+        "lessonMarkdown": "## Módulo 2: Reentrancy Vulnerability\n\n### El Hack más Famoso de Ethereum\nEn 2016, un atacante explotó una vulnerabilidad de **reentrancy** en 'The DAO', drenando **3.6M ETH** ($70M USD).\n\n### ¿Cómo Funciona?\n```solidity\n// VULNERABLE — Anti-pattern: Checks-Effects-Interactions violado\nfunction withdraw(uint amount) external {\n    require(balances[msg.sender] >= amount);  // Check ✓\n    // DANGER: External call BEFORE updating state\n    (bool success,) = msg.sender.call{value: amount}(\"\"); \n    balances[msg.sender] -= amount;  // Effect AFTER call ← BUG\n}\n```\n\n### El Atacante crea un Contrato Malicioso\nCada vez que recibe ETH, llama recursivamente a `withdraw()` antes de que el balance se actualice.\n\n### Reto Técnico\nAudit y corrige el contrato `VulnerableVault.sol` usando:\n1. **Checks-Effects-Interactions** pattern\n2. **ReentrancyGuard** de OpenZeppelin\n3. Tests con Foundry `forge test --vvv`",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "Analysis of the DAO Exploit (2016)",
+            "author": "Phil Daian",
+            "url": "#",
+            "tags": [
+              "Historical",
+              "Security"
+            ]
+          },
+          {
+            "type": "tool",
+            "title": "OpenZeppelin ReentrancyGuard",
+            "author": "OpenZeppelin",
+            "url": "#",
+            "tags": [
+              "Library",
+              "Official"
+            ]
+          },
+          {
+            "type": "tool",
+            "title": "Slither Static Analyzer",
+            "author": "Trail of Bits",
+            "url": "#",
+            "tags": [
+              "Security Tool",
+              "CLI"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$165,000",
+          "openRoles": 156,
+          "topHirers": [
+            "Trail of Bits",
+            "OpenZeppelin",
+            "Certik",
+            "Hacken"
+          ],
+          "growthRate": "+280% YoY",
+          "timeToHire": "2.8 semanas"
+        },
+        "starterCode": "// SPDX-License-Identifier: MIT\n// Module 2: Reentrancy Attack & Defense\n// DAO Labs University — DeFi Security Track\n// Instructor: Marcus Reeves (Trail of Bits Alumni)\npragma solidity ^0.8.20;\n\nimport \"@openzeppelin/contracts/security/ReentrancyGuard.sol\";\n\n/// @title VulnerableVault\n/// @notice INSECURE — Your task: Fix the reentrancy vulnerability\ncontract VulnerableVault {\n    mapping(address => uint256) public balances;\n\n    event Deposit(address indexed user, uint256 amount);\n    event Withdrawal(address indexed user, uint256 amount);\n\n    function deposit() external payable {\n        balances[msg.sender] += msg.value;\n        emit Deposit(msg.sender, msg.value);\n    }\n\n    /// @notice BUG: Violates Checks-Effects-Interactions pattern\n    /// TODO: Fix this function to prevent reentrancy attacks\n    function withdraw(uint256 amount) external {\n        require(balances[msg.sender] >= amount, \"Insufficient balance\");\n        \n        // VULNERABILITY: External call before state update\n        (bool success, ) = msg.sender.call{value: amount}(\"\");\n        require(success, \"Transfer failed\");\n        \n        // BUG: State updated AFTER external call\n        balances[msg.sender] -= amount;\n        \n        emit Withdrawal(msg.sender, amount);\n    }\n\n    function getBalance() external view returns (uint256) {\n        return address(this).balance;\n    }\n}\n\n/// @title AttackContract\n/// @notice Simulates reentrancy attack — DO NOT deploy to mainnet\ncontract AttackContract {\n    VulnerableVault public target;\n    uint256 public attackCount;\n    \n    constructor(address _target) {\n        target = VulnerableVault(_target);\n    }\n\n    receive() external payable {\n        if (address(target).balance >= 1 ether && attackCount < 5) {\n            attackCount++;\n            target.withdraw(1 ether); // Recursive drain!\n        }\n    }\n\n    function attack() external payable {\n        require(msg.value >= 1 ether, \"Need 1 ETH to attack\");\n        target.deposit{value: 1 ether}();\n        target.withdraw(1 ether);\n    }\n}",
+        "consoleLogs": [
+          "$ forge test --match-contract VaultTest -vvv",
+          "Compiling 3 files with 0.8.20...",
+          "[PASS] test_deposit() (gas: 43,218)",
+          "[FAIL] test_reentrancy_protection()",
+          "  Reason: AttackContract drained vault by 4 ETH!",
+          "  Expected: revert with 'ReentrancyGuard: reentrant call'",
+          "  Actual: Vault balance went from 5 ETH → 0.4 ETH",
+          "",
+          "Fix: Apply Checks-Effects-Interactions pattern",
+          "Fix: Add OpenZeppelin ReentrancyGuard modifier"
+        ],
+        "auditLogs": [
+          "Compiling files...",
+          "Running Foundry compiler (Solidity 0.8.20)...",
+          "Loading Slither static analyzer (243 detectors)...",
+          "Scanning for reentrancy vulnerabilities...",
+          "Checking Checks-Effects-Interactions pattern...",
+          "Simulating flash loan attack vectors...",
+          "Verifying ReentrancyGuard implementation...",
+          "Analyzing access control patterns...",
+          "Testing oracle price manipulation resistance...",
+          "Running Echidna fuzzer (10,000 iterations)...",
+          "Evaluating gas optimization score...",
+          "Generating DeFi security audit report..."
+        ]
+      }
+    },
+    "spec-web3-marketplaces": {
+      "id": "spec-web3-marketplaces",
+      "title": "Arquitectura de Marketplaces Descentralizados y NFTs",
+      "instructorName": "Dr. Sarah Jenkins",
+      "instructorTitle": "Expert Web3 Marketplace Architect · ex-OpenSea Core Dev",
+      "instructorAvatar": "🎨",
+      "category": "Sistemas Web3 y Marketplaces",
+      "totalTal": 600,
+      "lang": "Solidity",
+      "gradientFrom": "#F59E0B",
+      "gradientTo": "#9B5DE5",
+      "color": "#F59E0B",
+      "modules": [
+        {
+          "id": "mkt-m1",
+          "title": "Fideicomiso SafePay y Regalías ERC-2981",
+          "talReward": 150,
+          "completed": false
+        },
+        {
+          "id": "mkt-m2",
+          "title": "Metadatos Dinámicos en IPFS mediante Oráculos",
+          "talReward": 200,
+          "completed": false
+        },
+        {
+          "id": "mkt-m3",
+          "title": "Puenteo de NFTs Cross-Chain (Chainlink CCIP)",
+          "talReward": 250,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "mkt-m1",
+        "title": "Fideicomiso SafePay y Regalías ERC-2981",
+        "lessonMarkdown": "## Módulo 1: Royalties & Escrow\n\n### Objetivos\nImplementar un smart contract para un marketplace NFT descentralizado que distribuya regalías automáticamente al creador original utilizando el estándar EIP-2981, manteniendo los fondos en garantía hasta que expire el periodo de devolución.\n\n### Conceptos Clave\n- **EIP-2981 Royalty Standard**: Especificación estándar para consultar montos de regalías de NFTs de forma unificada.\n- **Marketplace Escrow**: Custodia temporal de los fondos de la venta para proteger a compradores contra estafas de metadatos.\n- **Checks-Effects-Interactions**: Patrón de desarrollo para evitar vulnerabilidades de reentrada (reentrancy).\n\n### Reto Técnico\n1. Diseña la función de distribución de regalías consultando `royaltyInfo`.\n2. Integra una protección contra reentradas en la función `purchaseNFT`.\n3. Implementa la lógica para liberar o reclamar los fondos en custodia.",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "EIP-2981: NFT Royalty Standard",
+            "author": "Zachary Belford et al. (2021)",
+            "url": "#",
+            "tags": [
+              "Standard",
+              "Solidity"
+            ]
+          },
+          {
+            "type": "tool",
+            "title": "OpenZeppelin ERC2981 implementation",
+            "author": "OpenZeppelin Team",
+            "url": "#",
+            "tags": [
+              "Library",
+              "Security"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$150,000",
+          "openRoles": 180,
+          "topHirers": [
+            "OpenSea",
+            "Blur",
+            "SuperRare",
+            "Rarible"
+          ],
+          "growthRate": "+240% YoY",
+          "timeToHire": "2.5 semanas"
+        },
+        "starterCode": "// SPDX-License-Identifier: MIT\n// Module 1: Web3 Marketplace Royalty Escrow\n// DAO Labs University — Marketplace Specialist\n// Instructor: Dr. Sarah Jenkins (ex-OpenSea)\npragma solidity ^0.8.20;\n\nimport \"@openzeppelin/contracts/token/ERC721/IERC721.sol\";\nimport \"@openzeppelin/contracts/interfaces/IERC2981.sol\";\nimport \"@openzeppelin/contracts/security/ReentrancyGuard.sol\";\n\ncontract Web3Marketplace is ReentrancyGuard {\n    struct EscrowSale {\n        address buyer;\n        address seller;\n        uint256 price;\n        uint256 nftId;\n        address nftAddress;\n        uint256 releaseTime;\n        bool claimed;\n    }\n\n    mapping(uint256 => EscrowSale) public sales;\n    uint256 public saleCount;\n\n    // --- TODO: Implement Purchase with EIP-2981 ---\n    function buyNFTWithEscrow(address nftAddress, uint256 nftId) external payable nonReentrant {\n        // 1. Fetch royalty information via IERC2981\n        // 2. Separate price into: Seller payment and Creator royalty\n        // 3. Keep funds in escrow storage for 24h\n        // YOUR CODE HERE\n    }\n\n    // --- TODO: Claim escrowed funds ---\n    function releaseEscrow(uint256 saleId) external {\n        // YOUR CODE HERE\n    }\n}\n",
+        "consoleLogs": [
+          "$ forge test --match-contract MarketplaceTest -vvv",
+          "Compiling 4 files with Solidity 0.8.20...",
+          "[PASS] test_escrow_deposit_success() (gas: 52,190)",
+          "[FAIL] test_royalty_payout()",
+          "  Reason: Creator received 0 royalties on ERC-2981 item",
+          "  Expected: 0.05 ether royalty, Actual: 0 ether",
+          "[FAIL] test_reentrancy_revert()",
+          "  Reason: HackContract drained escrow funds recursivelly",
+          "",
+          "FAILED: 2 errors — implement buyNFTWithEscrow() with ReentrancyGuard and EIP-2981"
+        ],
+        "auditLogs": [
+          "Compiling smart contracts...",
+          "Running Solidity 0.8.20 compiler...",
+          "Checking EIP-2981 interface support...",
+          "Validating royalty calculation logic...",
+          "Simulating reentrancy attack on buyNFTWithEscrow...",
+          "Verifying Checks-Effects-Interactions safety...",
+          "Running Slither static analysis...",
+          "Running Echidna fuzzer for contract invariant check...",
+          "Generating Security Audit Report..."
+        ]
+      }
+    },
+    "m1": {
+      "id": "m1",
+      "title": "Fundamentos de Programación & Lógica Web3",
+      "instructorName": "Alex Rivera",
+      "instructorTitle": "Genesis Track Lead · Top 1% Web3 Educator",
+      "instructorAvatar": "🎓",
+      "category": "Módulo Génesis - Ruta de Inmersión",
+      "totalTal": 200,
+      "lang": "JavaScript",
+      "gradientFrom": "#9B5DE5",
+      "gradientTo": "#00F5FF",
+      "color": "#9B5DE5",
+      "modules": [
+        {
+          "id": "genesis-1",
+          "title": "Variables, Tipos y Estructuras Básicas",
+          "talReward": 50,
+          "completed": false
+        },
+        {
+          "id": "genesis-2",
+          "title": "Estructuras de Control y Lógica Condicional",
+          "talReward": 50,
+          "completed": false
+        },
+        {
+          "id": "genesis-3",
+          "title": "Introducción a Algoritmos de Búsqueda",
+          "talReward": 100,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "genesis-1",
+        "title": "Variables, Tipos y Estructuras Básicas",
+        "lessonMarkdown": "## Módulo Génesis 1: Fundamentos de Programación\n\n### Objetivos\nAprender los pilares esenciales de la lógica de programación y estructuras de control básicas requeridas antes de sumergirse en Smart Contracts.\n\n### Conceptos Clave\n- **Variables y Tipos**: Almacenamiento de enteros, cadenas, booleanos y arreglos.\n- **Lógica Condicional**: Declaraciones `if`, `else` y operadores booleanos (`&&`, `||`, `!`).\n- **Estructura de Datos**: Cómo organizar y estructurar datos primitivos en JavaScript.\n\n### Reto Técnico\nCompleta el script para:\n1. Declarar una función que retorne si un candidato tiene los requisitos mínimos de edad (>= 18) y experiencia (>= 1 año).\n2. Filtrar un arreglo de candidatos seleccionando únicamente a los calificados.",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "JavaScript Fundamentals MDN",
+            "author": "Mozilla Developer Network",
+            "url": "#",
+            "tags": [
+              "Basics",
+              "Reference"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$60,000",
+          "openRoles": 450,
+          "topHirers": [
+            "DAO Talent Hub Builders",
+            "Web3 Startups",
+            "Dapp Labs"
+          ],
+          "growthRate": "+120% YoY",
+          "timeToHire": "1.5 semanas"
+        },
+        "starterCode": "// Module Genesis 1: Basic Web3 Logic Heuristics\n// DAO Labs University — Genesis Track\n// Instructor: Alex Rivera\n\n// --- TODO: Implement Candidate Qualification check ---\nfunction isCandidateQualified(age, yearsOfExperience) {\n    // Return true if age is 18 or older AND yearsOfExperience is 1 or more.\n    // YOUR CODE HERE\n    return false;\n}\n\n// --- TODO: Filter array of candidates ---\nfunction filterQualifiedCandidates(candidates) {\n    // candidates is an array of objects: { name: 'Alice', age: 20, exp: 2 }\n    // Return an array containing only qualified candidates.\n    // YOUR CODE HERE\n    return [];\n}\n",
+        "consoleLogs": [
+          "$ node test_genesis.js",
+          "Running unit tests...",
+          "[FAIL] test_qualification_underage: Expected false, got true (Age: 16)",
+          "[FAIL] test_qualification_no_experience: Expected false, got true (Exp: 0)",
+          "[FAIL] test_filter_candidates: Expected 2 candidates, got 0",
+          "",
+          "FAILED: isCandidateQualified() is not returning correct boolean logic."
+        ],
+        "auditLogs": [
+          "Compiling script...",
+          "Analyzing JavaScript syntax correctness...",
+          "Testing condition: Age >= 18...",
+          "Testing condition: Experience >= 1 year...",
+          "Running array filtering assertions...",
+          "Validating output structure..."
+        ],
+        "quizQuestions": [
+          {
+            "question": "¿Cuál es el operador lógico correcto para representar un condicional Y (AND) en JavaScript?",
+            "options": [
+              "||",
+              "&&",
+              "&",
+              "AND"
+            ],
+            "answerIndex": 1
+          },
+          {
+            "question": "¿Qué valor retorna la expresión (18 >= 18 && 0 > 1)?",
+            "options": [
+              "true",
+              "false",
+              "undefined",
+              "null"
+            ],
+            "answerIndex": 1
+          }
+        ]
+      }
+    },
+    "spec-solidity-advanced": {
+      "id": "spec-solidity-advanced",
+      "title": "Fundamentos Avanzados de Solidity y Criptografía",
+      "instructorName": "Marcus Reeves",
+      "instructorTitle": "Lead Security Auditor · ex-Trail of Bits Alumni",
+      "instructorAvatar": "🛡️",
+      "category": "Especialización Avanzada",
+      "totalTal": 800,
+      "lang": "Solidity",
+      "gradientFrom": "#EF4444",
+      "gradientTo": "#F59E0B",
+      "color": "#EF4444",
+      "modules": [
+        {
+          "id": "sol-adv-m1",
+          "title": "Yul & Assembly: Optimización Extrema de Gas",
+          "talReward": 250,
+          "completed": false
+        },
+        {
+          "id": "sol-adv-m2",
+          "title": "Firmas ECDSA y Mensajes Firmados",
+          "talReward": 250,
+          "completed": false
+        },
+        {
+          "id": "sol-adv-m3",
+          "title": "Bypass de Contratos e Inyección de Código",
+          "talReward": 300,
+          "completed": false
+        }
+      ],
+      "currentModule": {
+        "id": "sol-adv-m1",
+        "title": "Yul & Assembly: Optimización Extrema de Gas",
+        "lessonMarkdown": "## Módulo Avanzado 1: Assembly (Yul) en Solidity\n\n### Objetivos\nComprender el funcionamiento de la EVM (Ethereum Virtual Machine) a bajo nivel y utilizar bloques `assembly` en Solidity (Yul) para realizar operaciones con un consumo de gas drásticamente menor.\n\n### Conceptos Clave\n- **EVM Stack & Memory**: Acceso directo a slots de memoria de 32 bytes.\n- **Storage Layout**: Optimización en el empaquetado de variables de almacenamiento.\n- **Gas Cost Operations**: Reemplazar operaciones caras como sumas en loops por opcodes de Yul (`add`, `mstore`, `sstore`).\n\n### Reto Técnico\nOptimiza la función `sumArray` utilizando bloques de `assembly` en Solidity para sumar todos los enteros de un arreglo dinámico sin incurrir en costes altos de comprobación de desbordamiento (overflow check) clásicos de Solidity 0.8.",
+        "resources": [
+          {
+            "type": "paper",
+            "title": "Solidity Assembly Documentation",
+            "author": "Ethereum Foundation",
+            "url": "#",
+            "tags": [
+              "EVM",
+              "Yul",
+              "Assembly"
+            ]
+          }
+        ],
+        "b2bMetrics": {
+          "avgSalary": "$180,000",
+          "openRoles": 142,
+          "topHirers": [
+            "Arbitrum Labs",
+            "Optimism Foundation",
+            "Paradigm",
+            "OpenZeppelin"
+          ],
+          "growthRate": "+410% YoY",
+          "timeToHire": "3.0 semanas"
+        },
+        "starterCode": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract GasOptimizedVault {\n    // --- TODO: Optimize this function using Yul assembly ---\n    function sumArray(uint256[] calldata data) external pure returns (uint256 sum) {\n        // Iterate over the calldata array and sum elements utilizing assembly.\n        // YOUR CODE HERE\n        assembly {\n            // Write assembly block\n        }\n    }\n}\n",
+        "consoleLogs": [
+          "$ forge test --match-contract GasTest -vvv",
+          "Compiling 1 file with Solidity 0.8.20...",
+          "[FAIL] test_gas_consumption()",
+          "  Reason: Gas used is 42,000 (Limit: 12,000)",
+          "  Expected: assembly implementation bypasses Solidity checks.",
+          "",
+          "FAILED: sumArray() is not optimized with inline assembly Yul blocks."
+        ],
+        "auditLogs": [
+          "Compiling files...",
+          "Analyzing EVM Opcode output...",
+          "Checking memory layout structure...",
+          "Simulating out-of-gas attack vectors...",
+          "Validating sum loop efficiency...",
+          "Generating Gas Audit Report..."
+        ],
+        "quizQuestions": [
+          {
+            "question": "¿En qué slot de memoria de un arreglo dinámico en Solidity se almacena su longitud (length)?",
+            "options": [
+              "En el primer slot apuntado por el offset",
+              "En el slot de almacenamiento de la variable",
+              "En el stack temporal de la EVM",
+              "Solidity no almacena la longitud en memoria"
+            ],
+            "answerIndex": 0
+          },
+          {
+            "question": "¿Cuál es el opcode de Yul utilizado para escribir datos en la memoria volátil?",
+            "options": [
+              "sstore",
+              "mstore",
+              "mload",
+              "sload"
+            ],
+            "answerIndex": 1
+          }
+        ]
+      }
+    }
+  }
+}

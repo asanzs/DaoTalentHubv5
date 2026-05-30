@@ -1,0 +1,47 @@
+[
+  {
+    "id": "mission-1",
+    "title": "Audit de Reentrancy en Protocolo DeFi",
+    "b2bName": "Aave Labs",
+    "b2bAvatar": "🛡️",
+    "description": "Revisar y mitigar vectores de ataque por reentrada (Reentrancy) en un conjunto de bóvedas de liquidez complejas antes de su despliegue en Mainnet.",
+    "rewardUsd": 4500,
+    "rewardTal": 150,
+    "requiredSbt": "sbt-defi-104",
+    "requiredSbtName": "DeFi Security Auditor SBT",
+    "status": "Open",
+    "deliverableRepo": "",
+    "auditScore": 0,
+    "escrowId": ""
+  },
+  {
+    "id": "mission-2",
+    "title": "Fine-tuning de Agente Autónomo Financiero con RAG",
+    "b2bName": "Character.AI",
+    "b2bAvatar": "🤖",
+    "description": "Ajustar y desplegar un agente autónomo conversacional optimizado para consulta de datos financieros históricos utilizando Retrieval-Augmented Generation.",
+    "rewardUsd": 3500,
+    "rewardTal": 100,
+    "requiredSbt": "sbt-hf-101",
+    "requiredSbtName": "LLM Fine-Tuning SBT",
+    "status": "Open",
+    "deliverableRepo": "",
+    "auditScore": 0,
+    "escrowId": ""
+  },
+  {
+    "id": "mission-3",
+    "title": "Optimización Grover de Búsqueda sobre Hash SHA-256",
+    "b2bName": "IBM Quantum Network",
+    "b2bAvatar": "⚛️",
+    "description": "Optimizar el circuito del algoritmo de Grover para realizar ataques de colisión de preimagen SHA-256 controlados en un simulador cuántico ruidoso.",
+    "rewardUsd": 8000,
+    "rewardTal": 300,
+    "requiredSbt": "sbt-ibm-102",
+    "requiredSbtName": "Quantum Logic Audit SBT",
+    "status": "Open",
+    "deliverableRepo": "",
+    "auditScore": 0,
+    "escrowId": ""
+  }
+]

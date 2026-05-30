@@ -10,7 +10,7 @@
     "login": "Login / Connect"
   },
   "footer": {
-    "subtitle": "Revolutionizing global hiring through zero risk for companies and 100% earnings for talent.",
+    "subtitle": "DAO Talent Hub connects top-tier companies with AI-validated technical talent, guaranteeing risk-free hiring.",
     "product": "Product",
     "company": "Company",
     "legal": "Legal"
@@ -57,5 +57,147 @@
     "startCourse": "Start Module",
     "validated": "AI Validation",
     "sbt": "SBT Certificate"
+  },
+  "index": {
+    "hero": {
+      "title": "Access the Tech Elite without Friction.",
+      "subtitle": "AI-validated infrastructure for the talent of tomorrow.",
+      "b2c_cta": "I am Tech Talent",
+      "b2b_cta": "Hire Companies"
+    },
+    "b2c": {
+      "title": "Web3 Mode Activated",
+      "subtitle": "Build your on-chain reputation.",
+      "features": [
+        "Verified Skills Passport (SBTs)",
+        "€20 Airdrops for Early Adopters",
+        "8% Take-rate on hires",
+        "Algorithmic code validation"
+      ]
+    },
+    "b2b": {
+      "title": "Corporate SaaS",
+      "subtitle": "Guaranteed and risk-free technical hiring.",
+      "features": [
+        "Automated FIAT billing (Stripe)",
+        "Regulatory compliance KYB",
+        "Delivery Guarantee via Escrow",
+        "Secure Payment Infrastructure"
+      ]
+    },
+    "expanded": {
+      "socialProof": "Trusted by leading Web3 and Web2 companies",
+      "howItWorks": {
+        "title": "Frictionless Hiring, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk</span>",
+        "subtitle": "We merge the speed of Web2 SaaS with the transparency and security of Web3 Smart Contracts.",
+        "step1Title": "1. On-Chain Validation",
+        "step1Desc": "Talent doesn't upload empty CVs. They pass AI tests and receive an immutable <strong class=\"text-white\">SBT (Soulbound Token)</strong> that certifies their real skills.",
+        "step2Title": "2. Smart Match AI",
+        "step2Desc": "Our algorithm analyzes the company's tech stack and talent SBTs to make the perfect match in under 48 hours. Zero human bias.",
+        "step3Title": "3. Escrow Custody",
+        "step3Desc": "The company deposits funds in a Smart Contract. Talent works securely. Payment is released automatically upon delivery."
+      },
+      "engine": {
+        "tag": "Artificial Intelligence",
+        "title": "The Ultimate <br />Recruitment Engine",
+        "desc": "DAO Talent Hub deploys quantum models and predictive LLMs to audit not just GitHub, but contributions on Hugging Face, Kaggle, arXiv papers, and quantum computing architectures. We build an irrefutable on-chain profile of the top 1% elite global talent, eliminating hiring risk.",
+        "bullet1": "Predictive performance analysis",
+        "bullet2": "Code culture matching",
+        "bullet3": "100% elimination of hiring bias",
+        "link": "Read Technical Whitepaper"
+      },
+      "tokenomics": {
+        "title": "On-Chain Governance & Rewards",
+        "subtitle": "Talent retains 100% of their value. Investors fund the engine. Everyone wins with $TAL.",
+        "card1Title": "Liquid Reputation",
+        "card1Desc": "Each successfully completed project adds on-chain experience, leveling up your SBT and unlocking premium clients.",
+        "card2Title": "$TAL Token Airdrops",
+        "card2Desc": "Early adopters, validator nodes, and Top 1% talent receive periodic airdrops and voting power over DAO fees."
+      },
+      "cta": {
+        "title": "It's time to build the future of work.",
+        "btnB2B": "I'm a Company",
+        "btnB2C": "I'm Talent"
+      }
+    }
+  },
+  "universityV2": {
+    "hub": {
+      "title": "DAO University Hub",
+      "subtitle": "Learn to earn. Teach to multiply. The Web3 academy governed by talent.",
+      "students": {
+        "title": "Students (Learn-to-Earn)",
+        "desc": "Master the most in-demand technologies by the B2B market.",
+        "course1": "Web3 & Smart Contracts Path",
+        "course2": "AI & LLMs Fundamentals",
+        "badge": "Subsidized by your future commissions",
+        "btn": "Start Path"
+      },
+      "teachers": {
+        "title": "Teachers (Teach-to-Earn)",
+        "desc": "Monetize your knowledge by creating content for the next elite generation.",
+        "lockText": "Requires Validated Senior Level SBT",
+        "btn": "Create your Academy & Earn $TAL"
+      }
+    },
+    "course": {
+      "backBtn": "Back to Hub",
+      "titleM1": "Advanced Smart Contract Development",
+      "titleAI": "Artificial Intelligence Fundamentals",
+      "desc": "Complete this module to get your immutable SBT credential. Companies actively seek talent with this certification, boosting Match Scores by 40%.",
+      "challengeTitle": "Final Challenge: AI Verification",
+      "challengeDesc": "Write a secure smart contract that passes all assertions of our AI Auditor.",
+      "placeholder": "// Connect your environment to be audited by AI...",
+      "btnConnect": "Connect GitHub / DevEnv",
+      "btnConnecting": "Connecting Environment...",
+      "btnAudit": "Send Code to AI Agent",
+      "btnAuditing": "AI is auditing your code...",
+      "modalSuccess": "Audit Passed! 100/100",
+      "modalDesc": "Your code is mathematically secure. We've minted your SBT credential on Base Network. B2B companies can now see you as Verified Talent.",
+      "btnDashboard": "Go to B2C Dashboard",
+      "sidebarTitle": "Course Content",
+      "unlockPass": "Unlock all modules with the Founder Pass.",
+      "btnPass": "View Founder Subscription"
+    }
+  },
+  "b2cV2": {
+    "authModal": {
+      "title": "Sign In",
+      "subtitle": "Access your B2B/B2C platform",
+      "loggedIn": "Signed In",
+      "goToDash": "Go to Dashboard",
+      "disconnect": "Disconnect",
+      "btnEmail": "Email / Google",
+      "btnEmailDesc": "Recommended for B2C",
+      "btnGithub": "GitHub",
+      "btnGithubDesc": "Required for Validations",
+      "btnConnecting": "Connecting...",
+      "orWallet": "Or use your Web3 Wallet",
+      "walletDesc": "Decentralized Wallet"
+    },
+    "b2cDashboard": {
+      "title": "B2C Talent Panel",
+      "subtitle": "Manage your identity, credentials, and on-chain missions.",
+      "profile": {
+        "title": "Identity & KYC",
+        "desc": "Complete your profile to access better B2B opportunities.",
+        "btn": "Go to Profile"
+      },
+      "passport": {
+        "title": "Talent Passport (SBT)",
+        "desc": "Your AI-validated credentials and skills on-chain.",
+        "btn": "View Credentials"
+      },
+      "missions": {
+        "title": "Mission Center",
+        "desc": "Find technical challenges and bounties posted by B2B companies.",
+        "btn": "Explore Missions"
+      },
+      "staking": {
+        "title": "$TAL Staking",
+        "desc": "Stake your tokens to earn rewards and increase your Match Score multiplier.",
+        "btn": "Manage Staking"
+      }
+    }
   }
 }

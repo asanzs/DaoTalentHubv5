@@ -1,0 +1,262 @@
+{
+  "genesisTrack": {
+    "id": "genesis-zero-to-web3",
+    "badge": "100% Subvencionado",
+    "title": "Ruta de Inmersión Absoluta",
+    "subtitle": "De Cero a Web3 Developer",
+    "description": "Aprende los fundamentos de lógica, arquitectura descentralizada y flujos de datos. Tu formación se paga sola con las comisiones de tus primeros contratos en la plataforma.",
+    "duration": "16 semanas",
+    "totalModules": 24,
+    "rewardTal": 2000,
+    "modules": [
+      {
+        "id": "m1",
+        "title": "Fundamentos de Programación & Lógica",
+        "week": "Semana 1-2",
+        "completed": false
+      },
+      {
+        "id": "m2",
+        "title": "Blockchain & Arquitectura Descentralizada",
+        "week": "Semana 3-4",
+        "completed": false
+      },
+      {
+        "id": "m3",
+        "title": "Smart Contracts con Solidity",
+        "week": "Semana 5-7",
+        "completed": false
+      },
+      {
+        "id": "m4",
+        "title": "Flujos de Datos & APIs Web3",
+        "week": "Semana 8-10",
+        "completed": false
+      },
+      {
+        "id": "m5",
+        "title": "DeFi Protocols & Tokenomics",
+        "week": "Semana 11-13",
+        "completed": false
+      },
+      {
+        "id": "m6",
+        "title": "Auditoría IA & SBT Graduation",
+        "week": "Semana 14-16",
+        "completed": false
+      }
+    ]
+  },
+  "specializations": [
+    {
+      "id": "spec-llm-agents",
+      "icon": "cpu",
+      "color": "#9B5DE5",
+      "glowColor": "rgba(155, 93, 229, 0.15)",
+      "gradientFrom": "#9B5DE5",
+      "gradientTo": "#C084FC",
+      "tag": "IA Avanzada · Python · LangChain",
+      "title": "Modelado de LLMs y Agentes Autónomos",
+      "category": "Especialización IA Avanzada",
+      "instructor": "Colaboradores Certificados Top 1%",
+      "instructorAvatar": "🤖",
+      "rewardTal": 750,
+      "difficulty": "Expert",
+      "duration": "10 semanas",
+      "modules": 16,
+      "enrolled": 847,
+      "rating": 4.9,
+      "description": "Diseña e implementa agentes IA autónomos con LangChain, AutoGen y OpenAI Functions. Integra herramientas Web3 on-chain.",
+      "skills": [
+        "LangChain",
+        "AutoGen",
+        "RAG",
+        "Function Calling",
+        "Web3.py",
+        "Embeddings"
+      ],
+      "auditLogs": [
+        "Initializing Python 3.11 environment...",
+        "Cloning repository via secure SSH tunnel... OK",
+        "Scanning agent orchestration architecture...",
+        "Validating LLM context window management...",
+        "Testing tool-calling reliability (500 samples)...",
+        "Evaluating RAG retrieval precision @ k=5...",
+        "Checking for prompt injection vulnerabilities...",
+        "Analyzing memory persistence and state management...",
+        "Verifying Web3 transaction signing logic...",
+        "Running adversarial agent attack simulations...",
+        "Benchmarking token efficiency per task...",
+        "Generating audit report..."
+      ]
+    },
+    {
+      "id": "spec-quantum",
+      "icon": "atom",
+      "color": "#00F5FF",
+      "glowColor": "rgba(0, 245, 255, 0.12)",
+      "gradientFrom": "#00F5FF",
+      "gradientTo": "#0052FF",
+      "tag": "Qiskit · IBM Quantum · Post-Quantum",
+      "title": "Algoritmos Cuánticos y Criptografía Post-Cuántica",
+      "category": "Computación Cuántica Aplicada",
+      "instructor": "Expertos de la Red Top 1%",
+      "instructorAvatar": "⚛️",
+      "rewardTal": 1200,
+      "difficulty": "Elite",
+      "duration": "12 semanas",
+      "modules": 20,
+      "enrolled": 412,
+      "rating": 4.8,
+      "description": "Domina los algoritmos cuánticos (Shor, Grover, QAOA) y los estándares NIST post-cuánticos (CRYSTALS-Kyber, Dilithium) para proteger protocolos blockchain.",
+      "skills": [
+        "Qiskit",
+        "IBM Quantum",
+        "CRYSTALS-Kyber",
+        "Dilithium",
+        "QAOA",
+        "VQE"
+      ],
+      "auditLogs": [
+        "Initializing IBM Qiskit runtime environment...",
+        "Cloning quantum circuit repository... OK",
+        "Analyzing quantum gate complexity...",
+        "Running noise simulation (1024-qubit model)...",
+        "Validating post-quantum key encapsulation...",
+        "Testing CRYSTALS-Kyber implementation...",
+        "Verifying Dilithium signature scheme...",
+        "Benchmarking circuit depth optimization...",
+        "Checking lattice-based cryptography correctness...",
+        "Running quantum error correction validation...",
+        "Assessing overall algorithm efficiency...",
+        "Generating audit report..."
+      ]
+    },
+    {
+      "id": "spec-defi-security",
+      "icon": "shield",
+      "color": "#F59E0B",
+      "glowColor": "rgba(245, 158, 11, 0.12)",
+      "gradientFrom": "#F59E0B",
+      "gradientTo": "#EF4444",
+      "tag": "Solidity · Foundry · DeFi",
+      "title": "Seguridad en Smart Contracts y Tokenomics Avanzada",
+      "category": "Sistemas Web3 y DeFi Core",
+      "instructor": "Auditores DeFi Senior Top 1%",
+      "instructorAvatar": "🛡️",
+      "rewardTal": 500,
+      "difficulty": "Avanzado",
+      "duration": "8 semanas",
+      "modules": 12,
+      "enrolled": 1234,
+      "rating": 4.9,
+      "description": "Conviértete en auditor DeFi certificado. Flash loans, MEV, reentrancy, y diseño de tokenomics sostenibles para protocolos millonarios.",
+      "skills": [
+        "Solidity",
+        "Foundry",
+        "Slither",
+        "Echidna",
+        "MEV",
+        "Flash Loans"
+      ],
+      "auditLogs": [
+        "Initializing Foundry audit environment...",
+        "Cloning Solidity repository... OK",
+        "Running Slither static analyzer (243 detectors)...",
+        "Executing Echidna fuzzer (10,000 iterations)...",
+        "Scanning for reentrancy vulnerabilities...",
+        "Checking flash loan attack surfaces...",
+        "Analyzing MEV extraction vectors...",
+        "Validating access control patterns...",
+        "Testing price oracle manipulation resistance...",
+        "Evaluating token accounting precision...",
+        "Simulating sandwich attack scenarios...",
+        "Generating final security audit report..."
+      ]
+    },
+    {
+      "id": "spec-web3-marketplaces",
+      "icon": "shopping-bag",
+      "color": "#F59E0B",
+      "glowColor": "rgba(245, 158, 11, 0.15)",
+      "gradientFrom": "#F59E0B",
+      "gradientTo": "#9B5DE5",
+      "tag": "Solidity · EIP-2981 · IPFS Oracles",
+      "title": "Arquitectura de Marketplaces Descentralizados y NFTs",
+      "category": "Especialización Marketplaces Web3",
+      "instructor": "Arquitectos de Marketplaces Top 1%",
+      "instructorAvatar": "🎨",
+      "rewardTal": 600,
+      "difficulty": "Avanzado",
+      "duration": "6 semanas",
+      "modules": 3,
+      "enrolled": 528,
+      "rating": 4.9,
+      "description": "Domina la creación de economías NFT. Diseña fideicomisos SafePay, distribución de regalías estándar EIP-2981, metadatos dinámicos mediante oráculos y puenteo cross-chain.",
+      "skills": [
+        "Solidity",
+        "EIP-2981",
+        "IPFS",
+        "Chainlink CCIP",
+        "Oracles",
+        "Checks-Effects-Interactions"
+      ],
+      "auditLogs": [
+        "Initializing Hardhat audit environment...",
+        "Cloning marketplace contract repository... OK",
+        "Checking EIP-2981 interface support...",
+        "Validating royalty calculation logic...",
+        "Simulating reentrancy attack on buyNFTWithEscrow...",
+        "Verifying Checks-Effects-Interactions safety...",
+        "Running Slither static analysis...",
+        "Running Echidna fuzzer for contract invariant check...",
+        "Generating Security Audit Report..."
+      ]
+    },
+    {
+      "id": "spec-solidity-advanced",
+      "icon": "shield",
+      "color": "#EF4444",
+      "glowColor": "rgba(239, 68, 68, 0.15)",
+      "gradientFrom": "#EF4444",
+      "gradientTo": "#F59E0B",
+      "tag": "Solidity · Yul · EVM · Cryptography",
+      "title": "Fundamentos Avanzados de Solidity y Criptografía",
+      "category": "Computación Web3 Avanzada",
+      "instructor": "Auditores EVM Senior Top 1%",
+      "instructorAvatar": "🛡️",
+      "rewardTal": 800,
+      "difficulty": "Elite",
+      "duration": "8 semanas",
+      "modules": 3,
+      "enrolled": 381,
+      "rating": 4.9,
+      "description": "Optimización extrema de gas con Yul Assembly, análisis de bytecode, firmas ECDSA, hashes de Keccak256 y auditorías de seguridad avanzadas en la EVM.",
+      "skills": [
+        "Solidity",
+        "Yul Assembly",
+        "ECDSA",
+        "Keccak256",
+        "EVM Bytecode",
+        "Gas Optimization"
+      ],
+      "auditLogs": [
+        "Initializing EVM debugging console...",
+        "Cloning Solidity optimization repository... OK",
+        "Analyzing stack depth and storage collision risk...",
+        "Simulating out-of-gas scenarios in complex arrays...",
+        "Fuzzing ECDSA cryptographic signatures...",
+        "Validating Keccak256 hash operations...",
+        "Generating Solidity Advanced security report..."
+      ]
+    }
+  ],
+  "stats": {
+    "certificationsIssued": 3247,
+    "companiesHiring": 12,
+    "avgSuccessRate": 94,
+    "avgTimeToJob": "4.2 meses",
+    "avgSalaryIncrease": "340%",
+    "totalTalPaidOut": 2450000
+  }
+}
