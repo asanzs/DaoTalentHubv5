@@ -271,7 +271,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-xs font-black uppercase tracking-widest text-green-400 block mb-3">100% On-Chain</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Gobernanza & Tesorería DAO</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">{tApp('daoTreasuryTitle')}</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
               El poder y el capital residen en la comunidad. Los holders de $TAL deciden el futuro del protocolo y auditan los fondos en tiempo real.
             </p>
@@ -287,7 +287,7 @@ export default function Home() {
                       <Database className="w-6 h-6 text-[#00F5FF]" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">Tesorería DAO</h3>
+                      <h3 className="text-xl font-bold text-white">{tApp('daoTreasury')}</h3>
                       <span className="text-xs text-[#00F5FF] font-mono">Live on Base</span>
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export default function Home() {
                   <div className="p-4 rounded-xl bg-black/40 border border-white/5 hover:border-white/20 transition-all cursor-pointer">
                      <div className="flex justify-between items-start mb-2">
                        <span className="px-2 py-1 rounded text-[10px] font-bold bg-green-500/20 text-green-400 border border-green-500/20 uppercase">Activa</span>
-                       <span className="text-xs text-gray-500">Termina en 2 días</span>
+                       <span className="text-xs text-gray-500">{tApp('endsIn2Days')}</span>
                      </div>
                      <p className="text-sm font-bold text-white mb-3">DIP-14: Reducir fee de B2B Escrow del 2% al 1% para startups Web3</p>
                      <div className="flex items-center gap-4 text-xs font-mono">

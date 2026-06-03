@@ -126,7 +126,7 @@ export default function StakingPage() {
             <Coins className="w-6 h-6 text-[#F59E0B]" />
             Bloqueo y Staking (veTAL)
           </h2>
-          <p className="text-sm text-gray-400 mb-8">Bloquea tus tokens $TAL para obtener poder de voto (veTAL) y multiplicadores de reputación.</p>
+          <p className="text-sm text-gray-400 mb-8">{tApp('lockTalTokens')}</p>
 
           <form onSubmit={handleCreateStake} className="space-y-6 relative z-10">
             <div>
@@ -191,7 +191,7 @@ export default function StakingPage() {
             <Globe className="w-6 h-6 text-[#A855F7]" />
             Cross-Chain Bridge
           </h2>
-          <p className="text-sm text-gray-400 mb-8">Transfiere liquidez de $TAL desde otras redes hacia Base para unificar tu reputación.</p>
+          <p className="text-sm text-gray-400 mb-8">{tApp('transferTalLiq')}</p>
 
           <form onSubmit={handleBridgeTokens} className="space-y-6 relative z-10">
             <div className="flex items-center gap-4">

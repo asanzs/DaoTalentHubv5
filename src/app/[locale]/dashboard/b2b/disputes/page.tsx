@@ -91,7 +91,7 @@ export default function B2bDisputesPage() {
         {/* Form to Open Dispute */}
         <div className="lg:col-span-2 p-8 rounded-3xl bg-white/5 border border-white/10 shadow-xl self-start relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-[#EF4444]"></div>
-          <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">Abrir Nueva Reclamación</h3>
+          <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-6">{tApp('openNewClaim')}</h3>
 
           <form onSubmit={handleCreateDispute} className="space-y-5">
             <div>
@@ -114,7 +114,7 @@ export default function B2bDisputesPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Título del conflicto</label>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{tApp('conflictTitle')}</label>
               <input 
                 type="text" 
                 value={title} 
@@ -182,7 +182,7 @@ export default function B2bDisputesPage() {
                       </div>
                       
                       <div className="text-right shrink-0">
-                        <span className="block text-[10px] text-gray-500 uppercase font-black tracking-widest">En Garantía</span>
+                        <span className="block text-[10px] text-gray-500 uppercase font-black tracking-widest">{tApp('inWarranty')}</span>
                         <span className="text-xl font-mono font-black text-[#EF4444]">${dispute.amount}</span>
                       </div>
                     </div>

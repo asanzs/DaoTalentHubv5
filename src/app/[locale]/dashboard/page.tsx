@@ -195,7 +195,7 @@ export default function DashboardPage() {
                 {/* Checklist steps */}
                 <div className="flex-1 max-w-md bg-black/30 p-6 rounded-2xl border border-white/5 space-y-3 shrink-0">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="text-gray-500 font-bold uppercase tracking-wider">Requisitos de Verificación</span>
+                    <span className="text-gray-500 font-bold uppercase tracking-wider">{tApp('verificationReqs')}</span>
                     <span className="text-[#00F5FF] font-bold font-mono">{airdrop?.airdropStatus === 'Claimed' ? "3/3" : airdrop?.airdropStatus === 'Claimable' ? "3/3" : "2/3"}</span>
                   </div>
                   
@@ -288,11 +288,11 @@ export default function DashboardPage() {
                       <span className="text-xs text-[#9B5DE5] font-bold uppercase tracking-widest">Learn-to-Earn Activo</span>
                     </div>
                   </div>
-                  <p className="text-gray-400 mb-6 max-w-lg">Continúa tu formación, gana $TAL por cada módulo completado y convierte tus certificados en SBTs verificables on-chain.</p>
+                  <p className="text-gray-400 mb-6 max-w-lg">{tApp('continueEdu')}</p>
                   <div className="flex items-center gap-4 mb-6">
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#fca311]/10 border border-[#fca311]/20">
                       <Flame className="w-4 h-4 text-[#fca311]" />
-                      <span className="text-xs font-bold text-[#fca311]">7 días de racha</span>
+                      <span className="text-xs font-bold text-[#fca311]">{tApp('7dayStreak')}</span>
                     </div>
                     <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20">
                       <Zap className="w-4 h-4 text-green-400" />

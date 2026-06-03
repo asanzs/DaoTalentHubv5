@@ -20,7 +20,7 @@ export default function WhitepaperPage() {
             <span className="w-2 h-2 rounded-full bg-[#00F5FF] animate-pulse" /> Documento Fundacional V5.2
           </div>
           <h1 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-tight">
-            El Futuro del <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]">Trabajo y la Educación</span> es On-Chain.
+            {tApp('futureOf')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]">{tApp('workAndEdu')}</span> {tApp('isOnChain')}
           </h1>
           <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
             DAO Talent Hub rompe el monopolio del reclutamiento tradicional. Validamos el talento criptográficamente y usamos Inteligencia Artificial para emparejarte directamente con empresas Web3, sin intermediarios.
@@ -41,7 +41,7 @@ export default function WhitepaperPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">El Motor: Smart Match AI</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">Nuestro LLM (Retrieval-Augmented Generation) analiza tu código, tus auditorías y tus contribuciones en tiempo real, conectándote instantáneamente con ofertas B2B.</p>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">{tApp('llmAnalysis')}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -49,7 +49,7 @@ export default function WhitepaperPage() {
               <div className="w-14 h-14 rounded-xl bg-[#00F5FF]/10 flex items-center justify-center mb-6">
                 <Database className="w-7 h-7 text-[#00F5FF]" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Extracción RAG</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{tApp('ragExtraction')}</h3>
               <p className="text-gray-400">El motor indexa repositorios de GitHub, commits en cadena (Gitcoin) y certificaciones universitarias (SBTs) creando un perfil vectorial inmutable.</p>
             </div>
             <div className="p-8 rounded-3xl border border-white/10 bg-white/5 hover:border-[#9B5DE5]/30 transition-colors relative">
@@ -57,13 +57,13 @@ export default function WhitepaperPage() {
                 <Cpu className="w-7 h-7 text-[#9B5DE5]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">Emparejamiento IA</h3>
-              <p className="text-gray-400">Comparamos la huella vectorial del candidato contra el "Job Description" de la empresa, generando un Score de Afinidad algorítmico.</p>
+              <p className="text-gray-400">{tApp('vectorMatch')}</p>
             </div>
             <div className="p-8 rounded-3xl border border-white/10 bg-white/5 hover:border-green-500/30 transition-colors">
               <div className="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
                 <ShieldCheck className="w-7 h-7 text-green-400" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">Escrow Automático</h3>
+              <h3 className="text-xl font-bold text-white mb-4">{tApp('autoEscrow')}</h3>
               <p className="text-gray-400">Si hay un match y ambas partes aceptan, un contrato inteligente retiene los fondos (USDC/TAL) y garantiza el pago contra hitos probados.</p>
             </div>
           </div>
@@ -108,14 +108,14 @@ export default function WhitepaperPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Utilidad del Ecosistema $TAL</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-lg">El token nativo impulsa cada transacción de la red. Una economía circular diseñada para la apreciación a largo plazo.</p>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">{tApp('nativeTokenEco')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="p-6 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/10">
               <GraduationCap className="w-8 h-8 text-[#00F5FF] mb-4" />
               <h3 className="text-lg font-bold text-white mb-2">Learn to Earn</h3>
-              <p className="text-sm text-gray-400">Estudiantes reciben recompensas en $TAL al completar módulos y aprobar exámenes validados por oráculos.</p>
+              <p className="text-sm text-gray-400">{tApp('studentRewards')}</p>
             </div>
             <div className="p-6 rounded-3xl bg-gradient-to-b from-white/5 to-transparent border border-white/10">
               <HeartHandshake className="w-8 h-8 text-[#9B5DE5] mb-4" />

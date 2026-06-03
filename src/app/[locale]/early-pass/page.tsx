@@ -500,7 +500,7 @@ export default function EarlyPassPage() {
           >
             Reclamar Mi Pase Fundador — ${TOTAL_PRICE.toFixed(2)} USD
           </button>
-          <p className="text-xs text-gray-600 mt-4">Pago seguro · Sin suscripción · Acceso de por vida</p>
+          <p className="text-xs text-gray-600 mt-4">{tApp('securePayAccess')}</p>
         </div>
       </section>
     </div>

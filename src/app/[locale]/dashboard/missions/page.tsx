@@ -112,7 +112,7 @@ export default function MissionsPage() {
       <div className="flex items-center gap-3 mb-6">
         <Briefcase className="w-8 h-8 text-[#00F5FF]" />
         <div>
-          <h2 className="text-3xl font-black text-white">Tablón de Misiones (Bounties)</h2>
+          <h2 className="text-3xl font-black text-white">{tApp('missionBoardBounties')}</h2>
           <p className="text-gray-400">Aplica a trabajos con Smart Match AI y cobra mediante Smart Contracts sin intermediarios.</p>
         </div>
       </div>
@@ -212,8 +212,8 @@ export default function MissionsPage() {
       {submissionMission && (
         <div className="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex justify-center items-center p-4">
           <div className="bg-[#0B0C10] border border-white/10 p-8 rounded-3xl w-full max-w-lg shadow-2xl">
-            <h3 className="text-xl font-black text-white mb-2">Entregar Repositorio a Oráculo IA</h3>
-            <p className="text-sm text-gray-400 mb-6">El Oráculo clonará, compilará y auditará tu código antes de liberar el Escrow.</p>
+            <h3 className="text-xl font-black text-white mb-2">{tApp('submitRepoOracle')}</h3>
+            <p className="text-sm text-gray-400 mb-6">{tApp('oracleCloneAudit')}</p>
             
             <form onSubmit={handleDeliverMission} className="space-y-4">
               <div>

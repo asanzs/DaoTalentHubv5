@@ -69,7 +69,7 @@ export default function B2bDashboardPage() {
               </div>
               <h2 className="text-2xl font-bold text-white">Smart Match AI</h2>
             </div>
-            <p className="text-gray-400 mb-8">Publica misiones técnicas y deja que nuestro Oráculo IA te proponga perfiles con SBTs (Soulbound Tokens) validados.</p>
+            <p className="text-gray-400 mb-8">{tApp('postMissions')}</p>
             <div className="mb-6 p-4 rounded-2xl bg-black/40 border border-white/5 space-y-3">
               <div className="flex justify-between items-center text-xs">
                 <span className="text-gray-500">Candidatos sugeridos:</span>
@@ -95,7 +95,7 @@ export default function B2bDashboardPage() {
               </div>
               <h2 className="text-2xl font-bold text-white">Proyectos & Custodia</h2>
             </div>
-            <p className="text-gray-400 mb-8">Administra tus hitos (Milestones), audita código entregado mediante Sandbox IA y libera fondos con custodia segura.</p>
+            <p className="text-gray-400 mb-8">{tApp('manageMilestones')}</p>
             <div className="mb-6 p-4 rounded-2xl bg-black/40 border border-white/5 space-y-3">
               <div className="flex justify-between items-center text-xs">
                 <span className="text-gray-500">Proyectos activos:</span>
@@ -128,7 +128,7 @@ export default function B2bDashboardPage() {
                 <span className="font-mono text-green-400 font-bold">{stakedTal.toFixed(2)} TAL</span>
               </div>
               <div className="flex justify-between items-center text-xs">
-                <span className="text-gray-500">Comisión actual:</span>
+                <span className="text-gray-500">{tApp('currentFee')}</span>
                 <span className="font-mono text-white font-bold">{currentFee}% Take-Rate</span>
               </div>
             </div>

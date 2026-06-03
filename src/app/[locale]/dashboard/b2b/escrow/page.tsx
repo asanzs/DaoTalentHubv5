@@ -77,7 +77,7 @@ export default function B2bEscrowStakingPage() {
         <Coins className="w-8 h-8 text-green-400" />
         <div>
           <h2 className="text-3xl font-black text-white">Staking y Tarifas Corporativas</h2>
-          <p className="text-gray-400">Reduce tus comisiones de intermediación haciendo stake de $TAL en Base Network.</p>
+          <p className="text-gray-400">{tApp('reduceFeesStake')}</p>
         </div>
       </div>
 
@@ -93,7 +93,7 @@ export default function B2bEscrowStakingPage() {
             <h3 className="text-3xl font-black text-white mb-2">{currentTier.tier}</h3>
             
             <div className="my-6">
-              <span className="text-sm text-gray-400 block mb-1">Comisión por contratación:</span>
+              <span className="text-sm text-gray-400 block mb-1">{tApp('hiringFee')}</span>
               <span className="text-5xl font-black text-green-400 font-mono">{currentTier.fee}%</span>
             </div>
 
@@ -101,13 +101,13 @@ export default function B2bEscrowStakingPage() {
               <div className="p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs text-gray-400 flex items-center gap-2">
                 <Zap className="w-4 h-4 text-green-400 shrink-0 animate-pulse" />
                 <p>
-                  Bloquea <strong className="text-white">{(currentTier.nextGoal.tal - totalStakedTal)} TAL</strong> más para bajar al <strong className="text-green-400">{currentTier.nextGoal.nextFee}%</strong> de comisiones.
+                  Bloquea <strong className="text-white">{(currentTier.nextGoal.tal - totalStakedTal)} TAL</strong> {tApp('moreToLower')} <strong className="text-green-400">{currentTier.nextGoal.nextFee}%</strong> {tApp('feesDot')}
                 </p>
               </div>
             ) : (
               <div className="p-3.5 rounded-xl bg-green-500/10 border border-green-500/20 text-xs text-green-400 flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 shrink-0" />
-                <span>¡Tienes la comisión al 0% permanente en la plataforma!</span>
+                <span>{tApp('zeroFeePerm')}</span>
               </div>
             )}
           </div>
@@ -115,7 +115,7 @@ export default function B2bEscrowStakingPage() {
           {/* Staking Balances HUD */}
           <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-4">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-gray-400">TAL líquido disponible:</span>
+              <span className="text-gray-400">{tApp('liquidTal')}</span>
               <span className="font-mono font-bold text-white">{balances.tal.toFixed(2)} TAL</span>
             </div>
             <div className="flex justify-between items-center text-sm">
@@ -174,7 +174,7 @@ export default function B2bEscrowStakingPage() {
 
             <div className="p-4 rounded-xl bg-green-500/5 border border-green-500/10 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-400">Comisión estimada tras Staking:</span>
+                <span className="text-gray-400">{tApp('estFeeStake')}</span>
                 <span className="font-bold text-green-400">{getFeeTierInfo(totalStakedTal + stakeAmount).fee}%</span>
               </div>
               <div className="flex justify-between text-sm">

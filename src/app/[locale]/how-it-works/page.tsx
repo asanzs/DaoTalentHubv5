@@ -51,7 +51,7 @@ export default function HowItWorks() {
               <Activity className="w-8 h-8 text-[#9B5DE5]" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">2. Trabajo y Verificación</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">{tApp('workVerification')}</h3>
               <p className="text-white/60 leading-relaxed">
                 El talento realiza el trabajo sabiendo al 100% que los fondos están garantizados y que nadie puede quitárselos. Si hay dudas sobre la calidad del código, un Tribunal de Arbitraje (Revisores Élite) revisa la entrega de forma imparcial.
               </p>
@@ -69,7 +69,7 @@ export default function HowItWorks() {
               <CheckCircle className="w-8 h-8 text-white" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white mb-3">3. Liberación Automática</h3>
+              <h3 className="text-2xl font-bold text-white mb-3">{tApp('autoRelease')}</h3>
               <p className="text-white/60 leading-relaxed">
                 Una vez la empresa aprueba el trabajo (o el árbitro da la razón al talento), el sistema SafePay libera los fondos. El desarrollador recibe el 100% en dólares/euros directamente en su cuenta.
               </p>

@@ -141,7 +141,7 @@ export default function TalentDirectoryPage() {
           <br/>
           <span className="px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-widest bg-[#00F5FF]/10 text-[#00F5FF] border border-[#00F5FF]/20">Directorio On-Chain</span>
           <h1 className="text-4xl md:text-5xl font-black text-white mt-4 mb-3">Buscar Talento Verificado</h1>
-          <p className="text-lg text-gray-400 max-w-2xl">Encuentra desarrolladores y auditores Web3 cuya reputación y habilidades han sido validadas por IA.</p>
+          <p className="text-lg text-gray-400 max-w-2xl">{tApp('findValidatedDevs')}</p>
         </div>
 
         {/* Filter Toolbar */}
@@ -204,7 +204,7 @@ export default function TalentDirectoryPage() {
           <div className="p-16 text-center rounded-3xl border border-white/10 bg-white/5">
             <span className="text-4xl block mb-4">🔍</span>
             <h3 className="text-lg font-bold text-white mb-2">Sin resultados</h3>
-            <p className="text-gray-500 text-sm">No encontramos ningún talento que coincida con los criterios de búsqueda actuales.</p>
+            <p className="text-gray-500 text-sm">{tApp('noTalentFound')}</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -291,7 +291,7 @@ export default function TalentDirectoryPage() {
             
             <form onSubmit={handleSendInvite} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Título de la Misión / Proyecto</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">{tApp('missionProjectTitle')}</label>
                 <input 
                   type="text" 
                   value={projectTitle} 

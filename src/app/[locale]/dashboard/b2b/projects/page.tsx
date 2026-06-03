@@ -149,7 +149,7 @@ export default function B2bProjectsPage() {
           <Briefcase className="w-8 h-8 text-[#9B5DE5]" />
           <div>
             <h2 className="text-3xl font-black text-white font-sans">Proyectos y Custodia (Escrow)</h2>
-            <p className="text-gray-400 text-sm">Gestiona tus contratos de depósito en garantía, audita entregables y libera fondos.</p>
+            <p className="text-gray-400 text-sm">{tApp('manageEscrowContracts')}</p>
           </div>
         </div>
 
@@ -313,11 +313,11 @@ export default function B2bProjectsPage() {
         <div className="fixed inset-0 z-[99999] bg-black/80 backdrop-blur-sm flex justify-center items-center p-4">
           <div className="bg-[#0B0C10] border border-white/10 p-8 rounded-3xl w-full max-w-md shadow-2xl relative">
             <h3 className="text-xl font-black text-white mb-2">Abrir Disputa de Smart Contract</h3>
-            <p className="text-xs text-gray-400 mb-6">Bloqueará temporalmente los fondos de este Escrow y enviará el caso a votación del jurado.</p>
+            <p className="text-xs text-gray-400 mb-6">{tApp('blockEscrowFunds')}</p>
             
             <form onSubmit={handleCreateDispute} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Título de la Disputa</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">{tApp('disputeTitle')}</label>
                 <input 
                   type="text" 
                   value={disputeTitle} 
@@ -328,7 +328,7 @@ export default function B2bProjectsPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Descripción del Conflicto / Pruebas</label>
+                <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">{tApp('conflictDescEvidence')}</label>
                 <textarea 
                   value={disputeDesc} 
                   onChange={(e) => setDisputeDesc(e.target.value)}

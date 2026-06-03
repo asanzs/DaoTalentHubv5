@@ -76,7 +76,7 @@ export default function TeachApplyPage() {
         {exito ? (
           <div className="p-8 rounded-3xl border border-green-500/30 bg-green-500/10 text-center">
             <CheckCircle2 className="w-16 h-16 text-green-400 mx-auto mb-4" />
-            <h2 className="text-2xl font-black text-white mb-3">¡Solicitud enviada!</h2>
+            <h2 className="text-2xl font-black text-white mb-3">{tApp('requestSent')}</h2>
             <p className="text-green-300 leading-relaxed">
               Revisaremos tu perfil en 48–72h. Recibirás un email de confirmación con los
               próximos pasos para convertirte en instructor oficial de DAO Talent Hub.
@@ -151,7 +151,7 @@ export default function TeachApplyPage() {
                 <option value="web3">Web3 &amp; Blockchain</option>
                 <option value="ia">Inteligencia Artificial</option>
                 <option value="defi">DeFi &amp; Finanzas Descentralizadas</option>
-                <option value="cuantica">Computación Cuántica</option>
+                <option value="cuantica">{tApp('quantumComputing')}</option>
                 <option value="devops">DevOps &amp; Cloud</option>
               </select>
             </div>

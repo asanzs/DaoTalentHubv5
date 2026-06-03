@@ -258,7 +258,7 @@ export default function UniversityDashboardPage() {
 
             {/* Transaction history */}
             <div className="p-4 rounded-2xl border border-white/10 bg-white/[0.03]">
-              <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">Últimas transacciones</p>
+              <p className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">{tApp('latestTxs')}</p>
               <ul className="space-y-2.5">
                 {TAL_HISTORY.map((tx) => (
                   <li
@@ -336,10 +336,10 @@ export default function UniversityDashboardPage() {
             <div className="flex items-center gap-4 mb-6">
               <div className="flex flex-col items-center">
                 <span className="text-5xl font-black text-orange-400">{STREAK_DAYS}</span>
-                <span className="text-xs text-white/40 mt-1">días consecutivos</span>
+                <span className="text-xs text-white/40 mt-1">{tApp('consecutiveDays')}</span>
               </div>
               <div className="flex-1 p-4 rounded-xl bg-orange-500/10 border border-orange-500/20 text-center">
-                <p className="text-orange-300 font-bold text-sm">🔥 ¡Racha activa!</p>
+                <p className="text-orange-300 font-bold text-sm">{tApp('activeStreak')}</p>
                 <p className="text-white/40 text-xs mt-1">Estudia hoy para mantenerla</p>
               </div>
             </div>
@@ -402,7 +402,7 @@ export default function UniversityDashboardPage() {
 
                   <div className="flex-1 min-w-0">
                     <p className={`text-sm font-bold truncate ${s.isYou ? "text-[#00F5FF]" : "text-white"}`}>
-                      {s.name} {s.isYou && <span className="text-[10px] text-[#00F5FF]/60">(tú)</span>}
+                      {s.name} {s.isYou && <span className="text-[10px] text-[#00F5FF]/60">{tApp('you')}</span>}
                     </p>
                     <p className="text-[11px] text-white/40">
                       {s.courses} cursos · {s.tal.toLocaleString()} TAL

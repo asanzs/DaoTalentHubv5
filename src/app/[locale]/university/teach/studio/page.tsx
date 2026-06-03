@@ -253,7 +253,7 @@ export default function TeachStudioPage() {
   const Step1 = () => (
     <div className="space-y-6">
       <div>
-        <label className={labelClass}>Título del curso *</label>
+        <label className={labelClass}>{tApp('courseTitle')}</label>
         <input
           name="titulo"
           type="text"
@@ -265,7 +265,7 @@ export default function TeachStudioPage() {
       </div>
 
       <div>
-        <label className={labelClass}>Descripción</label>
+        <label className={labelClass}>{tApp('description')}</label>
         <textarea
           name="descripcion"
           rows={4}
@@ -286,25 +286,25 @@ export default function TeachStudioPage() {
             onChange={handleInfoChange}
           >
             <option value="">Seleccionar nivel</option>
-            <option>Básico</option>
+            <option>{tApp('basic')}</option>
             <option>Intermedio</option>
             <option>Avanzado</option>
             <option>Experto</option>
           </select>
         </div>
         <div>
-          <label className={labelClass}>Categoría</label>
+          <label className={labelClass}>{tApp('category')}</label>
           <select
             name="categoria"
             className={inputClass}
             value={info.categoria}
             onChange={handleInfoChange}
           >
-            <option value="">Seleccionar categoría</option>
+            <option value="">{tApp('selectCategory')}</option>
             <option>Web3</option>
             <option>Inteligencia Artificial</option>
             <option>DeFi</option>
-            <option>Computación Cuántica</option>
+            <option>{tApp('quantumComputing')}</option>
             <option>DevOps</option>
             <option>Seguridad</option>
           </select>
@@ -348,7 +348,7 @@ export default function TeachStudioPage() {
           onChange={handleInfoChange}
         />
         <label htmlFor="earlyPass" className="text-gray-300 cursor-pointer text-sm">
-          <span className="font-bold text-white">¿Gratis con Early Pass?</span> — Los holders
+          <span className="font-bold text-white">{tApp('freeEarlyPass')}</span> {tApp('holdersSuffix')}
           del Early Pass acceden sin costo adicional.
         </label>
       </div>
@@ -387,7 +387,7 @@ export default function TeachStudioPage() {
       {modules.length === 0 && (
         <div className="py-16 text-center rounded-2xl border border-dashed border-white/10 text-gray-600">
           <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-30" />
-          <p>Aún no tienes módulos. ¡Crea el primero!</p>
+          <p>{tApp('noModulesCreate')}</p>
         </div>
       )}
 
@@ -583,7 +583,7 @@ export default function TeachStudioPage() {
         {publicado ? (
           <div className="p-10 rounded-3xl border border-green-500/30 bg-green-500/10 text-center">
             <CheckCircle2 className="w-20 h-20 text-green-400 mx-auto mb-5" />
-            <h2 className="text-3xl font-black text-white mb-3">¡Curso publicado!</h2>
+            <h2 className="text-3xl font-black text-white mb-3">{tApp('coursePublished')}</h2>
             <p className="text-green-300 text-lg">
               Los estudiantes ya pueden inscribirse a{" "}
               <span className="font-bold">{info.titulo || "tu curso"}</span>.
@@ -598,7 +598,7 @@ export default function TeachStudioPage() {
             <div className="grid md:grid-cols-2 gap-4">
               {[
                 { label: "Título", value: info.titulo || "—" },
-                { label: "Categoría", value: info.categoria || "—" },
+                { label: tApp('category'), value: info.categoria || "—" },
                 { label: "Nivel", value: info.nivel || "—" },
                 {
                   label: "Precio",
@@ -638,7 +638,7 @@ export default function TeachStudioPage() {
 
             {info.descripcion && (
               <div className="p-4 rounded-xl border border-white/10 bg-white/[0.03]">
-                <p className="text-gray-500 text-xs mb-2">Descripción</p>
+                <p className="text-gray-500 text-xs mb-2">{tApp('description')}</p>
                 <p className="text-gray-300 text-sm leading-relaxed">{info.descripcion}</p>
               </div>
             )}

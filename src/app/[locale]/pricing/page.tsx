@@ -118,7 +118,7 @@ export default function Pricing() {
         {/* Explain the Staking */}
         <div className="mt-20 max-w-4xl mx-auto p-10 rounded-3xl bg-white/[0.02] border border-white/5 text-center">
           <Zap className="w-10 h-10 text-[#00F5FF] mx-auto mb-6" />
-          <h4 className="text-2xl font-bold text-white mb-4">¿Cómo funciona el depósito de garantía? (Corporate Staking)</h4>
+          <h4 className="text-2xl font-bold text-white mb-4">{tApp('howCorporateStakingWorks')}</h4>
           <p className="text-white/60 leading-relaxed">
             Nuestro modelo Premium es revolucionario. Tu depósito de $20,000 USD se bloquea en un contrato inteligente auditado. Mientras ese dinero esté depositado, tu comisión de contratación es 0%. <strong>Puedes retirar tu depósito íntegro en cualquier momento.</strong> Literalmente contratas gratis.
           </p>

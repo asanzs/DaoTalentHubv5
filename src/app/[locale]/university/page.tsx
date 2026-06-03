@@ -105,7 +105,7 @@ export default function UniversityPage() {
                   <span className="text-xs text-[#00F5FF] font-bold">Learn-to-Earn</span>
                 </div>
               </div>
-              <p className="text-gray-400 mb-8">Accede a cursos especializados en Web3, IA y Computación Cuántica. Gana $TAL por cada módulo y certifícate con SBTs.</p>
+              <p className="text-gray-400 mb-8">{tApp('accessWeb3Courses')}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href={`/${locale}/university/marketplace`} className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5] text-black font-black text-sm hover:opacity-90 transition-opacity">
                   <BookOpen className="w-4 h-4" /> Ver Todos los Cursos
@@ -181,7 +181,7 @@ export default function UniversityPage() {
               <span className="text-xs font-bold text-[#fca311] uppercase tracking-widest">Early Adopter Pass</span>
             </div>
             <h3 className="text-2xl font-black text-white mb-2">Accede a todos los cursos — gratis.</h3>
-            <p className="text-gray-400">Con el Pase Fundador ($12 USD) tienes acceso ilimitado a todo el catálogo de cursos mientras dure la preventa.</p>
+            <p className="text-gray-400">{tApp('founderPassAccess')}</p>
           </div>
           <Link href={`/${locale}/early-pass`} className="shrink-0 flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#9B5DE5] to-[#00F5FF] text-black font-black hover:opacity-90 transition-opacity whitespace-nowrap">
             Obtener Early Pass <ArrowRight className="w-5 h-5" />

@@ -111,7 +111,7 @@ export default function SmartMatchPage() {
           
           <form onSubmit={startSmartMatch} className="space-y-5">
             <div>
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Nombre del Proyecto / Misión</label>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{tApp('projectNameMission')}</label>
               <input 
                 type="text" 
                 value={title} 
@@ -145,7 +145,7 @@ export default function SmartMatchPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">SBT Mínimo Requerido</label>
+              <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">{tApp('minSbtReq')}</label>
               <select 
                 value={requiredSbt}
                 onChange={(e) => setRequiredSbt(e.target.value)}
@@ -175,7 +175,7 @@ export default function SmartMatchPage() {
             <div className="flex-1 rounded-3xl border border-white/10 bg-white/5 flex flex-col items-center justify-center p-8 text-center">
               <Users className="w-16 h-16 text-gray-500 mb-4 opacity-50" />
               <h3 className="text-lg font-bold text-white mb-2">Listo para el Matching</h3>
-              <p className="text-gray-400 text-sm max-w-sm">Completa el formulario de la izquierda y haz clic en Postear para iniciar el análisis automático del Oráculo de Talentos.</p>
+              <p className="text-gray-400 text-sm max-w-sm">{tApp('completeFormOracle')}</p>
             </div>
           )}
 

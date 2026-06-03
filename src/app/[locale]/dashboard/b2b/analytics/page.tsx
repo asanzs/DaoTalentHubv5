@@ -156,7 +156,7 @@ export default function B2bAnalyticsPage() {
           {/* Monthly chart (visual mock) */}
           <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-sm font-black uppercase tracking-widest text-gray-400">Volumen de Contratos — Últimos 6 Meses</h3>
+              <h3 className="text-sm font-black uppercase tracking-widest text-gray-400">{tApp('contractVol6m')}</h3>
               <span className="text-xs text-green-400 font-bold flex items-center gap-1">
                 <TrendingUp className="w-3 h-3" /> +24% crecimiento
               </span>
@@ -206,14 +206,14 @@ export default function B2bAnalyticsPage() {
             {filteredPayments.length === 0 ? (
               <div className="text-center py-12">
                 <AlertCircle className="w-12 h-12 text-gray-600 mx-auto mb-4" />
-                <p className="text-gray-500">No hay transacciones en este filtro aún.</p>
-                <p className="text-xs text-gray-600 mt-2">Publica tu primera misión en Smart Match AI para empezar.</p>
+                <p className="text-gray-500">{tApp('noTxFilter')}</p>
+                <p className="text-xs text-gray-600 mt-2">{tApp('postFirstMission')}</p>
               </div>
             ) : (
               <div className="space-y-3">
                 {/* Table header */}
                 <div className="grid grid-cols-12 gap-4 px-4 pb-2 border-b border-white/5 text-[9px] uppercase tracking-widest text-gray-600 font-bold">
-                  <div className="col-span-4">Contrato / Misión</div>
+                  <div className="col-span-4">{tApp('contractMission')}</div>
                   <div className="col-span-2">Tipo</div>
                   <div className="col-span-2 text-right">Importe</div>
                   <div className="col-span-2 text-center">Score IA</div>

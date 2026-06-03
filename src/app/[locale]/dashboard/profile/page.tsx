@@ -92,7 +92,7 @@ export default function ProfilePage() {
 
           {/* Bio */}
           <div>
-            <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Descripción / Bio</label>
+            <label className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">{tApp('descBio')}</label>
             {editing ? (
               <textarea
                 value={bio}
@@ -186,7 +186,7 @@ export default function ProfilePage() {
         <div className="space-y-6">
           {/* KYC Card */}
           <div className="p-8 rounded-3xl bg-white/5 border border-white/10 shadow-xl">
-            <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">Verificación (KYC)</h3>
+            <h3 className="text-sm font-black uppercase tracking-widest text-gray-400 mb-4">{tApp('verificationKyc')}</h3>
 
             <div className="p-6 rounded-2xl bg-green-500/5 border border-green-500/20 text-center">
               <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
