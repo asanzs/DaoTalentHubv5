@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 "use client";
+import { useTranslations } from 'next-intl';
 
 import React, { useState } from "react";
 import Link from "next/link";

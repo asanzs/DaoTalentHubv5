@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 "use client";
+import { useTranslations } from 'next-intl';
 
 import React from "react";
 import { motion } from "framer-motion";

@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 "use client";
+import { useTranslations } from 'next-intl';
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
