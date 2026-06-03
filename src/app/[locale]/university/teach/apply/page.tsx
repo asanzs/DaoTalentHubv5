@@ -11,6 +11,7 @@ const inputClass =
 const labelClass = "block text-sm font-semibold text-gray-300 mb-2";
 
 export default function TeachApplyPage() {
+  const tApp = useTranslations('app');
   const locale = useLocale();
   const [form, setForm] = useState({
     nombre: "",

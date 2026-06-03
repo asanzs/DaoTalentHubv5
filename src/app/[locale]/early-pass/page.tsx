@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -21,6 +22,7 @@ const IDO_SOLD_PERCENT = 34;
 const IDO_GOAL_M = 50;
 
 export default function EarlyPassPage() {
+  const tApp = useTranslations('app');
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
 

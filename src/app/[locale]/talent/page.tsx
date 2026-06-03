@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -8,6 +9,7 @@ import { supabase } from "@/utils/supabase/client";
 import { createEscrow } from "@/app/actions/b2b";
 
 export default function TalentDirectoryPage() {
+  const tApp = useTranslations('app');
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [talents, setTalents] = useState<Talent[]>([]);

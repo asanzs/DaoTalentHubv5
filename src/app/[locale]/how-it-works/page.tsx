@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React from "react";
@@ -6,6 +7,7 @@ import { Lock, Activity, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function HowItWorks() {
+  const tApp = useTranslations('app');
   return (
     <main className="min-h-screen bg-[#0B0C10] font-sans selection:bg-[#00F5FF]/30 pt-32 pb-24">
       <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#00F5FF]/10 rounded-full blur-[150px] pointer-events-none" />

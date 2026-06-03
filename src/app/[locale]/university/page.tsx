@@ -50,6 +50,7 @@ const FEATURED_PATHS = [
 ];
 
 export default function UniversityPage() {
+  const tApp = useTranslations('app');
   const locale = useLocale();
   return (
     <div className="min-h-screen pt-28 pb-24 px-6 bg-[#020408]">

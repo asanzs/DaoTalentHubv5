@@ -14,6 +14,7 @@ import {
 } from "@/lib/mocks/service";
 
 export default function DashboardPage() {
+  const tApp = useTranslations('app');
   const t = useTranslations('b2cV2.b2cDashboard');
   const pathname = usePathname();
   const currentLocale = pathname.split('/')[1] || 'en';

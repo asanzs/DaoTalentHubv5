@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState } from "react";
@@ -6,6 +7,7 @@ import { ArrowRight, Cpu, Layers, Link as LinkIcon, ShieldCheck, Zap, HeartHands
 import { usePathname } from "next/navigation";
 
 export default function WhitepaperPage() {
+  const tApp = useTranslations('app');
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
 

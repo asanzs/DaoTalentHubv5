@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -11,6 +12,7 @@ import {
 } from "@/lib/mocks/service";
 
 export default function B2bEscrowStakingPage() {
+  const tApp = useTranslations('app');
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [stakes, setStakes] = useState<ActiveStake[]>([]);

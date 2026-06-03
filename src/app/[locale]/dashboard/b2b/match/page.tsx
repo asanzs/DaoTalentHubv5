@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState } from "react";
@@ -48,6 +49,7 @@ const MOCK_CANDIDATES: Candidate[] = [
 ];
 
 export default function SmartMatchPage() {
+  const tApp = useTranslations('app');
   const [title, setTitle] = useState("Auditoría de Bóveda DeFi");
   const [rewardUsd, setRewardUsd] = useState(3000);
   const [rewardTal, setRewardTal] = useState(150);

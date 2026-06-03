@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -8,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { fetchUserBalances, fetchActiveStakes, fetchMissionsList } from "@/lib/mocks/service";
 
 export default function B2bDashboardPage() {
+  const tApp = useTranslations('app');
   const { isConnected } = useAccount();
   const pathname = usePathname();
   const currentLocale = pathname.split('/')[1] || 'en';

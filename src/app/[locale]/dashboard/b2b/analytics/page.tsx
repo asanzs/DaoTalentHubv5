@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -30,6 +31,7 @@ interface PaymentRecord {
 }
 
 export default function B2bAnalyticsPage() {
+  const tApp = useTranslations('app');
   const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(true);
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);

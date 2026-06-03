@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -6,6 +7,7 @@ import { User, Mail, GitBranch, Wallet, ShieldCheck, CheckCircle2, Bell, Edit3, 
 import { useAccount, useWalletModal } from "@/context/Web3Provider";
 
 export default function ProfilePage() {
+  const tApp = useTranslations('app');
   const { address, isConnected } = useAccount();
   const { open } = useWalletModal();
   const [mounted, setMounted] = useState(false);

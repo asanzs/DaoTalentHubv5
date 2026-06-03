@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 "use client";
 
 import React from "react";
@@ -47,6 +48,7 @@ const TIERS = [
 ];
 
 export default function Pricing() {
+  const tApp = useTranslations('app');
   
 
   return (

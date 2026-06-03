@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const tApp = useTranslations('app');
   const t = useTranslations('index');
   const [view, setView] = useState<'b2c' | 'b2b'>('b2c');
 

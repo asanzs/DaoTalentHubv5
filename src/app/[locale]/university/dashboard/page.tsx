@@ -150,6 +150,7 @@ function ProgressBar({ pct, color }: { pct: number; color: string }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function UniversityDashboardPage() {
+  const tApp = useTranslations('app');
   const locale = useLocale();
   const [expandedTx, setExpandedTx] = useState<number | null>(null);
 

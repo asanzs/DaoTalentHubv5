@@ -61,6 +61,7 @@ const STEPS = ["Información", "Currículo", "Economía", "Publicar"];
 
 // ─── MAIN COMPONENT ──────────────────────────────────────────────────────────
 export default function TeachStudioPage() {
+  const tApp = useTranslations('app');
   const locale = useLocale();
   const [step, setStep] = useState(1);
 

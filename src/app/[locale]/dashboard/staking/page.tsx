@@ -17,6 +17,7 @@ import {
 } from "@/lib/mocks/service";
 
 export default function StakingPage() {
+  const tApp = useTranslations('app');
   const { isConnected } = useAccount();
 
   const [mounted, setMounted] = useState(false);
