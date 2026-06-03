@@ -4,16 +4,18 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, PieChart, Coins, Lock, CheckCircle2 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function CapTablePage() {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
+  const t = useTranslations('capTable');
   const [hoveredSlice, setHoveredSlice] = useState<number | null>(null);
 
   const TOKENOMICS = [
-    { id: 1, label: "Ecosistema e Incentivos DAO", pct: 65, tokens: 130000000, color: "#00F5FF", desc: "Liberación por hitos de protocolo (TVL y Contratos Escrow).", vesting: "Emisión dinámica" },
-    { id: 2, label: "Equipo Core & Asesores", pct: 20, tokens: 40000000, color: "#9B5DE5", desc: "Desarrolladores iniciales y junta de asesores estratégicos.", vesting: "12m Cliff, 36m Lineal" },
-    { id: 3, label: "Early Backers & F&F", pct: 15, tokens: 30000000, color: "#fca311", desc: "Inversores semilla (Ronda SAFE y Warrants blindados).", vesting: "Vesting 12m/36m" }
+    { id: 1, label: t("t1Label"), pct: 65, tokens: 130000000, color: "#00F5FF", desc: t("t1Desc"), vesting: t("t1Vest") },
+    { id: 2, label: t("t2Label"), pct: 20, tokens: 40000000, color: "#9B5DE5", desc: t("t2Desc"), vesting: t("t2Vest") },
+    { id: 3, label: t("t3Label"), pct: 15, tokens: 30000000, color: "#fca311", desc: t("t3Desc"), vesting: t("t3Vest") }
   ];
 
   return (
@@ -29,13 +31,13 @@ export default function CapTablePage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#9B5DE5]/10 border border-[#9B5DE5]/20 rounded-full text-xs font-bold text-[#9B5DE5] mb-4 uppercase tracking-widest">
               <PieChart className="w-3 h-3" /> Auditado: V5.1
             </div>
-            <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Cap Table & Tokenomics</h1>
+            <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">{t('title')}</h1>
             <p className="text-xl text-gray-400 max-w-2xl">
-              Distribución de capital (Total Supply: 200M $TAL). Estructura diseñada para descentralización progresiva y captura de valor a largo plazo.
+              {t('desc')}
             </p>
           </div>
           <div className="text-right shrink-0">
-            <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mb-1">Precio Seed / IDO</p>
+            <p className="text-sm text-gray-500 font-bold uppercase tracking-widest mb-1">{t('seedPrice')}</p>
             <p className="text-3xl font-black font-mono text-[#fca311]">$0.040 USD</p>
           </div>
         </div>
@@ -43,7 +45,7 @@ export default function CapTablePage() {
         {/* Visualizer */}
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold mb-6">Distribución de Tokens</h2>
+            <h2 className="text-2xl font-bold mb-6">{t('distTitle')}</h2>
             <div className="space-y-4">
               {TOKENOMICS.map((item) => (
                 <div 
@@ -106,39 +108,39 @@ export default function CapTablePage() {
 
         {/* Proyecciones de Vesting */}
         <div className="p-8 rounded-3xl bg-black/40 border border-white/10">
-          <h2 className="text-2xl font-bold mb-6">Calendario de Emisión (Vesting Schedule)</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('vestTitle')}</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="border-b border-white/10 text-gray-500 uppercase tracking-wider">
-                  <th className="pb-4 font-bold">Cohorte</th>
-                  <th className="pb-4 font-bold">Mes 0 (TGE)</th>
-                  <th className="pb-4 font-bold">Mes 12 (Cliff)</th>
-                  <th className="pb-4 font-bold">Mes 24</th>
-                  <th className="pb-4 font-bold">Mes 36 (Full Vest)</th>
+                  <th className="pb-4 font-bold">{t('cohort')}</th>
+                  <th className="pb-4 font-bold">{t('month0')}</th>
+                  <th className="pb-4 font-bold">{t('month12')}</th>
+                  <th className="pb-4 font-bold">{t('month24')}</th>
+                  <th className="pb-4 font-bold">{t('month36')}</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-gray-300 font-mono">
                 <tr>
-                  <td className="py-4 text-white font-sans font-bold">Early Backers (15%)</td>
+                  <td className="py-4 text-white font-sans font-bold">{t('v1Coh')}</td>
                   <td className="py-4 text-gray-500">0%</td>
                   <td className="py-4 text-[#00F5FF]">33.3%</td>
                   <td className="py-4 text-[#00F5FF]">66.6%</td>
                   <td className="py-4 text-green-400">100%</td>
                 </tr>
                 <tr>
-                  <td className="py-4 text-white font-sans font-bold">Equipo Core (20%)</td>
+                  <td className="py-4 text-white font-sans font-bold">{t('v2Coh')}</td>
                   <td className="py-4 text-gray-500">0%</td>
                   <td className="py-4 text-[#9B5DE5]">25.0%</td>
                   <td className="py-4 text-[#9B5DE5]">50.0%</td>
                   <td className="py-4 text-green-400">100%</td>
                 </tr>
                 <tr>
-                  <td className="py-4 text-white font-sans font-bold">Ecosistema DAO (65%)</td>
-                  <td className="py-4 text-[#fca311]">5.0% (Liquidez)</td>
-                  <td className="py-4 text-gray-400">Dinámico según TVL</td>
-                  <td className="py-4 text-gray-400">Dinámico según TVL</td>
-                  <td className="py-4 text-gray-400">Dinámico</td>
+                  <td className="py-4 text-white font-sans font-bold">{t('v3Coh')}</td>
+                  <td className="py-4 text-[#fca311]">{t('v3M0')}</td>
+                  <td className="py-4 text-gray-400">{t('v3M12')}</td>
+                  <td className="py-4 text-gray-400">{t('v3M12')}</td>
+                  <td className="py-4 text-gray-400">{t('v3M36')}</td>
                 </tr>
               </tbody>
             </table>

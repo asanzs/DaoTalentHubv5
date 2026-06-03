@@ -4,10 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { ArrowLeft, TrendingUp, Activity, DollarSign, Users, LineChart } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function FinancialsPage() {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
+  const t = useTranslations('financials');
 
   return (
     <div className="min-h-screen bg-[#020408] pt-32 pb-24 text-white">
@@ -21,19 +23,19 @@ export default function FinancialsPage() {
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00F5FF]/10 border border-[#00F5FF]/20 rounded-full text-xs font-bold text-[#00F5FF] mb-4 uppercase tracking-widest">
             <LineChart className="w-3 h-3" /> Dashboard Financiero Live
           </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Proyecciones y Modelado</h1>
+          <h1 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">{t('title')}</h1>
           <p className="text-xl text-gray-400 max-w-2xl">
-            Métricas clave, presupuesto operativo y proyecciones de volumen de transacciones (GMV) para los primeros 24 meses del ecosistema.
+            {t('desc')}
           </p>
         </div>
 
         {/* KPIs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {[
-            { label: "Presupuesto Operativo Y1", value: "$500,000", sub: "Financiado (Ronda Seed)", icon: <DollarSign className="w-5 h-5 text-green-400"/>, color: "border-green-500/20 bg-green-500/5" },
-            { label: "Take-Rate (B2B Escrow)", value: "8.0%", sub: "Fee máximo por contrato", icon: <Activity className="w-5 h-5 text-[#fca311]"/>, color: "border-[#fca311]/20 bg-[#fca311]/5" },
-            { label: "Usuarios Activos (MoM)", value: "+32%", sub: "Proyección crecimiento base", icon: <Users className="w-5 h-5 text-[#00F5FF]"/>, color: "border-[#00F5FF]/20 bg-[#00F5FF]/5" },
-            { label: "Proyección GMV (Y1)", value: "$1.2M", sub: "Volumen bruto transaccionado", icon: <TrendingUp className="w-5 h-5 text-[#9B5DE5]"/>, color: "border-[#9B5DE5]/20 bg-[#9B5DE5]/5" }
+            { label: t("kpi1Title"), value: "$500,000", sub: t("kpi1Sub"), icon: <DollarSign className="w-5 h-5 text-green-400"/>, color: "border-green-500/20 bg-green-500/5" },
+            { label: t("kpi2Title"), value: "8.0%", sub: t("kpi2Sub"), icon: <Activity className="w-5 h-5 text-[#fca311]"/>, color: "border-[#fca311]/20 bg-[#fca311]/5" },
+            { label: t("kpi3Title"), value: "+32%", sub: t("kpi3Sub"), icon: <Users className="w-5 h-5 text-[#00F5FF]"/>, color: "border-[#00F5FF]/20 bg-[#00F5FF]/5" },
+            { label: t("kpi4Title"), value: "$1.2M", sub: t("kpi4Sub"), icon: <TrendingUp className="w-5 h-5 text-[#9B5DE5]"/>, color: "border-[#9B5DE5]/20 bg-[#9B5DE5]/5" }
           ].map((kpi, i) => (
             <div key={i} className={`p-6 rounded-3xl border ${kpi.color}`}>
               <div className="flex justify-between items-start mb-4">
@@ -50,13 +52,13 @@ export default function FinancialsPage() {
         <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div>
-              <h2 className="text-2xl font-bold">Proyección de Ingresos Netos (Trimestral)</h2>
-              <p className="text-sm text-gray-400">Basado en adopción B2B Escrow + Subscripciones SaaS</p>
+              <h2 className="text-2xl font-bold">{t('chartTitle')}</h2>
+              <p className="text-sm text-gray-400">{t('chartSub')}</p>
             </div>
             <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-wider">
-              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#9B5DE5]"/> B2C Pases</span>
-              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#00F5FF]"/> B2B SaaS</span>
-              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#fca311]"/> Escrow Fees</span>
+              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#9B5DE5]"/> {t('b2cPass')}</span>
+              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#00F5FF]"/> {t('b2bSaas')}</span>
+              <span className="flex items-center gap-2 text-gray-400"><div className="w-3 h-3 rounded-sm bg-[#fca311]"/> {t('escrowFees')}</span>
             </div>
           </div>
 
@@ -94,23 +96,23 @@ export default function FinancialsPage() {
         {/* Modelo Deflacionario */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="p-8 rounded-3xl bg-[#9B5DE5]/5 border border-[#9B5DE5]/20">
-            <h3 className="text-xl font-bold mb-4 text-[#9B5DE5]">Mecanismo Deflacionario (Buy & Burn)</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#9B5DE5]">{t('defTitle')}</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              El 20% de los ingresos fiat generados por las comisiones de Escrow B2B y suscripciones premium se destinarán trimestralmente a recomprar tokens `$TAL` en el mercado abierto para ser quemados de forma provable.
+              {t('defDesc')}
             </p>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-center">
-              <span className="block text-xs text-gray-500 uppercase tracking-widest mb-1">Target de Quema Y1-Y3</span>
-              <span className="text-2xl font-black font-mono text-[#9B5DE5]">15% del Supply</span>
+              <span className="block text-xs text-gray-500 uppercase tracking-widest mb-1">{t('defTarget')}</span>
+              <span className="text-2xl font-black font-mono text-[#9B5DE5]">{t('defTargetValue')}</span>
             </div>
           </div>
           <div className="p-8 rounded-3xl bg-[#00F5FF]/5 border border-[#00F5FF]/20">
-            <h3 className="text-xl font-bold mb-4 text-[#00F5FF]">Staking & Tesorería B2B</h3>
+            <h3 className="text-xl font-bold mb-4 text-[#00F5FF]">{t('stakeTitle')}</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              Las empresas que contraten talento deberán realizar un staking de tokens `$TAL` proporcional al tamaño del contrato. Este mecanismo bloquea liquidez continuamente mientras genera confianza criptográfica entre las partes.
+              {t('stakeDesc')}
             </p>
             <div className="p-4 rounded-xl bg-black/40 border border-white/5 text-center">
-              <span className="block text-xs text-gray-500 uppercase tracking-widest mb-1">Ratio de Colateral</span>
-              <span className="text-2xl font-black font-mono text-[#00F5FF]">5% por Contrato</span>
+              <span className="block text-xs text-gray-500 uppercase tracking-widest mb-1">{t('stakeRatio')}</span>
+              <span className="text-2xl font-black font-mono text-[#00F5FF]">{t('stakeRatioValue')}</span>
             </div>
           </div>
         </div>

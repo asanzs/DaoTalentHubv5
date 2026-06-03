@@ -65,7 +65,7 @@ export default function EarlyPassPage() {
         const { data: { session } } = await supabase.auth.getSession();
         
         if (!session?.user) {
-          alert('Por favor, conecta tu wallet o cuenta primero usando el botón superior.');
+          alert(t2('alertWallet'));
           setBuying(null);
           return;
         }
@@ -92,7 +92,7 @@ export default function EarlyPassPage() {
       localStorage.setItem('dao_early_pass_claimed', '1');
       setPassClaimed(true);
       setBuying(null);
-      alert('¡Pase fundador reclamado con éxito (Simulado)!');
+      alert(t2('alertPass'));
     }
   };
 
@@ -100,7 +100,7 @@ export default function EarlyPassPage() {
     setIdoBuying(method);
     await new Promise(r => setTimeout(r, 2000));
     setIdoBuying(null);
-    alert(`¡Compra de ${talAmount.toLocaleString()} $TAL completada! Los tokens aparecerán en tu wallet en las próximas 24h.`);
+    alert(t2('alertTokens', { amount: talAmount.toLocaleString() }));
   };
 
   if (!mounted) return null;

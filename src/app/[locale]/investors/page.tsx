@@ -10,6 +10,7 @@ import {
 export default function InvestorsPage() {
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
+  const t = useTranslations("investors");
 
   // Contact Form State
   const [formData, setFormData] = useState({
@@ -52,16 +53,16 @@ export default function InvestorsPage() {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#fca311]/30 bg-[#fca311]/10 text-[#fca311] text-xs font-black uppercase tracking-widest mb-6">
-            <Sparkles className="w-3.5 h-3.5" /> Investor Hub & Early Opportunities
+            <Sparkles className="w-3.5 h-3.5" /> {t('hub')}
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">
-            Únete a la Revolución de la{' '}
+            {t('title1')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fca311] to-[#00F5FF]">
-              Contratación Web3
+              {t('title2')}
             </span>
           </h1>
           <p className="text-lg text-gray-400 leading-relaxed">
-            DAO Talent Hub conecta el talento tecnológico validado por IA del 1% más calificado con empresas globales a través de un protocolo de Escrow sin fricción. Accede a nuestra documentación institucional y contáctanos para oportunidades de inversión.
+            {t('desc')}
           </p>
         </div>
 
@@ -70,10 +71,10 @@ export default function InvestorsPage() {
           <div className="lg:col-span-5 space-y-8">
             <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md">
               <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-2">
-                <Shield className="w-6 h-6 text-[#fca311]" /> Documentos Estratégicos
+                <Shield className="w-6 h-6 text-[#fca311]" /> {t('docs')}
               </h2>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Descubre nuestra arquitectura de incentivos de tokens duales ($TAL/$veTAL) y nuestras proyecciones financieras auditadas.
+                {t('docsDesc')}
               </p>
               
               <div className="space-y-4">
@@ -82,8 +83,8 @@ export default function InvestorsPage() {
                   className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#00F5FF]/30 hover:bg-white/10 transition-all group"
                 >
                   <div>
-                    <h4 className="font-bold text-white text-sm">Executive Whitepaper</h4>
-                    <p className="text-xs text-gray-500 mt-1">Detalles de tokenomics, SBTs y IA</p>
+                    <h4 className="font-bold text-white text-sm">{t('wpTitle')}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{t('wpDesc')}</p>
                   </div>
                   <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#00F5FF] transition-colors" />
                 </a>
@@ -93,8 +94,8 @@ export default function InvestorsPage() {
                   className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#9B5DE5]/30 hover:bg-white/10 transition-all group"
                 >
                   <div>
-                    <h4 className="font-bold text-white text-sm">Acceso a Data Room</h4>
-                    <p className="text-xs text-gray-500 mt-1">Cap Table, Proyecciones Financieras y Pitch Deck</p>
+                    <h4 className="font-bold text-white text-sm">{t('drTitle')}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{t('drDesc')}</p>
                   </div>
                   <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#9B5DE5] transition-colors" />
                 </a>
@@ -104,8 +105,8 @@ export default function InvestorsPage() {
                   className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-[#fca311]/30 hover:bg-white/10 transition-all group"
                 >
                   <div>
-                    <h4 className="font-bold text-white text-sm">Programa 'Early Adopter'</h4>
-                    <p className="text-xs text-gray-500 mt-1">Pase Fundador y lanzamiento de token $TAL</p>
+                    <h4 className="font-bold text-white text-sm">{t('epTitle')}</h4>
+                    <p className="text-xs text-gray-500 mt-1">{t('epDesc')}</p>
                   </div>
                   <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-[#fca311] transition-colors" />
                 </a>
@@ -113,14 +114,14 @@ export default function InvestorsPage() {
             </div>
 
             <div className="p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-md space-y-4">
-              <h3 className="font-bold text-white">Nuestra Ronda Seed</h3>
+              <h3 className="font-bold text-white">{t('seed')}</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-gray-500 uppercase tracking-widest block mb-1">Objetivo Ronda</span>
+                  <span className="text-[10px] text-gray-500 uppercase tracking-widest block mb-1">{t('target')}</span>
                   <span className="text-xl font-bold text-white font-mono">$1.8M USD</span>
                 </div>
                 <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
-                  <span className="text-[10px] text-gray-500 uppercase tracking-widest block mb-1">Vesting Period</span>
+                  <span className="text-[10px] text-gray-500 uppercase tracking-widest block mb-1">{t('vesting')}</span>
                   <span className="text-xl font-bold text-[#fca311] font-mono">12m / 36m</span>
                 </div>
               </div>
@@ -136,7 +137,7 @@ export default function InvestorsPage() {
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#fca311]/50 to-transparent" />
               
               <h2 className="text-2xl font-black text-white mb-2 flex items-center gap-2">
-                <Mail className="w-6 h-6 text-[#fca311]" /> Contactar con Relaciones con Inversores
+                <Mail className="w-6 h-6 text-[#fca311]" /> {t('contact')}
               </h2>
               <p className="text-gray-400 text-sm mb-8">
                 Completa el formulario para solicitar una llamada de presentación con J. Alfonso Sanz (CEO) o solicitar acceso premium de auditoría.
@@ -147,7 +148,7 @@ export default function InvestorsPage() {
                   <div className="w-12 h-12 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">¡Solicitud Enviada Correctamente!</h3>
+                  <h3 className="text-xl font-bold text-white">{t('success')}</h3>
                   <p className="text-gray-400 text-sm max-w-md mx-auto">
                     Tu mensaje ha sido remitido directamente a nuestro equipo de Relaciones con Inversores. Nos pondremos en contacto contigo en un plazo máximo de 24 horas laborables.
                   </p>
@@ -155,14 +156,14 @@ export default function InvestorsPage() {
                     onClick={() => setSubmitted(false)}
                     className="mt-4 px-6 py-2 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-xs hover:bg-white/10 transition-colors"
                   >
-                    Enviar otro mensaje
+                    {t('btnAnother')}
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Nombre Completo</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">{t('name')}</label>
                       <div className="relative">
                         <User className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                         <input
@@ -171,13 +172,13 @@ export default function InvestorsPage() {
                           value={formData.name}
                           onChange={e => setFormData({ ...formData, name: e.target.value })}
                           className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-[#fca311] focus:ring-1 focus:ring-[#fca311] transition-all"
-                          placeholder="Introduce tu nombre"
+                          placeholder={t("namePlaceholder")}
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Correo Electrónico</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">{t('email')}</label>
                       <div className="relative">
                         <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                         <input
@@ -186,7 +187,7 @@ export default function InvestorsPage() {
                           value={formData.email}
                           onChange={e => setFormData({ ...formData, email: e.target.value })}
                           className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-[#fca311] focus:ring-1 focus:ring-[#fca311] transition-all"
-                          placeholder="ejemplo@empresa.com"
+                          placeholder={t("emailPlaceholder")}
                         />
                       </div>
                     </div>
@@ -194,7 +195,7 @@ export default function InvestorsPage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Empresa / Fondo</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">{t('company')}</label>
                       <div className="relative">
                         <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
                         <input
@@ -203,28 +204,28 @@ export default function InvestorsPage() {
                           value={formData.company}
                           onChange={e => setFormData({ ...formData, company: e.target.value })}
                           className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-[#fca311] focus:ring-1 focus:ring-[#fca311] transition-all"
-                          placeholder="Fondo de VC o Agencia"
+                          placeholder={t("companyPlaceholder")}
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Rango de Interés / Ticket</label>
+                      <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">{t('ticket')}</label>
                       <select
                         value={formData.investmentRange}
                         onChange={e => setFormData({ ...formData, investmentRange: e.target.value })}
                         className="w-full bg-[#0d1117] border border-white/10 rounded-xl px-4 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-[#fca311] focus:ring-1 focus:ring-[#fca311] transition-all"
                       >
-                        <option value="$50,000 - $150,000">$50,000 - $150,000 USD</option>
-                        <option value="$150,000 - $500,000">$150,000 - $500,000 USD</option>
-                        <option value="$500,000 - $1.8M">$500,000 - $1.8M USD</option>
-                        <option value="Socio Estratégico B2B">Socio Estratégico B2B / Comercial</option>
+                        <option value="$50,000 - $150,000">{t('opt1')}</option>
+                        <option value="$150,000 - $500,000">{t('opt2')}</option>
+                        <option value="$500,000 - $1.8M">{t('opt3')}</option>
+                        <option value="Socio Estratégico B2B">{t('opt4')}</option>
                       </select>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Mensaje / Comentarios</label>
+                    <label className="text-xs font-bold text-gray-400 uppercase tracking-wider block">{t('message')}</label>
                     <div className="relative">
                       <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-gray-500" />
                       <textarea
@@ -233,7 +234,7 @@ export default function InvestorsPage() {
                         value={formData.message}
                         onChange={e => setFormData({ ...formData, message: e.target.value })}
                         className="w-full bg-white/5 border border-white/10 rounded-xl pl-11 pr-4 py-3.5 text-sm font-medium text-white focus:outline-none focus:border-[#fca311] focus:ring-1 focus:ring-[#fca311] transition-all resize-none"
-                        placeholder="Describe brevemente tus intereses de inversión o consultas específicas..."
+                        placeholder={t("msgPlaceholder")}
                       />
                     </div>
                   </div>
@@ -258,10 +259,10 @@ export default function InvestorsPage() {
                     className="w-full min-h-[50px] py-4 rounded-xl font-bold text-sm uppercase tracking-wider text-black bg-gradient-to-r from-[#fca311] to-[#e65c00] hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {loading ? (
-                      <span className="animate-pulse">Enviando solicitud...</span>
+                      <span className="animate-pulse">{t('btnSending')}</span>
                     ) : (
                       <>
-                        <Send className="w-4 h-4" /> Enviar mensaje a Relaciones con Inversores
+                        <Send className="w-4 h-4" /> {t('btnSend')}
                       </>
                     )}
                   </button>
