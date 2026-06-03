@@ -35,7 +35,7 @@ export default function PassportPage() {
       <div className="flex items-center gap-3 mb-6">
         <Compass className="w-8 h-8 text-[#9B5DE5]" />
         <div>
-          <h2 className="text-3xl font-black text-white">Identity Passport (SBTs)</h2>
+          <h2 className="text-3xl font-black text-white">Pasaporte de Identidad (SBTs)</h2>
           <p className="text-gray-400">Tus credenciales inmutables validadas on-chain mediante Proof of Work.</p>
         </div>
       </div>

@@ -197,7 +197,42 @@
         "title": "Staking $TAL",
         "desc": "Haz stake de tus tokens para ganar recompensas y aumentar tu multiplicador de Match Score.",
         "btn": "Gestionar Staking"
+      },
+      "airdrop": {
+        "title": "Airdrop de €20 ($TAL)",
+        "desc": "Completa las validaciones requeridas para reclamar tu airdrop de bienvenida de €20 en tokens TAL.",
+        "statusLocked": "Bloqueado (Requiere completar pasos)",
+        "statusClaimable": "¡Disponible para reclamar!",
+        "statusClaimed": "Airdrop Reclamado ✓",
+        "stepEmail": "Verificar Email",
+        "stepGithub": "Conectar GitHub y Mintear SBT",
+        "stepMission": "Completar 1 Hito o Misión B2B",
+        "btnClaim": "Reclamar 200 TAL (~€20)",
+        "btnClaiming": "Procesando Airdrop..."
       }
     }
+  },
+  "talentPage": {
+    "badge": "Directorio On-Chain",
+    "title": "Buscar Talento Verificado",
+    "subtitle": "Encuentra desarrolladores y auditores Web3 cuya reputación y habilidades han sido validadas por IA.",
+    "placeholderSearch": "Buscar por nombre, cargo o skill...",
+    "allSkills": "Todos los Skills",
+    "allSbts": "Todos los SBTs",
+    "availability": "Disponibilidad",
+    "available": "Disponible",
+    "inContract": "En Contrato",
+    "noResults": "Sin resultados",
+    "noResultsDesc": "No encontramos ningún talento que coincida con los criterios de búsqueda actuales.",
+    "verifiedSbts": "Badges SBT Verificados",
+    "moreSbts": "+{count} credenciales más",
+    "btnInvite": "Invitar",
+    "modalTitle": "Contratar a {name}",
+    "modalSub": "{role} • ${rate}/hora",
+    "labelTitle": "Título de la Misión / Proyecto",
+    "labelBudget": "Presupuesto del Escrow (USD)",
+    "btnCancel": "Cancelar",
+    "btnCreate": "Crear Escrow & Contratar",
+    "btnCreating": "Enviando..."
   }
 }

@@ -18,7 +18,7 @@
   "landing": {
     "badge": "B2B Early Access",
     "title": "Hire the Top 1% of Talent. <br />With <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk.</span>",
-    "subtitle": "Our AI technically validates every developer. Smart Contracts ensure your company only pays if milestones are met. Maximum ROI, zero risk.",
+    "subtitle": "Our AI technically validates every developer. Smart Contracts guarantee that your company only pays if milestones are met. Maximum profitability, zero risk.",
     "ctaPrimary": "Try Smart Match",
     "ctaSecondary": "Get Founder Pass"
   },
@@ -29,30 +29,30 @@
     "subtitleB2B": "Manage your investments, contracts, and talent with zero risk.",
     "switchB2B": "Switch to B2B (Investor/Company)",
     "switchB2C": "Switch to B2C (Talent)",
-    "stakingLabel": "Staking & 0% Fees",
-    "stakingDesc": "Lock liquidity to eliminate hiring fees forever.",
+    "stakingLabel": "0% Staking & Fees",
+    "stakingDesc": "Lock liquidity to eliminate hiring fees.",
     "walletNotConnected": "Connect your Wallet to access the Dashboard"
   },
   "earlyPass": {
-    "title": "Founder Pass (Early Access)",
-    "subtitle": "VIP access to token presale, lifetime 0% platform fees, and direct governance.",
+    "title": "Founder Pass (Early Pass)",
+    "subtitle": "VIP access to the token presale, lifetime 0% fees on the platform, and direct governance.",
     "mint": "Mint Pass (0.5 ETH)",
     "benefits": "Exclusive Benefits",
     "b1": "Guaranteed Airdrop",
-    "b2": "B2B Tribunal Access",
+    "b2": "Access to B2B Tribunal",
     "b3": "Staking Multiplier x2"
   },
   "dataRoom": {
     "title": "Mythos Private Data Room",
     "subtitle": "Confidential information for VCs, Angels, and Strategic Partners.",
-    "capTable": "Cap Table & Distribution",
-    "tokenomics": "Tokenomics & Emission",
-    "roadmap": "Q3-Q4 2026 Roadmap",
+    "capTable": "Cap Table and Distribution",
+    "tokenomics": "Tokenomics and Emission",
+    "roadmap": "Roadmap Q3-Q4 2026",
     "download": "Download Pitch Deck"
   },
   "university": {
     "title": "Mythos AI University",
-    "subtitle": "The only academy where AI tests you and issues an irrefutable Soulbound Token of your skills.",
+    "subtitle": "The only academy where AI examines you and issues an irrefutable Soulbound Token about your skills.",
     "courseM1": "Module 1: Web3 Fundamentals",
     "startCourse": "Start Module",
     "validated": "AI Validation",
@@ -69,7 +69,7 @@
       "title": "Web3 Mode Activated",
       "subtitle": "Build your on-chain reputation.",
       "features": [
-        "Verified Skills Passport (SBTs)",
+        "Verified Skill Passport (SBTs)",
         "€20 Airdrops for Early Adopters",
         "8% Take-rate on hires",
         "Algorithmic code validation"
@@ -81,43 +81,43 @@
       "features": [
         "Automated FIAT billing (Stripe)",
         "Regulatory compliance KYB",
-        "Delivery Guarantee via Escrow",
-        "Secure Payment Infrastructure"
+        "Delivery Guarantee through Escrow",
+        "Secure payment infrastructure"
       ]
     },
     "expanded": {
       "socialProof": "Trusted by leading Web3 and Web2 companies",
       "howItWorks": {
-        "title": "Frictionless Hiring, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk</span>",
-        "subtitle": "We merge the speed of Web2 SaaS with the transparency and security of Web3 Smart Contracts.",
+        "title": "Frictionless hiring, <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk</span>",
+        "subtitle": "We combine the speed of Web2 SaaS with the transparency and security of Web3 Smart Contracts.",
         "step1Title": "1. On-Chain Validation",
-        "step1Desc": "Talent doesn't upload empty CVs. They pass AI tests and receive an immutable <strong class=\"text-white\">SBT (Soulbound Token)</strong> that certifies their real skills.",
+        "step1Desc": "Talent doesn't upload an empty resume. They pass AI tests and receive an immutable <strong class=\"text-white\">SBT (Soulbound Token)</strong> that certifies their real skills.",
         "step2Title": "2. Smart Match AI",
-        "step2Desc": "Our algorithm analyzes the company's tech stack and talent SBTs to make the perfect match in under 48 hours. Zero human bias.",
-        "step3Title": "3. Escrow Custody",
-        "step3Desc": "The company deposits funds in a Smart Contract. Talent works securely. Payment is released automatically upon delivery."
+        "step2Desc": "Our algorithm analyzes the company's tech stack and the talent's SBTs to make the perfect match in less than 48 hours. No human bias.",
+        "step3Title": "3. Escrow",
+        "step3Desc": "The company deposits funds in a Smart Contract. Talent works securely. Payment is automatically released upon delivery."
       },
       "engine": {
         "tag": "Artificial Intelligence",
-        "title": "The Ultimate <br />Recruitment Engine",
-        "desc": "DAO Talent Hub deploys quantum models and predictive LLMs to audit not just GitHub, but contributions on Hugging Face, Kaggle, arXiv papers, and quantum computing architectures. We build an irrefutable on-chain profile of the top 1% elite global talent, eliminating hiring risk.",
+        "title": "The Ultimate <br />Recruiting Engine",
+        "desc": "DAO Talent Hub deploys quantum models and predictive LLMs to audit not only GitHub but also contributions on Hugging Face, Kaggle, arXiv papers, and quantum computing architectures. We build an irrefutable on-chain profile of the top 1% global elite talent, eliminating hiring risk.",
         "bullet1": "Predictive performance analysis",
         "bullet2": "Code culture matching",
         "bullet3": "100% elimination of hiring bias",
         "link": "Read Technical Whitepaper"
       },
       "tokenomics": {
-        "title": "On-Chain Governance & Rewards",
+        "title": "On-Chain Governance and Rewards",
         "subtitle": "Talent retains 100% of their value. Investors fund the engine. Everyone wins with $TAL.",
         "card1Title": "Liquid Reputation",
-        "card1Desc": "Each successfully completed project adds on-chain experience, leveling up your SBT and unlocking premium clients.",
+        "card1Desc": "Every successfully completed project adds on-chain experience, increasing your SBT level and unlocking premium clients.",
         "card2Title": "$TAL Token Airdrops",
-        "card2Desc": "Early adopters, validator nodes, and Top 1% talent receive periodic airdrops and voting power over DAO fees."
+        "card2Desc": "Early adopters, validator nodes, and top 1% talent receive periodic airdrops and voting power over DAO fees."
       },
       "cta": {
         "title": "It's time to build the future of work.",
-        "btnB2B": "I'm a Company",
-        "btnB2C": "I'm Talent"
+        "btnB2B": "I am a Company",
+        "btnB2C": "I am Talent"
       }
     }
   },
@@ -127,7 +127,7 @@
       "subtitle": "Learn to earn. Teach to multiply. The Web3 academy governed by talent.",
       "students": {
         "title": "Students (Learn-to-Earn)",
-        "desc": "Master the most in-demand technologies by the B2B market.",
+        "desc": "Master the technologies most demanded by the B2B market.",
         "course1": "Web3 & Smart Contracts Path",
         "course2": "AI & LLMs Fundamentals",
         "badge": "Subsidized by your future commissions",
@@ -135,16 +135,16 @@
       },
       "teachers": {
         "title": "Teachers (Teach-to-Earn)",
-        "desc": "Monetize your knowledge by creating content for the next elite generation.",
+        "desc": "Monetize your knowledge by creating content for the next generation of elite.",
         "lockText": "Requires Validated Senior Level SBT",
-        "btn": "Create your Academy & Earn $TAL"
+        "btn": "Create your Academy and Earn $TAL"
       }
     },
     "course": {
       "backBtn": "Back to Hub",
-      "titleM1": "Advanced Smart Contract Development",
+      "titleM1": "Advanced Smart Contracts Development",
       "titleAI": "Artificial Intelligence Fundamentals",
-      "desc": "Complete this module to get your immutable SBT credential. Companies actively seek talent with this certification, boosting Match Scores by 40%.",
+      "desc": "Complete this module to get your immutable SBT credential. Companies are actively looking for talent with this certification and Match Scores increase by 40%.",
       "challengeTitle": "Final Challenge: AI Verification",
       "challengeDesc": "Write a secure smart contract that passes all assertions of our AI Auditor.",
       "placeholder": "// Connect your environment to be audited by AI...",
@@ -153,7 +153,7 @@
       "btnAudit": "Send Code to AI Agent",
       "btnAuditing": "AI is auditing your code...",
       "modalSuccess": "Audit Passed! 100/100",
-      "modalDesc": "Your code is mathematically secure. We've minted your SBT credential on Base Network. B2B companies can now see you as Verified Talent.",
+      "modalDesc": "Your code is mathematically secure. We have minted your credential (SBT) on Base Network. B2B companies can now see you as Verified Talent.",
       "btnDashboard": "Go to B2C Dashboard",
       "sidebarTitle": "Course Content",
       "unlockPass": "Unlock all modules with the Founder Pass.",
@@ -164,7 +164,7 @@
     "authModal": {
       "title": "Sign In",
       "subtitle": "Access your B2B/B2C platform",
-      "loggedIn": "Signed In",
+      "loggedIn": "Logged In",
       "goToDash": "Go to Dashboard",
       "disconnect": "Disconnect",
       "btnEmail": "Email / Google",
@@ -185,19 +185,54 @@
       },
       "passport": {
         "title": "Talent Passport (SBT)",
-        "desc": "Your AI-validated credentials and skills on-chain.",
+        "desc": "Your credentials and AI-validated skills on-chain.",
         "btn": "View Credentials"
       },
       "missions": {
         "title": "Mission Center",
-        "desc": "Find technical challenges and bounties posted by B2B companies.",
+        "desc": "Find technical challenges and bounties published by B2B companies.",
         "btn": "Explore Missions"
       },
       "staking": {
         "title": "$TAL Staking",
         "desc": "Stake your tokens to earn rewards and increase your Match Score multiplier.",
         "btn": "Manage Staking"
+      },
+      "airdrop": {
+        "title": "€20 Airdrop ($TAL)",
+        "desc": "Complete the required validations to claim your €20 welcome airdrop in TAL tokens.",
+        "statusLocked": "Locked (Requires completing steps)",
+        "statusClaimable": "Available to claim!",
+        "statusClaimed": "Airdrop Claimed ✓",
+        "stepEmail": "Verify Email",
+        "stepGithub": "Connect GitHub and Mint SBT",
+        "stepMission": "Complete 1 B2B Milestone or Mission",
+        "btnClaim": "Claim 200 TAL (~€20)",
+        "btnClaiming": "Processing Airdrop..."
       }
     }
+  },
+  "talentPage": {
+    "badge": "On-Chain Directory",
+    "title": "Search Verified Talent",
+    "subtitle": "Find Web3 developers and auditors whose reputation and skills have been AI-validated.",
+    "placeholderSearch": "Search by name, role, or skill...",
+    "allSkills": "All Skills",
+    "allSbts": "All SBTs",
+    "availability": "Availability",
+    "available": "Available",
+    "inContract": "In Contract",
+    "noResults": "No results",
+    "noResultsDesc": "We couldn't find any talent matching the current search criteria.",
+    "verifiedSbts": "Verified SBT Badges",
+    "moreSbts": "+{count} more credentials",
+    "btnInvite": "Invite",
+    "modalTitle": "Hire {name}",
+    "modalSub": "{role} • ${rate}/hour",
+    "labelTitle": "Mission / Project Title",
+    "labelBudget": "Escrow Budget (USD)",
+    "btnCancel": "Cancel",
+    "btnCreate": "Create Escrow & Hire",
+    "btnCreating": "Sending..."
   }
 }

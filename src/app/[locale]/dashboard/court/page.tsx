@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
-import { Award, AlertCircle, Scale, ShieldCheck, ThumbsUp, ThumbsDown } from "lucide-react";
+import { Award, AlertCircle, Scale, ShieldCheck, ThumbsUp, ThumbsDown, Code2, Briefcase } from "lucide-react";
 import { fetchDisputesList, voteOnDispute, Dispute, fetchUserBalances, UserBalances } from "@/lib/mocks/service";
 
 export default function CourtPage() {

@@ -7,6 +7,7 @@ import {
   fetchMissionsList, 
   applyToMission, 
   submitMissionDeliverable, 
+  releaseMissionPayment,
   Mission
 } from "@/lib/mocks/service";
 
@@ -45,11 +46,21 @@ export default function MissionsPage() {
     try {
       await applyToMission(missionId);
       await loadData();
-      alert("Applied to mission successfully!");
+      alert("¡Aplicación enviada! El Escrow ha sido pre-fondeado. Ahora puedes entregar tu trabajo.");
     } catch (err: any) {
-      alert(err.message || "Application failed");
+      alert(err.message || "Error al aplicar a la misión");
     } finally {
       setApplyingId(null);
+    }
+  };
+
+  const handleClaimPayment = async (missionId: string) => {
+    try {
+      await releaseMissionPayment(missionId);
+      await loadData();
+      alert("¡Pago reclamado con éxito! Los tokens TAL han sido acreditados en tu wallet.");
+    } catch (err: any) {
+      alert(err.message || "Error al reclamar el pago");
     }
   };
 
@@ -85,9 +96,9 @@ export default function MissionsPage() {
       await submitMissionDeliverable(missionId, repoUrl);
       setSubmissionMission(null);
       await loadData();
-      alert("Deliverable submitted and audited!");
+      alert("¡Entregable auditado! El score de auditoría IA es 96/100. Ahora puedes reclamar tu pago.");
     } catch (err: any) {
-      alert(err.message || "Submission failed");
+      alert(err.message || "Error al enviar el entregable");
     } finally {
       setSubmittingId(null);
       setTimeout(() => setShowConsole(false), 2500);
@@ -112,7 +123,7 @@ export default function MissionsPage() {
           <div className="h-32 bg-white/5 rounded-3xl w-full"></div>
         </div>
       ) : missions.length === 0 ? (
-        <p className="text-gray-500 text-center py-10">No missions found.</p>
+        <p className="text-gray-500 text-center py-10">No hay misiones disponibles en este momento.</p>
       ) : (
         <div className="grid md:grid-cols-2 gap-6">
           {missions.map(mission => (
@@ -171,10 +182,24 @@ export default function MissionsPage() {
                   </button>
                 )}
 
-                {(mission.status === 'Delivered' || mission.status === 'Disbursed') && (
-                  <div className="flex items-center gap-2 text-green-400 text-xs font-bold">
+                {mission.status === 'Delivered' && (
+                  <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1.5 text-green-400 text-xs font-bold">
+                      <ShieldCheck className="w-4 h-4" />
+                      Auditoría IA: {mission.auditScore}%
+                    </div>
+                    <button
+                      onClick={() => handleClaimPayment(mission.id)}
+                      className="px-4 py-1.5 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5] text-black font-black text-[10px] uppercase tracking-widest hover:opacity-90 transition-all"
+                    >
+                      Reclamar Pago
+                    </button>
+                  </div>
+                )}
+                {mission.status === 'Disbursed' && (
+                  <div className="flex items-center gap-1.5 text-green-400 text-xs font-bold">
                     <ShieldCheck className="w-4 h-4" />
-                    Auditoría IA: {mission.auditScore}%
+                    Pagado · {mission.auditScore}% audit
                   </div>
                 )}
               </div>

@@ -3,59 +3,150 @@
     "id": 1,
     "name": "Alex Rivers",
     "role": "Senior AI Architect",
-    "avatar": "AR",
+    "avatar": "🤖",
     "rate": 450,
     "rating": 4.9,
-    "availability": "Immediate",
-    "matching": {
-      "total": 98,
-      "codeAudit": 99,
-      "smartContracts": 97,
-      "rateAvailability": 98
-    },
+    "availability": "Available",
+    "matching": { "total": 98, "codeAudit": 99, "smartContracts": 97, "rateAvailability": 98 },
     "skills": ["Python", "PyTorch", "Hugging Face", "LLMs", "LangChain"],
     "credentials": [
-      { "platform": "HUGGING_FACE", "name": "Model Fine-Tuning SBT", "grade": "98%" },
-      { "platform": "KAGGLE", "name": "Kaggle Grandmaster Proof", "grade": "Top 10" }
+      { "platform": "Hugging Face Verified", "name": "Model Fine-Tuning SBT", "grade": "98%" },
+      { "platform": "Kaggle Verified", "name": "Kaggle Grandmaster Proof", "grade": "Top 10" }
     ]
   },
   {
     "id": 2,
     "name": "Elena Rostova",
     "role": "Lead Smart Contract Auditor",
-    "avatar": "ER",
+    "avatar": "🔐",
     "rate": 600,
     "rating": 5.0,
-    "availability": "Part-Time",
-    "matching": {
-      "total": 95,
-      "codeAudit": 96,
-      "smartContracts": 98,
-      "rateAvailability": 90
-    },
+    "availability": "In Contract",
+    "matching": { "total": 95, "codeAudit": 96, "smartContracts": 98, "rateAvailability": 90 },
     "skills": ["Solidity", "Rust", "EVM Audits", "Fuzzing", "Foundry"],
     "credentials": [
-      { "platform": "IBM_QUANTUM", "name": "Quantum Logic Audit", "grade": "95%" },
-      { "platform": "DEWORK", "name": "SafePay Escrow Verification", "grade": "15 Bounties" }
+      { "platform": "IBM Quantum Platform", "name": "Quantum Logic Audit", "grade": "95%" },
+      { "platform": "Dework Protocol", "name": "SafePay Escrow Verification", "grade": "15 Bounties" }
     ]
   },
   {
     "id": 3,
     "name": "Chen Wei",
     "role": "Quantum Algorithms Engineer",
-    "avatar": "CW",
+    "avatar": "⚛️",
     "rate": 750,
     "rating": 4.8,
-    "availability": "Contract",
-    "matching": {
-      "total": 92,
-      "codeAudit": 95,
-      "smartContracts": 90,
-      "rateAvailability": 91
-    },
-    "skills": ["Qiskit", "Python", "Quantum Annealing", "Linear Algebra"],
+    "availability": "Available",
+    "matching": { "total": 92, "codeAudit": 95, "smartContracts": 90, "rateAvailability": 91 },
+    "skills": ["Qiskit", "Python", "Quantum Annealing", "Linear Algebra", "PennyLane"],
     "credentials": [
-      { "platform": "IBM_QUANTUM", "name": "Quantum Developer SBT", "grade": "96%" }
+      { "platform": "IBM Quantum Platform", "name": "Quantum Developer SBT", "grade": "96%" },
+      { "platform": "PennyLane Xanadu", "name": "Quantum ML Practitioner", "grade": "94%" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Marco Delvecchio",
+    "role": "Fullstack Web3 Developer",
+    "avatar": "🌐",
+    "rate": 320,
+    "rating": 4.7,
+    "availability": "Available",
+    "matching": { "total": 89, "codeAudit": 88, "smartContracts": 92, "rateAvailability": 87 },
+    "skills": ["React", "Next.js", "Ethers.js", "TypeScript", "Wagmi"],
+    "credentials": [
+      { "platform": "GitHub Verified", "name": "Verified Open-Source Contributor", "grade": "A+" },
+      { "platform": "Gitcoin Passport", "name": "Web3 Public Goods Patron", "grade": "Score 92" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Sara Nakamura",
+    "role": "DeFi Protocol Engineer",
+    "avatar": "💎",
+    "rate": 520,
+    "rating": 4.9,
+    "availability": "Available",
+    "matching": { "total": 96, "codeAudit": 97, "smartContracts": 99, "rateAvailability": 92 },
+    "skills": ["Solidity", "Vyper", "DeFi", "Uniswap V4", "AMM Design"],
+    "credentials": [
+      { "platform": "Dework Protocol", "name": "Verified Web3 Bounty Hunter", "grade": "22 Wins" },
+      { "platform": "Gitcoin Passport", "name": "Web3 Public Goods Patron", "grade": "Score 98" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Dmitri Volkov",
+    "role": "Blockchain Infrastructure Engineer",
+    "avatar": "⛓️",
+    "rate": 410,
+    "rating": 4.6,
+    "availability": "In Contract",
+    "matching": { "total": 87, "codeAudit": 85, "smartContracts": 91, "rateAvailability": 85 },
+    "skills": ["Go", "Node.js", "IPFS", "libp2p", "Consensus Algorithms"],
+    "credentials": [
+      { "platform": "Radicle Protocol", "name": "P2P Sovereign Code Contributor", "grade": "Top 5%" },
+      { "platform": "GitHub Verified", "name": "Verified Open-Source Contributor", "grade": "A" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Amara Osei",
+    "role": "AI Safety & Alignment Researcher",
+    "avatar": "🧠",
+    "rate": 680,
+    "rating": 4.9,
+    "availability": "Available",
+    "matching": { "total": 93, "codeAudit": 91, "smartContracts": 88, "rateAvailability": 99 },
+    "skills": ["Python", "RLHF", "Constitutional AI", "JAX", "Interpretability"],
+    "credentials": [
+      { "platform": "Hugging Face Verified", "name": "Open LLM & Dataset Curator SBT", "grade": "99%" },
+      { "platform": "Kaggle Verified", "name": "Kaggle Grandmaster Rank SBT", "grade": "Top 3" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Leila Ahmadi",
+    "role": "ZK-Proof Systems Engineer",
+    "avatar": "🔮",
+    "rate": 780,
+    "rating": 5.0,
+    "availability": "Available",
+    "matching": { "total": 99, "codeAudit": 99, "smartContracts": 99, "rateAvailability": 99 },
+    "skills": ["Circom", "Noir", "Plonk", "Groth16", "StarkNet"],
+    "credentials": [
+      { "platform": "Gitcoin Passport", "name": "Web3 Public Goods Patron", "grade": "Score 100" },
+      { "platform": "Dework Protocol", "name": "Verified Web3 Bounty Hunter", "grade": "30 Wins" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "James Okafor",
+    "role": "Cross-Chain Bridge Architect",
+    "avatar": "🌉",
+    "rate": 490,
+    "rating": 4.8,
+    "availability": "Available",
+    "matching": { "total": 91, "codeAudit": 90, "smartContracts": 94, "rateAvailability": 89 },
+    "skills": ["LayerZero", "Axelar", "Wormhole", "Solidity", "Rust"],
+    "credentials": [
+      { "platform": "Radicle Protocol", "name": "P2P Sovereign Code Contributor", "grade": "Top 10%" },
+      { "platform": "IBM Quantum Platform", "name": "Quantum Developer SBT", "grade": "89%" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Yuki Tanaka",
+    "role": "ML Model Deployment Engineer",
+    "avatar": "🚀",
+    "rate": 360,
+    "rating": 4.7,
+    "availability": "In Contract",
+    "matching": { "total": 88, "codeAudit": 87, "smartContracts": 82, "rateAvailability": 93 },
+    "skills": ["MLOps", "Docker", "Kubernetes", "FastAPI", "TensorFlow Serving"],
+    "credentials": [
+      { "platform": "Replicate Verified", "name": "ML API Production Deployer", "grade": "A+" },
+      { "platform": "Hugging Face Verified", "name": "Open LLM & Dataset Curator SBT", "grade": "95%" }
     ]
   }
 ]

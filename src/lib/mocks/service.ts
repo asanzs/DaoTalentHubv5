@@ -1,6 +1,7 @@
 import talentMocks from './talent.json';
 import escrowMocks from './escrow.json';
 import missionMocks from './missions.json';
+import { supabase } from '@/utils/supabase/client';
 
 export interface Talent {
   id: number;
@@ -195,11 +196,29 @@ export const defaultSbts: SbtItem[] = [
 ];
 
 export async function fetchTalentList(): Promise<Talent[]> {
+  try {
+    const { data, error } = await supabase.from('talents').select('*');
+    if (!error && data && data.length > 0) {
+      return data as Talent[];
+    }
+  } catch (err) {
+    console.warn('Supabase fetchTalentList failed, falling back to mocks', err);
+  }
+
   await delay(1500);
   return getLocalStorage<Talent[]>(TALENT_KEY, talentMocks as Talent[]);
 }
 
 export async function fetchEscrowList(): Promise<EscrowContract[]> {
+  try {
+    const { data, error } = await supabase.from('escrows').select('*');
+    if (!error && data && data.length > 0) {
+      return data as EscrowContract[];
+    }
+  } catch (err) {
+    console.warn('Supabase fetchEscrowList failed, falling back to mocks', err);
+  }
+
   await delay(1500);
   return getLocalStorage<EscrowContract[]>(ESCROW_KEY, escrowMocks as EscrowContract[]);
 }
@@ -212,6 +231,12 @@ export async function fetchAirdropState(): Promise<AirdropState> {
 export async function fetchB2bBalance(): Promise<number> {
   await delay(1000);
   return getLocalStorage<number>(BALANCE_KEY, initBalance);
+}
+
+export async function fetchClaimedPasses(): Promise<number> {
+  await delay(800);
+  // Simulating a backend call that might change over time
+  return getLocalStorage<number>('dao_claimed_passes', 1842);
 }
 
 export async function addB2bBalance(amount: number): Promise<number> {
@@ -279,18 +304,38 @@ export async function submitMilestone(escrowId: string, milestoneId: string): Pr
   return escrow;
 }
 
-export async function disburseEscrow(escrowId: string): Promise<EscrowContract> {
+export async function disburseEscrow(escrowId: string, milestoneId?: string): Promise<EscrowContract> {
   await delay(1500);
   const escrows = getLocalStorage<EscrowContract[]>(ESCROW_KEY, escrowMocks as EscrowContract[]);
   const escrow = escrows.find(e => e.id === escrowId);
   if (!escrow) throw new Error("Contract not found");
 
-  escrow.status = 'Disbursed';
-  escrow.milestones.forEach(m => {
-    if (m.status === 'Submitted' || m.status === 'Pending') {
-      m.status = 'Completed';
+  let amountToDisburse = 0;
+
+  if (milestoneId) {
+    const milestone = escrow.milestones.find(m => m.id === milestoneId);
+    if (!milestone) throw new Error("Milestone not found");
+    if (milestone.status === 'Completed') throw new Error("Milestone already completed");
+    
+    milestone.status = 'Completed';
+    amountToDisburse = milestone.amount;
+    
+    // Check if all milestones are completed
+    const allDone = escrow.milestones.every(m => m.status === 'Completed');
+    if (allDone) {
+      escrow.status = 'Disbursed';
+    } else {
+      escrow.status = 'Funded';
     }
-  });
+  } else {
+    escrow.status = 'Disbursed';
+    escrow.milestones.forEach(m => {
+      if (m.status !== 'Completed') {
+        amountToDisburse += m.amount;
+        m.status = 'Completed';
+      }
+    });
+  }
 
   setLocalStorage(ESCROW_KEY, escrows);
 
@@ -299,6 +344,12 @@ export async function disburseEscrow(escrowId: string): Promise<EscrowContract> 
   airdrop.missionPercent = 100;
   airdrop.milestonesCompleted = Math.min(2, airdrop.milestonesCompleted + 1);
   setLocalStorage(AIRDROP_KEY, airdrop);
+
+  // Credit the developer's balance with the disbursed amount in TAL (10:1 ratio)
+  if (amountToDisburse > 0) {
+    const currentTal = getLocalStorage<number>(USER_TAL_BALANCE_KEY, 10000);
+    setLocalStorage(USER_TAL_BALANCE_KEY, currentTal + (amountToDisburse / 10));
+  }
 
   return escrow;
 }
@@ -370,7 +421,7 @@ const USER_VETAL_BALANCE_KEY = 'dao_user_vetal_balance';
 
 export async function fetchUserBalances(): Promise<UserBalances> {
   await delay(800);
-  const tal = getLocalStorage<number>(USER_TAL_BALANCE_KEY, 1000);
+  const tal = getLocalStorage<number>(USER_TAL_BALANCE_KEY, 10000);
   const veTal = getLocalStorage<number>(USER_VETAL_BALANCE_KEY, 0);
   return { tal, veTal };
 }
@@ -449,6 +500,15 @@ export async function claimStakedTokens(stakeId: string): Promise<ActiveStake> {
 }
 
 export async function fetchMissionsList(): Promise<Mission[]> {
+  try {
+    const { data, error } = await supabase.from('missions').select('*');
+    if (!error && data && data.length > 0) {
+      return data as Mission[];
+    }
+  } catch (err) {
+    console.warn('Supabase fetchMissionsList failed, falling back to mocks', err);
+  }
+
   await delay(1200);
   return getLocalStorage<Mission[]>(MISSIONS_KEY, missionMocks as Mission[]);
 }

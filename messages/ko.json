@@ -197,7 +197,42 @@
         "title": "$TAL 스테이킹",
         "desc": "토큰을 스테이킹하여 보상을 얻고 매치 점수 배수를 높이세요.",
         "btn": "스테이킹 관리"
+      },
+      "airdrop": {
+        "title": "€20 에어드랍 ($TAL)",
+        "desc": "TAL 토큰으로 지급되는 €20 웰컴 에어드랍을 받으려면 필요한 검증을 완료하세요.",
+        "statusLocked": "잠김 (필수 단계 완료 필요)",
+        "statusClaimable": "수령 가능!",
+        "statusClaimed": "에어드랍 수령 완료 ✓",
+        "stepEmail": "이메일 인증",
+        "stepGithub": "GitHub 연결 및 SBT 민팅",
+        "stepMission": "1개 마일스톤 또는 B2B 미션 완료",
+        "btnClaim": "200 TAL 수령 (~€20)",
+        "btnClaiming": "에어드랍 처리 중..."
       }
     }
+  },
+  "talentPage": {
+    "badge": "온체인 디렉토리",
+    "title": "검증된 인재 검색",
+    "subtitle": "평판과 스킬이 AI로 검증된 Web3 개발자 및 감사자를 찾아보세요.",
+    "placeholderSearch": "이름, 역할 또는 스킬로 검색...",
+    "allSkills": "모든 스킬",
+    "allSbts": "모든 SBT",
+    "availability": "협업 가능 여부",
+    "available": "가능함",
+    "inContract": "계약 중",
+    "noResults": "결과 없음",
+    "noResultsDesc": "현재 검색 조건에 맞는 인재를 찾을 수 없습니다.",
+    "verifiedSbts": "검증된 SBT 배지",
+    "moreSbts": "+{count}개 자격 증명 더 보기",
+    "btnInvite": "초대하기",
+    "modalTitle": "{name} 고용하기",
+    "modalSub": "{role} • 시간당 ${rate}",
+    "labelTitle": "미션 / 프로젝트 제목",
+    "labelBudget": "에스크로 예산 (USD)",
+    "btnCancel": "취소",
+    "btnCreate": "에스크로 생성 및 고용",
+    "btnCreating": "전송 중..."
   }
 }

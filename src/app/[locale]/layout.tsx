@@ -5,6 +5,7 @@ import NavBar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {
   title: "DAO Talent Hub V5",
@@ -30,6 +31,7 @@ export default async function LocaleLayout({
             <Footer />
           </Web3Provider>
         </NextIntlClientProvider>
+        <Toaster theme="dark" />
       </body>
     </html>
   );

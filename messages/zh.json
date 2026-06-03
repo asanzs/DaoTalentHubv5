@@ -1,106 +1,106 @@
 {
   "nav": {
-    "home": "Home",
-    "whitepaper": "Whitepaper",
-    "university": "University",
-    "dataRoom": "Investors (Data Room)",
-    "earlyPass": "Founder Pass",
-    "talent": "B2C Talent",
-    "dashboard": "Go to Dashboard",
-    "login": "Login / Connect"
+    "home": "首页",
+    "whitepaper": "白皮书",
+    "university": "大学",
+    "dataRoom": "投资者 (Data Room)",
+    "earlyPass": "创始人通行证",
+    "talent": "B2C 人才",
+    "dashboard": "进入仪表盘",
+    "login": "登录 / 连接"
   },
   "footer": {
-    "subtitle": "DAO Talent Hub connects top-tier companies with AI-validated technical talent, guaranteeing risk-free hiring.",
-    "product": "Product",
-    "company": "Company",
-    "legal": "Legal"
+    "subtitle": "DAO Talent Hub 将顶级公司与经过 AI 验证的技术人才连接起来，保证无风险招聘。",
+    "product": "产品",
+    "company": "公司",
+    "legal": "法律"
   },
   "landing": {
-    "badge": "B2B Early Access",
-    "title": "Hire the Top 1% of Talent. <br />With <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">Zero Risk.</span>",
-    "subtitle": "Our AI technically validates every developer. Smart Contracts ensure your company only pays if milestones are met. Maximum ROI, zero risk.",
-    "ctaPrimary": "Try Smart Match",
-    "ctaSecondary": "Get Founder Pass"
+    "badge": "B2B 抢先体验",
+    "title": "雇佣前 1% 的顶尖人才。<br />实现 <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">零风险。</span>",
+    "subtitle": "我们的 AI 在技术上验证每位开发者。智能合约保证您的公司仅在达成里程碑时才付款。最大化盈利能力，零风险。",
+    "ctaPrimary": "尝试智能匹配",
+    "ctaSecondary": "获取创始人通行证"
   },
   "dashboard": {
-    "titleB2C": "Talent Dashboard",
-    "subtitleB2C": "Your milestones, tokens, and AI-validated reputation.",
-    "titleB2B": "Corporate Dashboard",
-    "subtitleB2B": "Manage your investments, contracts, and talent with zero risk.",
-    "switchB2B": "Switch to B2B (Investor/Company)",
-    "switchB2C": "Switch to B2C (Talent)",
-    "stakingLabel": "Staking & 0% Fees",
-    "stakingDesc": "Lock liquidity to eliminate hiring fees forever.",
-    "walletNotConnected": "Connect your Wallet to access the Dashboard"
+    "titleB2C": "人才仪表盘",
+    "subtitleB2C": "您的里程碑、代币和经 AI 验证的声誉。",
+    "titleB2B": "企业仪表盘",
+    "subtitleB2B": "以零风险管理您的投资、合同和人才。",
+    "switchB2B": "切换到 B2B (投资者/企业)",
+    "switchB2C": "切换到 B2C (人才)",
+    "stakingLabel": "0% 质押与手续费",
+    "stakingDesc": "锁定流动性以消除招聘费用。",
+    "walletNotConnected": "连接您的钱包以访问仪表盘"
   },
   "earlyPass": {
-    "title": "Founder Pass (Early Access)",
-    "subtitle": "VIP access to token presale, lifetime 0% platform fees, and direct governance.",
-    "mint": "Mint Pass (0.5 ETH)",
-    "benefits": "Exclusive Benefits",
-    "b1": "Guaranteed Airdrop",
-    "b2": "B2B Tribunal Access",
-    "b3": "Staking Multiplier x2"
+    "title": "创始人通行证 (Early Pass)",
+    "subtitle": "代币预售的 VIP 访问权限，平台终身 0% 费用以及直接治理权。",
+    "mint": "铸造通行证 (0.5 ETH)",
+    "benefits": "独家福利",
+    "b1": "保证空投",
+    "b2": "访问 B2B 法庭",
+    "b3": "质押乘数 x2"
   },
   "dataRoom": {
-    "title": "Mythos Private Data Room",
-    "subtitle": "Confidential information for VCs, Angels, and Strategic Partners.",
-    "capTable": "Cap Table & Distribution",
-    "tokenomics": "Tokenomics & Emission",
-    "roadmap": "Q3-Q4 2026 Roadmap",
-    "download": "Download Pitch Deck"
+    "title": "Mythos 隐私数据室",
+    "subtitle": "面向风投、天使投资人和战略合作伙伴的机密信息。",
+    "capTable": "股权结构表与分配",
+    "tokenomics": "代币经济学与发行",
+    "roadmap": "路线图 Q3-Q4 2026",
+    "download": "下载演示文稿"
   },
   "university": {
-    "title": "Mythos AI University",
-    "subtitle": "The only academy where AI tests you and issues an irrefutable Soulbound Token of your skills.",
-    "courseM1": "Module 1: Web3 Fundamentals",
-    "startCourse": "Start Module",
-    "validated": "AI Validation",
-    "sbt": "SBT Certificate"
+    "title": "Mythos AI 大学",
+    "subtitle": "唯一一个由 AI 对您进行考核并签发关于您技能的不可篡改的灵魂绑定代币 (SBT) 的学院。",
+    "courseM1": "模块 1: Web3 基础",
+    "startCourse": "开始模块",
+    "validated": "AI 验证",
+    "sbt": "SBT 证书"
   },
   "index": {
     "hero": {
-      "title": "Access the Tech Elite without Friction.",
-      "subtitle": "AI-validated infrastructure for the talent of tomorrow.",
-      "b2c_cta": "I am Tech Talent",
-      "b2b_cta": "Hire Companies"
+      "title": "无缝接触技术精英。",
+      "subtitle": "为未来人才打造的经 AI 验证的基础设施。",
+      "b2c_cta": "我是技术人才",
+      "b2b_cta": "企业招聘"
     },
     "b2c": {
-      "title": "Web3 Mode Activated",
-      "subtitle": "Build your on-chain reputation.",
+      "title": "Web3 模式已激活",
+      "subtitle": "建立您的链上声誉。",
       "features": [
-        "Verified Skills Passport (SBTs)",
-        "€20 Airdrops for Early Adopters",
-        "8% Take-rate on hires",
-        "Algorithmic code validation"
+        "经验证的技能护照 (SBTs)",
+        "早期采用者 20 欧元空投",
+        "招聘收取 8% 服务费",
+        "算法代码验证"
       ]
     },
     "b2b": {
-      "title": "Corporate SaaS",
-      "subtitle": "Guaranteed and risk-free technical hiring.",
+      "title": "企业级 SaaS",
+      "subtitle": "有保障且无风险的技术招聘。",
       "features": [
-        "Automated FIAT billing (Stripe)",
-        "Regulatory compliance KYB",
-        "Delivery Guarantee via Escrow",
-        "Secure Payment Infrastructure"
+        "自动法币计费 (Stripe)",
+        "合规的 KYB",
+        "通过托管 (Escrow) 保证交付",
+        "安全的支付基础设施"
       ]
     },
     "expanded": {
-      "socialProof": "深受领先 Web3 和 Web2 公司的信任",
+      "socialProof": "受到领先的 Web3 和 Web2 公司信任",
       "howItWorks": {
         "title": "无摩擦招聘，<span class=\"text-transparent bg-clip-text bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5]\">零风险</span>",
         "subtitle": "我们将 Web2 SaaS 的速度与 Web3 智能合约的透明度和安全性结合起来。",
         "step1Title": "1. 链上验证",
-        "step1Desc": "人才不上传空洞的简历。他们通过 AI 测试并获得不可篡改的 <strong class=\"text-white\">SBT (灵魂绑定代币)</strong>，证明其真实技能。",
-        "step2Title": "2. 智能匹配 AI",
-        "step2Desc": "我们的算法分析公司的技术栈和人才的 SBT，在48小时内完成完美匹配。没有任何人为偏见。",
+        "step1Desc": "人才不再上传空洞的简历。他们通过 AI 测试并获得不可篡改的 <strong class=\"text-white\">SBT (灵魂绑定代币)</strong>，证明其真实技能。",
+        "step2Title": "2. AI 智能匹配",
+        "step2Desc": "我们的算法分析企业的技术栈和人才的 SBT，在 48 小时内完成完美匹配。无人类偏见。",
         "step3Title": "3. 托管 (Escrow)",
-        "step3Desc": "公司将资金存入智能合约。人才安全地工作。项目交付后自动释放付款。"
+        "step3Desc": "企业将资金存入智能合约。人才安全工作。交付后自动释放付款。"
       },
       "engine": {
         "tag": "人工智能",
-        "title": "终极<br />招聘引擎",
-        "desc": "DAO Talent Hub 部署量子模型和预测性 LLM，不仅审计 GitHub，还审计 Hugging Face、Kaggle、arXiv 论文和量子计算架构上的贡献。我们为全球前 1% 的精英人才构建无可辩驳的链上档案，消除招聘风险。",
+        "title": "终极的<br />招聘引擎",
+        "desc": "DAO Talent Hub 部署量子模型和预测性 LLM，不仅审计 GitHub，还审计 Hugging Face、Kaggle、arXiv 论文和量子计算架构上的贡献。我们为全球前 1% 的精英人才建立不可篡改的链上档案，消除招聘风险。",
         "bullet1": "预测性绩效分析",
         "bullet2": "代码文化匹配",
         "bullet3": "100% 消除招聘偏见",
@@ -110,13 +110,13 @@
         "title": "链上治理与奖励",
         "subtitle": "人才保留 100% 的价值。投资者为引擎提供资金。所有人通过 $TAL 获益。",
         "card1Title": "流动声誉",
-        "card1Desc": "每个成功完成的项目都会增加链上经验，提升你的 SBT 等级并解锁优质客户。",
+        "card1Desc": "每个成功完成的项目都会增加链上经验，提升您的 SBT 等级并解锁优质客户。",
         "card2Title": "$TAL 代币空投",
-        "card2Desc": "早期采用者、验证节点和排名前 1% 的人才将获得定期空投和对 DAO 费用的投票权。"
+        "card2Desc": "早期采用者、验证节点和前 1% 的人才会收到定期空投，并拥有 DAO 费用的投票权。"
       },
       "cta": {
-        "title": "是时候构建工作的未来了。",
-        "btnB2B": "我是公司",
+        "title": "是时候构建未来的工作方式了。",
+        "btnB2B": "我是企业",
         "btnB2C": "我是人才"
       }
     }
@@ -128,15 +128,15 @@
       "students": {
         "title": "学生 (Learn-to-Earn)",
         "desc": "掌握 B2B 市场最抢手的技术。",
-        "course1": "Web3 & 智能合约路径",
-        "course2": "AI 和 LLM 基础",
+        "course1": "Web3 & 智能合约路线",
+        "course2": "AI & LLMs 基础",
         "badge": "由您未来的佣金补贴",
-        "btn": "开始路径"
+        "btn": "开始学习"
       },
       "teachers": {
         "title": "教师 (Teach-to-Earn)",
         "desc": "通过为下一代精英创建内容来将您的知识变现。",
-        "lockText": "需要验证高级别 SBT",
+        "lockText": "需要经验证的高级 SBT",
         "btn": "创建您的学院并赚取 $TAL"
       }
     },
@@ -144,17 +144,17 @@
       "backBtn": "返回中心",
       "titleM1": "高级智能合约开发",
       "titleAI": "人工智能基础",
-      "desc": "完成此模块以获取您不可篡改的 SBT 凭证。企业积极寻找具有此认证的人才，匹配分数提高 40%。",
-      "challengeTitle": "最终挑战：AI 验证",
-      "challengeDesc": "编写一个安全的智能合约，通过我们的 AI 审计员的所有断言。",
-      "placeholder": "// 连接您的环境以进行 AI 审计...",
-      "btnConnect": "连接 GitHub / DevEnv",
+      "desc": "完成此模块以获得您不可篡改的 SBT 凭证。企业正在积极寻找具有此认证的人才，匹配分数将提高 40%。",
+      "challengeTitle": "终极挑战：AI 验证",
+      "challengeDesc": "编写一个安全的智能合约，通过我们 AI 审计员的所有断言。",
+      "placeholder": "// 连接您的环境以接受 AI 的审计...",
+      "btnConnect": "连接 GitHub / 开发环境",
       "btnConnecting": "正在连接环境...",
       "btnAudit": "将代码发送给 AI 代理",
       "btnAuditing": "AI 正在审计您的代码...",
       "modalSuccess": "审计通过！ 100/100",
-      "modalDesc": "您的代码在数学上是安全的。我们在 Base Network 铸造了您的凭证 (SBT)。B2B 企业现在将您视为经过验证的人才。",
-      "btnDashboard": "转到 B2C 仪表板",
+      "modalDesc": "您的代码在数学上是安全的。我们已在 Base Network 上铸造了您的凭证 (SBT)。B2B 企业现在可以看到您作为经验证的人才。",
+      "btnDashboard": "进入 B2C 仪表盘",
       "sidebarTitle": "课程内容",
       "unlockPass": "使用创始人通行证解锁所有模块。",
       "btnPass": "查看创始人订阅"
@@ -165,13 +165,13 @@
       "title": "登录",
       "subtitle": "访问您的 B2B/B2C 平台",
       "loggedIn": "已登录",
-      "goToDash": "转到仪表板",
+      "goToDash": "进入仪表盘",
       "disconnect": "断开连接",
       "btnEmail": "电子邮件 / Google",
-      "btnEmailDesc": "B2C 推荐",
+      "btnEmailDesc": "推荐 B2C 用户使用",
       "btnGithub": "GitHub",
-      "btnGithubDesc": "验证所必需",
-      "btnConnecting": "正在连接...",
+      "btnGithubDesc": "验证必填",
+      "btnConnecting": "连接中...",
       "orWallet": "或使用您的 Web3 钱包",
       "walletDesc": "去中心化钱包"
     },
@@ -179,25 +179,60 @@
       "title": "B2C 人才面板",
       "subtitle": "管理您的身份、凭证和链上任务。",
       "profile": {
-        "title": "身份与 KYC",
+        "title": "身份 & KYC",
         "desc": "完善您的个人资料以获得更好的 B2B 机会。",
-        "btn": "转到个人资料"
+        "btn": "前往个人资料"
       },
       "passport": {
         "title": "人才护照 (SBT)",
-        "desc": "您的 AI 验证凭证和链上技能。",
+        "desc": "您的凭证和链上经 AI 验证的技能。",
         "btn": "查看凭证"
       },
       "missions": {
         "title": "任务中心",
-        "desc": "查找 B2B 公司发布的重难点挑战和悬赏。",
+        "desc": "查找 B2B 企业发布的技术挑战和赏金任务。",
         "btn": "探索任务"
       },
       "staking": {
         "title": "$TAL 质押",
         "desc": "质押您的代币以赚取奖励并增加您的匹配分数乘数。",
         "btn": "管理质押"
+      },
+      "airdrop": {
+        "title": "€20 空投 ($TAL)",
+        "desc": "完成所需的验证，以领取 20 欧元的 TAL 代币欢迎空投。",
+        "statusLocked": "已锁定 (需要完成步骤)",
+        "statusClaimable": "可领取！",
+        "statusClaimed": "已领取空投 ✓",
+        "stepEmail": "验证电子邮件",
+        "stepGithub": "连接 GitHub 并铸造 SBT",
+        "stepMission": "完成 1 个 B2B 里程碑或任务",
+        "btnClaim": "领取 200 TAL (~€20)",
+        "btnClaiming": "正在处理空投..."
       }
     }
+  },
+  "talentPage": {
+    "badge": "链上目录",
+    "title": "搜索经过验证的人才",
+    "subtitle": "查找其声誉和技能已通过 AI 验证的 Web3 开发人员和审计员。",
+    "placeholderSearch": "按名称、角色或技能搜索...",
+    "allSkills": "所有技能",
+    "allSbts": "所有 SBT",
+    "availability": "可用性",
+    "available": "可用",
+    "inContract": "合同中",
+    "noResults": "无结果",
+    "noResultsDesc": "我们找不到任何与当前搜索条件匹配的人才。",
+    "verifiedSbts": "经验证的 SBT 徽章",
+    "moreSbts": "还有 +{count} 个凭证",
+    "btnInvite": "邀请",
+    "modalTitle": "雇佣 {name}",
+    "modalSub": "{role} • ${rate}/小时",
+    "labelTitle": "任务 / 项目标题",
+    "labelBudget": "托管预算 (美元)",
+    "btnCancel": "取消",
+    "btnCreate": "创建托管并雇佣",
+    "btnCreating": "发送中..."
   }
 }

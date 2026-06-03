@@ -2,23 +2,30 @@
 
 import React, { ReactNode, createContext, useContext, useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { ShieldCheck, Mail, Wallet, Terminal } from 'lucide-react';
+import { ShieldCheck, Mail, Wallet } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import { supabase } from '@/utils/supabase/client';
+import { WagmiProvider, useConnect, useAccount as useWagmiAccount, useDisconnect } from 'wagmi';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { config } from '@/utils/wagmi';
+import { syncWalletToProfile } from '@/app/actions/web3';
 
-// ─── Mocked Wagmi Context ──────────────────────────────────────────────────────
+const queryClient = new QueryClient();
+
+// ─── Combined Account Context ──────────────────────────────────────────────────────
 interface AccountContextType {
   address: string | undefined;
   isConnected: boolean;
-  connect: (name: string) => void;
-  disconnect: () => void;
+  connect: (name: string) => Promise<void>;
+  disconnect: () => Promise<void>;
 }
 
 const AccountContext = createContext<AccountContextType>({
   address: undefined,
   isConnected: false,
-  connect: () => {},
-  disconnect: () => {},
+  connect: async () => {},
+  disconnect: async () => {},
 });
 
 export const useAccount = () => useContext(AccountContext);
@@ -51,17 +58,24 @@ function WalletModal({ onClose }: { onClose: () => void }) {
     setMounted(true);
   }, []);
 
-  const handleConnect = (type: string) => {
+  const handleConnect = async (type: string) => {
     setIsPending(true);
     setConnectingType(type);
-    setTimeout(() => {
-      connect(type);
+    
+    try {
+      await connect(type);
+      if (type !== 'GitHub' && type !== 'Google/Email') {
+        setIsPending(false);
+        setConnectingType(null);
+        onClose();
+        const currentLocale = window.location.pathname.split('/')[1] || 'en';
+        router.push(`/${currentLocale}/dashboard`);
+      }
+    } catch (e) {
+      console.error(e);
       setIsPending(false);
       setConnectingType(null);
-      onClose();
-      const currentLocale = window.location.pathname.split('/')[1] || 'en';
-      router.push(`/${currentLocale}/dashboard`);
-    }, 1500);
+    }
   };
 
   const GithubIcon = () => (
@@ -105,7 +119,7 @@ function WalletModal({ onClose }: { onClose: () => void }) {
             {t('goToDash')}
           </button>
           <button
-            onClick={() => { disconnect(); onClose(); }}
+            onClick={async () => { await disconnect(); onClose(); }}
             className="w-full py-3 rounded-2xl font-bold text-sm border border-red-500/30 bg-red-500/10 text-red-400 hover:bg-red-500/20 transition-all duration-300 mb-3"
           >
             {t('disconnect')}
@@ -201,27 +215,91 @@ function AccountProvider({ children }: { children: ReactNode }) {
   const [isConnected, setIsConnected] = useState(false);
   const [mounted, setMounted] = useState(false);
 
+  // Wagmi hooks
+  const { address: wagmiAddress, isConnected: isWagmiConnected } = useWagmiAccount();
+  const { connect: wagmiConnect, connectors } = useConnect();
+  const { disconnect: wagmiDisconnect } = useDisconnect();
+
   useEffect(() => {
     setMounted(true);
-    const savedAddress = localStorage.getItem('mockAddress');
-    if (savedAddress) {
-      setAddress(savedAddress);
-      setIsConnected(true);
-    }
-  }, []);
+    
+    // Check Supabase session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user && !isWagmiConnected) {
+        setAddress(session.user.id);
+        setIsConnected(true);
+      }
+    });
 
-  const connect = (name: string) => { 
-    console.log(name);
-    const newAddress = "0x7F2a095E" + Math.floor(Math.random() * 100000000).toString(16);
-    setAddress(newAddress);
-    setIsConnected(true);
-    localStorage.setItem('mockAddress', newAddress);
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user && !isWagmiConnected) {
+        setAddress(session.user.id);
+        setIsConnected(true);
+      } else if (!isWagmiConnected) {
+        setAddress(undefined);
+        setIsConnected(false);
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [isWagmiConnected]);
+
+  // Sync Wagmi State
+  useEffect(() => {
+    if (isWagmiConnected && wagmiAddress) {
+      setAddress(wagmiAddress);
+      setIsConnected(true);
+      
+      // Attempt to link wallet to Supabase profile in the background
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        syncWalletToProfile(wagmiAddress, session?.user?.id).catch(console.error);
+      });
+      
+    } else if (mounted) {
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        if (!session?.user) {
+          setAddress(undefined);
+          setIsConnected(false);
+        }
+      });
+    }
+  }, [isWagmiConnected, wagmiAddress, mounted]);
+
+  const connect = async (name: string) => { 
+    if (name === 'GitHub') {
+      await supabase.auth.signInWithOAuth({
+        provider: 'github',
+        options: {
+          redirectTo: `${window.location.origin}${window.location.pathname}`
+        }
+      });
+    } else if (name === 'Google/Email') {
+      await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: `${window.location.origin}${window.location.pathname}`
+        }
+      });
+    } else {
+      // Connect with Wagmi (Web3)
+      const connectorName = name === 'MetaMask' ? 'MetaMask' : 'Coinbase Wallet';
+      const connector = connectors.find(c => c.name === connectorName || c.id.includes(connectorName.toLowerCase().replace(' ', '')));
+      if (connector) {
+        wagmiConnect({ connector });
+      } else {
+        console.error('Connector not found:', name);
+        alert('Extensión de billetera no encontrada. Instala MetaMask o Coinbase Wallet.');
+      }
+    }
   };
 
-  const disconnect = () => {
+  const disconnect = async () => {
+    if (isWagmiConnected) {
+      wagmiDisconnect();
+    }
+    await supabase.auth.signOut();
     setAddress(undefined);
     setIsConnected(false);
-    localStorage.removeItem('mockAddress');
   };
 
   return (
@@ -233,13 +311,22 @@ function AccountProvider({ children }: { children: ReactNode }) {
 
 export default function Web3Provider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) return <>{children}</>;
 
   return (
-    <AccountProvider>
-      <WalletModalContext.Provider value={{ open: () => setIsOpen(true), close: () => setIsOpen(false), isOpen }}>
-        {children}
-        {isOpen && <WalletModal onClose={() => setIsOpen(false)} />}
-      </WalletModalContext.Provider>
-    </AccountProvider>
+    <WagmiProvider config={config}>
+      <QueryClientProvider client={queryClient}>
+        <AccountProvider>
+          <WalletModalContext.Provider value={{ open: () => setIsOpen(true), close: () => setIsOpen(false), isOpen }}>
+            {children}
+            {isOpen && <WalletModal onClose={() => setIsOpen(false)} />}
+          </WalletModalContext.Provider>
+        </AccountProvider>
+      </QueryClientProvider>
+    </WagmiProvider>
   );
 }

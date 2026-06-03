@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import { useTranslations } from "next-intl";
+import {  useTranslations , useLocale } from "next-intl";
 import { BookOpen, CheckCircle2, PlayCircle, ShieldCheck, ChevronRight, Lock, Code2, Terminal, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 export default function CoursePage({ params }: { params: { id: string } }) {
+  const locale = useLocale();
   const t = useTranslations('universityV2.course');
   const [activeLesson, setActiveLesson] = useState(1);
   const [envConnected, setEnvConnected] = useState(false);
@@ -39,7 +40,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
           {/* Main Content Area */}
           <div className="flex-1">
             <div className="mb-6">
-              <Link href="/university" className="text-[#00F5FF] text-sm font-bold flex items-center gap-1 hover:underline">
+              <Link href={`/${locale}/university`} className="text-[#00F5FF] text-sm font-bold flex items-center gap-1 hover:underline">
                 <ChevronRight className="w-4 h-4 rotate-180" /> {t('backBtn')}
               </Link>
             </div>
@@ -68,7 +69,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
                     <p className="text-gray-300 mb-8 leading-relaxed">
                       {t('modalDesc')}
                     </p>
-                    <Link href="/talent" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 text-black font-black hover:scale-105 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                    <Link href={`/${locale}/talent`} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 text-black font-black hover:scale-105 transition-transform shadow-[0_0_20px_rgba(34,197,94,0.3)]">
                       {t('btnDashboard')} <ChevronRight className="w-5 h-5" />
                     </Link>
                   </div>
@@ -162,7 +163,7 @@ export default function CoursePage({ params }: { params: { id: string } }) {
                 <p className="text-xs text-white/50 text-center mb-4">
                   {t('unlockPass')}
                 </p>
-                <Link href="/early-pass" className="w-full h-10 rounded-lg border border-[#9B5DE5] text-[#9B5DE5] flex items-center justify-center text-sm font-bold hover:bg-[#9B5DE5]/10 transition-colors">
+                <Link href={`/${locale}/early-pass`} className="w-full h-10 rounded-lg border border-[#9B5DE5] text-[#9B5DE5] flex items-center justify-center text-sm font-bold hover:bg-[#9B5DE5]/10 transition-colors">
                   {t('btnPass')}
                 </Link>
               </div>

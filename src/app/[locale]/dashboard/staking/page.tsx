@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Coins, Globe, ArrowRight, ShieldCheck } from "lucide-react";
-import { useAccount } from "wagmi";
+import { useAccount } from "@/context/Web3Provider";
 import { 
   fetchActiveStakes, 
   createStake, 
@@ -64,9 +64,9 @@ export default function StakingPage() {
     try {
       await createStake(stakeAmount, lockMonths);
       await loadData();
-      alert("Staking successful!");
+      alert("¡Staking realizado con éxito! Tu poder de voto (veTAL) ha sido actualizado.");
     } catch (err: any) {
-      alert(err.message || "Staking failed");
+      alert(err.message || "Error al realizar el staking");
     } finally {
       setStakingLoading(false);
     }
@@ -77,9 +77,9 @@ export default function StakingPage() {
     try {
       await claimStakedTokens(stakeId);
       await loadData();
-      alert("Unstaked successfully!");
+      alert("¡Tokens retirados con éxito! El balance TAL ha sido actualizado.");
     } catch (err: any) {
-      alert(err.message || "Unstaking failed");
+      alert(err.message || "Error al retirar tokens");
     } finally {
       setUnstakingId(null);
     }
@@ -93,9 +93,9 @@ export default function StakingPage() {
       await new Promise(r => setTimeout(r, 1500)); // simulate delay
       await bridgeTokens(bridgeAmount, sourceChain);
       await loadData();
-      alert("Tokens Bridged successfully to Base!");
+      alert(`¡Bridge completado! ${bridgeAmount} TAL transferidos a Base Network con éxito.`);
     } catch (err: any) {
-      alert(err.message || "Bridge failed");
+      alert(err.message || "Error en el bridge");
     } finally {
       setBridgingLoading(false);
     }

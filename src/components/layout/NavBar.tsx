@@ -1,10 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { useWalletModal, useAccount } from "@/context/Web3Provider";
-import { Globe, ChevronDown } from "lucide-react";
+import { Globe, ChevronDown, Lock } from "lucide-react";
+import { useUserStore } from "@/store/userStore";
+import { supabase } from "@/utils/supabase/client";
 
 const LOCALES = [
   { code: 'en', label: 'English', flag: '🇺🇸' },
@@ -17,10 +19,34 @@ const LOCALES = [
 export default function NavBar() {
   const t = useTranslations('nav');
   const { open } = useWalletModal();
-  const { isConnected, address } = useAccount();
+  const { isConnected, address, disconnect } = useAccount();
   const pathname = usePathname();
   const router = useRouter();
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const balance = useUserStore((state) => state.balance);
+
+  // Synchronize Web3 login with Supabase
+  useEffect(() => {
+    if (isConnected && address) {
+      const syncUser = async () => {
+        try {
+          const { error } = await supabase
+            .from('users')
+            .upsert(
+              { wallet_address: address },
+              { onConflict: 'wallet_address' }
+            );
+          
+          if (error) {
+            console.error('Error syncing user to Supabase:', error);
+          }
+        } catch (err) {
+          console.error('Failed to sync user:', err);
+        }
+      };
+      syncUser();
+    }
+  }, [isConnected, address]);
 
   // Extract current locale from pathname (e.g., /es/about -> es)
   const currentLocale = pathname.split('/')[1] || 'en';
@@ -47,6 +73,8 @@ export default function NavBar() {
         
         <div className="hidden md:flex items-center gap-8">
           <Link href="/university" className="text-sm font-bold text-gray-400 hover:text-white transition-colors">{t('university')}</Link>
+          <Link href="/whitepaper" className="text-sm font-bold text-gray-400 hover:text-white transition-colors">Whitepaper</Link>
+          <Link href="/data-room" className="text-sm font-bold text-gray-400 hover:text-white transition-colors flex items-center gap-1">Data Room <Lock className="w-3 h-3"/></Link>
         </div>
 
         <div className="flex items-center gap-6">
@@ -79,12 +107,32 @@ export default function NavBar() {
 
           {/* Auth Button */}
           {isConnected ? (
-            <Link href="/dashboard" className="px-5 py-2 rounded-full border border-white/10 bg-white/5 text-white font-bold text-sm hover:bg-white/10 transition-all">
-              {t('dashboard')} ({address?.slice(0,6)}...)
-            </Link>
+            <div className="relative group">
+              <button className="flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#00F5FF]/30 bg-[#00F5FF]/10 text-white font-bold text-sm hover:bg-[#00F5FF]/20 transition-all">
+                <span className="w-2 h-2 rounded-full bg-[#00F5FF] animate-pulse" />
+                {address?.slice(0,6)}...{address?.slice(-4)}
+                <ChevronDown className="w-4 h-4 text-gray-400" />
+              </button>
+              
+              <div className="absolute right-0 mt-2 w-48 bg-[#0d1117] border border-white/10 rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <Link href="/dashboard" className="block px-4 py-3 text-sm font-bold text-white hover:bg-white/5 transition-colors border-b border-white/5">
+                  Ir al Dashboard
+                </Link>
+                <div className="px-4 py-3 text-xs text-gray-400 border-b border-white/5 bg-black/20">
+                  <span className="block mb-1">Balance</span>
+                  <span className="font-mono font-bold text-[#00F5FF]">{balance.toLocaleString()} $TAL</span>
+                </div>
+                <button 
+                  onClick={() => { disconnect(); setIsLangOpen(false); }} 
+                  className="w-full text-left px-4 py-3 text-sm font-bold text-red-400 hover:bg-red-500/10 transition-colors"
+                >
+                  Disconnect
+                </button>
+              </div>
+            </div>
           ) : (
             <button onClick={open} className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00F5FF] to-[#9B5DE5] text-black font-black text-sm hover:opacity-90 transition-all shadow-[0_0_20px_rgba(0,245,255,0.3)] hover:shadow-[0_0_30px_rgba(155,93,229,0.5)]">
-              {t('login')}
+              Connect Wallet
             </button>
           )}
         </div>
