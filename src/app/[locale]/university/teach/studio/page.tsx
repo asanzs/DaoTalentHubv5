@@ -15,7 +15,7 @@ import {
   Radio,
 } from "lucide-react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 type LessonType =

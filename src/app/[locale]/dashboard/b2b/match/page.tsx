@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 "use client";
+import { useTranslations } from 'next-intl';
 
 import React, { useState } from "react";
 import { Cpu, Target, ArrowRight, CheckCircle2, ShieldAlert, Users, Sparkles } from "lucide-react";

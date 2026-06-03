@@ -1,5 +1,5 @@
-import { useTranslations } from 'next-intl';
 "use client";
+import { useTranslations } from 'next-intl';
 
 import React, { useState, useEffect, useCallback } from "react";
 import { Coins, ChevronRight, HelpCircle, ArrowRight, Zap, ShieldCheck } from "lucide-react";

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, CheckCircle2, Loader2, Send } from "lucide-react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const inputClass =
   "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-[#00F5FF]/50 placeholder-gray-600 transition-colors";

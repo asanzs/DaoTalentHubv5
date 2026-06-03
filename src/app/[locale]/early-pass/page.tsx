@@ -23,6 +23,7 @@ const IDO_GOAL_M = 50;
 
 export default function EarlyPassPage() {
   const tApp = useTranslations('app');
+  const t2 = useTranslations('earlyPass2');
   const pathname = usePathname();
   const locale = pathname.split('/')[1] || 'es';
 

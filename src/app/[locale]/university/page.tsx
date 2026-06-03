@@ -1,7 +1,7 @@
 import React from "react";
 import { Brain, ArrowRight, BookOpen, GraduationCap, Star, Users, Zap, Trophy, ChevronLeft } from "lucide-react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const STATS = [
   { label: "Cursos disponibles", value: "6", icon: BookOpen, color: "#00F5FF" },
