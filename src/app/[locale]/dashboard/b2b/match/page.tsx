@@ -3,6 +3,8 @@ import { useTranslations } from 'next-intl';
 
 import React, { useState } from "react";
 import { Cpu, Target, ArrowRight, CheckCircle2, ShieldAlert, Users, Sparkles } from "lucide-react";
+import { createEscrowContract } from "@/lib/mocks/service";
+import { useRouter } from "next/navigation";
 
 interface Candidate {
   id: string;
@@ -50,6 +52,7 @@ const MOCK_CANDIDATES: Candidate[] = [
 
 export default function SmartMatchPage() {
   const tApp = useTranslations('app');
+  const router = useRouter();
   const [title, setTitle] = useState("Auditoría de Bóveda DeFi");
   const [rewardUsd, setRewardUsd] = useState(3000);
   const [rewardTal, setRewardTal] = useState(150);
@@ -90,8 +93,15 @@ export default function SmartMatchPage() {
     });
   };
 
-  const handleHire = (candidateName: string) => {
-    alert(`Oferta pre-fundada en Escrow enviada a ${candidateName}. Se requiere su aceptación en el Dashboard B2C.`);
+  const handleHire = async (candidate: Candidate) => {
+    try {
+      const talentId = parseInt(candidate.id.replace('c', ''));
+      await createEscrowContract(talentId, title, rewardUsd);
+      alert(`Oferta pre-fundada en Escrow enviada a ${candidate.name}. Fondos bloqueados en Smart Contract.`);
+      router.push(`/es/dashboard/b2b/projects`);
+    } catch (err: any) {
+      alert(`Error al crear contrato: ${err.message}`);
+    }
   };
 
   return (
@@ -243,7 +253,7 @@ export default function SmartMatchPage() {
 
                   <div className="mt-4 flex gap-3">
                     <button 
-                      onClick={() => handleHire(c.name)}
+                      onClick={() => handleHire(c)}
                       className="flex-1 py-3 rounded-xl bg-[#00F5FF] text-black font-black text-xs uppercase tracking-widest hover:opacity-90 transition-all flex items-center justify-center gap-1"
                     >
                       Enviar Oferta de Trabajo <ArrowRight className="w-4 h-4" />
