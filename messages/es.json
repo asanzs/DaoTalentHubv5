@@ -43,7 +43,7 @@
     "b3": "Multiplicador de Staking x2"
   },
   "dataRoom": {
-    "title": "Mythos Data Room Privada",
+    "title": "DAO Talent Hub Data Room Privada",
     "subtitle": "Información confidencial para VCs, Ángeles y Socios Estratégicos.",
     "capTable": "Cap Table y Distribución",
     "tokenomics": "Tokenomics y Emisión",
@@ -277,7 +277,7 @@
   "dataRoomHub": {
     "back": "Volver al Inicio",
     "restricted": "Acceso Restringido · Inversores Institucionales",
-    "title": "Mythos Data Room Privada",
+    "title": "DAO Talent Hub Data Room Privada",
     "desc": "Expediente maestro interactivo del ecosistema DAO Talent Hub. Documentos de negocio oficiales, proyecciones auditadas, cap table y tokenomics integrados de forma nativa en la plataforma.",
     "openMaster": "Abrir Master Plan",
     "capTitle": "Cap Table Simplificada",
@@ -306,6 +306,10 @@
     "finItem4": "Take-rate de Contrato B2C",
     "finItem4Value": "8.0% máximo",
     "viewFin": "Ver Dashboard Financiero",
+    "openMasterPlan": "Abrir Plan Master",
+"exploreCapTable": "Explorar Cap Table",
+"readBusinessPlan": "Leer Plan de Negocio",
+"viewFinancialDashboard": "Ver Dashboard Financiero"
     "idxTitle": "Índice de Documentos On-Chain",
     "idxCol1": "Sección de la Plataforma",
     "idxCol2": "Origen Histórico (Legacy)",
